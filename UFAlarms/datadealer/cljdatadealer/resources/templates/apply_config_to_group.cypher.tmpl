@@ -1,9 +1,0 @@
-MATCH (s:Site {siteid: "{{siteid}}"})-[:HAS]->(g:Group {groupid: "{{groupid}}"})-[:HAS]->(n:Node), (c:Config {configid: "{{configid}}"})
-OPTIONAL MATCH (other:Config)-[old:BELONGS_TO|HAS]-(n) WHERE other.configid <> "{{configid}}"
-DELETE old
-MERGE (n)-[:HAS]->(c)
-MERGE (c)-[:BELONGS_TO]->(n)
-RETURN COLLECT( DISTINCT {
-    nodeid: n.nodeid,
-    model: n.model
-}) AS nodes

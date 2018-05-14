@@ -1,4 +1,0 @@
-{:production {:hosts ["127.0.0.1"] :port 7687}
- :development {:dbpath "data/java-query-db"}
- :test {:dbpath "/tmp/java-query-db"}
- :docker {:hosts ["neo4j"] :port 7687}}

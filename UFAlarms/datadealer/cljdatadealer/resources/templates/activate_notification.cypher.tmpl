@@ -1,3 +1,0 @@
-MATCH (s:Site {siteid: "{{siteid}}"})-[:HAS]->(n:Notification {notificationid: "{{notificationid}}"})
-REMOVE n:Notification:Inactive
-SET n:Notification:Active

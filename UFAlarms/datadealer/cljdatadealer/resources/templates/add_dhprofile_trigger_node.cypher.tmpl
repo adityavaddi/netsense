@@ -1,3 +1,0 @@
-MATCH (dhprofile:DHProfile {dhprofileid: "{{ dhprofileid }}"})-[r:DH]-(node:Node {nodeid: "{{ nodeid }}"})
-SET r.trigger = true
-RETURN node, dhprofile

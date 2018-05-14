@@ -1,9 +1,0 @@
-MATCH (s:Site {siteid: "{{siteid}}"})
-WITH { props } AS props
-UNWIND props.nodeList AS nodeid
-    MATCH (s)-[:HAS]->(n:Node {nodeid: nodeid})
-    SET n.server = props.server
-WITH COLLECT( DISTINCT {
-    nodeid: n.nodeid
-}) AS nodes
-RETURN DISTINCT nodes

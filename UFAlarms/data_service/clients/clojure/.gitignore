@@ -1,6 +1,0 @@
-target/
-*.swp
-.lein-repl-history
-.lein-failures
-.nrepl-port
-

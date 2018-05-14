@@ -1,6 +1,0 @@
-MATCH (:ETDHProfile {etdhprofileid: "{{etdhprofileid}}"})-[:ETDH {trigger: true}]-(n:Node)
-RETURN DISTINCT {
-       nodeid: n.nodeid,
-       latitude: n.latitude,
-       longitude: n.longitude
-       } as items

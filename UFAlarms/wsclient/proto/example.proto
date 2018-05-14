@@ -1,4 +1,0 @@
-message Short {
-    required string name = 1;
-    optional string email = 2;
-}

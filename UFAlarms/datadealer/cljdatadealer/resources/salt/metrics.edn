@@ -1,8 +1,0 @@
-{:test
-    {:host "{{graphite.local-ip}}"}
- :development
-    {:host "{{graphite.local-ip}}"}
- :production
-    {:host "{{graphite.local-ip}}"}
- :docker
-    {:host "graphite_service"}}

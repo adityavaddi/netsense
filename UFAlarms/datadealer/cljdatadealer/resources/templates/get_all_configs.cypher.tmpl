@@ -1,9 +1,0 @@
-MATCH (s:Site {siteid: "{{siteid}}"})-[:HAS]->(c:Config)
-WHERE NOT(c:Inactive)
-OPTIONAL MATCH (c)-[BELONGS_TO]-(n:Node)
-RETURN {
-  configid: c.configid,
-  name: c.name,
-  model: c.model,
-  nodes: count(DISTINCT n)
-} AS items
