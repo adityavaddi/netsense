@@ -19,7 +19,7 @@ function created_signed_embed_url(options) {
    // looker options
    var secret = options.secret;
    var host = options.host;
-
+     
    // user options
    var json_external_user_id = JSON.stringify(options.external_user_id);
    var json_first_name = JSON.stringify(options.first_name);
