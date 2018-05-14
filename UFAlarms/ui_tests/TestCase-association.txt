@@ -1,0 +1,80 @@
+This File helps in associating what test case is associated with which folder in the repo
+
+Login:
+    Login test case is in a separate file based on each role
+        'specs/login/role/end_user_admin.js'
+        'specs/login/role/partner_admin.js'
+        'specs/login/role/sensity_admin.js'
+        'specs/login/role/sensity_user_admin.js'
+    Username and Passwords reside in a separate file:
+         'specs/login/mockData.js'
+
+Logout:
+    Logout test case is in a separate file based on each role
+
+
+variables.js
+    Different variables that need to be used to get data to be searched or added
+
+1. Sensity Admin:
+    Inside Suites: sensity_admin.js file which will give a list of all test cases that run for a Sensity Admin
+    a.Login as sensity_admin: 'specs/login/role/sensity_admin.js',
+    b.Login as sensity_admin, create a partner: './specs/createCustomer/role/createPartner.js',
+    c.Login as sensity_admin, create a partner_admin for this partner: ./specs/createCustomer/role/createPartnerAdmin.js',
+
+
+2.Partner Admin:
+    Inside Suites: partner_admin.js file which will give a list of all test cases that run for a Partner Admin
+    a.Login as partner_admin: 'specs/login/role/partner_admin.js',
+    b.Login as partner_admin, create a customer: 'specs/createCustomer/role/createCustomer.js',
+    b.Login as partner_admin, create end_user_admin for this customer:   @TODO: Ashwini - reverify it is working
+    c.Login as partner_admin, create account with "patner_api", then generate api key for this account
+
+
+All the Test Cases for End User Admin are set up in sequence
+    * As once Logged in the End User is taken directly to sites page
+
+    * The test cases are set up in sequence for the CI/CD to run
+    * If the User wants to run each test case individually then he needs to
+    * comment other test cases and then run the single test case intended to run there may be some routing that might need to be taken care of
+
+    'specs/customerPanel/customer_panel.spec.js': Customer Panel to just search for a customer
+    'specs/sitePanel/site_selection.page.js': Site Panel is used to get to the sites page and route to any other page as required by test cases
+
+
+3. End User Admin:
+    Inside Suites: end_user_admin.js file which will give a list of all test cases that run for a Ed User Admin
+    a. Login as end_user_admin, create a site under customer: './specs/createSite/createSite.spec.js',
+    b. Login as end_user_admin, create a lighting group under the site: './specs/createGroup/createGroup.js',
+    c. Login as end_user_admin, add at least 1 node into the lighting group:
+    d. Login as end_user_admin, create a config under the site: './specs/configPanel/config.spec.js',
+    e. Login as end_user_admin, create a schedule under the site : Could not be done due to some limitations
+    f. Login as end_user_admin, create a Proximity Dimming under the site: './specs/pdProfile/create.pd.profile.spec.js',
+    g. Login as end_user_admin, create a fixture under the site: './specs/fixturePanel/fixture.spec.js',
+    h. Login as end_user_admin, assign a PD to the node: './specs/pdToGroup/apply.pd.to.group.spec.js',
+    i. Login as end_user_admin, assign fixture to the node: './specs/fixtureToNode/fixture.to.node.spec.js',
+    j. Login as end_user_admin, check the Audits: './specs/checkAudits/checkAudit.js'
+    k. Login as end_user_admin, create a Notification: './specs/createNotification/createNotification.js',
+    l. Login as end_user_admin, check the Reporting, select the node, select the sensor, check the graph generated:  'specs/reportingPanel/reporting.spec.js',
+    m. Login as end_user_admin, verify name matched, and "Basic Identifiers", "config","Reports","Alerts & Alarms" are on the page: 'specs/verifyLabelsOnNodePage/verify_labels_nodes_spec.js',
+    n. Login as end_user_admin,check the node details, change the Name: 'specs/nodeNameChange/node_name_change_spec.js',
+    o. Login as end_user_admin, check the node details, under Config, verify all the following items on the page:
+       "Groups and Profiles","Wifi","Fixture","Location","Hardware","Lighting Control","Firmware",
+       "Configuration Management","Reset": 'specs/nodeDetailsUnderConfig/node_details_under_config_spec.js',
+    p. Login as end_user_admin, turn ON/OFF lighting: :TODO: Aditya(get the code to which branch it was pushed)
+    q. Login as end_customer_admin, assign a schedule to a node, check on device, make sure it is correct (entries): 'specs/assignScheduleToNode/assignScheduleToNode.spec.js',
+    r. Login as end_user_admin, create account with ""end_user_api", then generate api key for this account
+
+
+4. Sensity User: Parking Groups and Parking Zones Test Cases and Traffic Configuration:
+    Parking Groups test Cases (Runs only in qascale2)
+     './specs/parkingGroups/parkingGroups.spec.js',
+
+    Parking Zones test Cases (Runs only in qascale2)
+     './specs/parkingZones/parkingZones.spec.js',
+
+    Traffic Configuration
+     './specs/trafficConfiguration/role/sensity_user.js',
+
+
+

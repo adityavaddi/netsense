@@ -1,0 +1,49 @@
+MATCH (s:Site {siteid:"{{siteid}}"})
+CREATE (f:Fixture:Active {
+fixtureid: "{{fixtureid}}",
+name: "{{name}}",
+fixtureType: "{{fixtureType}}",
+MaxPower0: "{{MaxPower0}}",
+MaxPower10: "{{MaxPower10}}",
+MaxPower50: "{{MaxPower50}}",
+MaxPower100: "{{MaxPower100}}",
+MinPower100: "{{MinPower100}}",
+MinPower50: "{{MinPower50}}",
+MinPower10: "{{MinPower10}}",
+MinPower0: "{{MinPower0}}",
+PowerDraw: "{{PowerDraw}}",
+nemasocket: "{{nemasocket}}",
+description: "{{description}}",
+manufacturer: "{{manufacturer}}",
+manufacturersku: "{{manufacturersku}}",
+MinimumLightLevelForFailureDetection: "{{MinimumLightLevelForFailureDetection}}",
+BallastCost: "{{BallastCost}}",
+BulbCost: "{{BulbCost}}",
+LegacyPowerDraw: "{{LegacyPowerDraw}}",
+DailyOperatingTime: "{{DailyOperatingTime}}"
+})
+CREATE UNIQUE (f)-[:BELONGS_TO]->(s)
+CREATE UNIQUE (s)-[:HAS]->(f)
+RETURN {
+fixtureid: f.fixtureid,
+name: f.name,
+fixtureType: f.fixtureType,
+MaxPower0: f.MaxPower0,
+MaxPower10: f.MaxPower10,
+MaxPower50: f.MaxPower50,
+MaxPower100: f.MaxPower100,
+MinPower100: f.MinPower100,
+MinPower50: f.MinPower50,
+MinPower10: f.MinPower10,
+MinPower0: f.MinPower0,
+PowerDraw: f.PowerDraw,
+nemasocket: f.nemasocket,
+description: f.description,
+manufacturer: f.manufacturer,
+manufacturersku: f.manufacturersku,
+MinimumLightLevelForFailureDetection: f.MinimumLightLevelForFailureDetection,
+BallastCost: f.BallastCost,
+BulbCost: f.BulbCost,
+LegacyPowerDraw: f.LegacyPowerDraw,
+DailyOperatingTime: f.DailyOperatingTime
+} AS fixture

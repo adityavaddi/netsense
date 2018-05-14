@@ -1,0 +1,9 @@
+elk:
+    image: willdurand/elk
+    container_name: elk
+    ports:
+        - "0.0.0.0:8888:80"
+    volumes:
+        - ./logstash.conf:/etc/logstash/logstash.conf
+        - /var/log/:/tmp/log/
+        - /data/sensity/elk:/data

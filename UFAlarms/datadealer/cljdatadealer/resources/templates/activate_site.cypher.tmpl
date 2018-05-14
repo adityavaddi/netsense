@@ -1,0 +1,6 @@
+MATCH (s:Site {siteid:"{{siteid}}"})		  
+OPTIONAL MATCH (s)-[:HAS]->(n:Node)
+REMOVE s:Site:Inactive		  
+SET s:Site:Active		  
+REMOVE n:Node:Inactive
+SET n:Node:Active

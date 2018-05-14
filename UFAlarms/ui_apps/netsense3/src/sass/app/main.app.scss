@@ -1,0 +1,26 @@
+/* Importing styles from folder netsense - specific to app */
+@import "netsense/constants";
+@import "netsense/font";
+
+//  New Designs Styling Code
+@import "netsense/customers.panel";
+@import "netsense/overlay.component";
+
+//  Current Application Styling Code
+@import "netsense/audit.panel";
+@import "netsense/default.generic";
+@import "netsense/generic";
+@import "netsense/header";
+@import "netsense/maps";
+@import "netsense/node";
+@import "netsense/rubix";
+@import "netsense/schedule";
+@import "netsense/sites";
+@import "netsense/slick.grid";
+@import "netsense/user.management";
+@import "netsense/reporting";
+@import "netsense/groups";
+@import "netsense/list.editor";
+@import "netsense/traffic.config";
+@import "netsense/buttons";
+@import "netsense/parkingspace";

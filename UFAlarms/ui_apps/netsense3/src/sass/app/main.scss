@@ -1,0 +1,59 @@
+/* REQUIRED: DO NOT REMOVE */
+@import "../../global/sass/rubix/overrides/variables";
+@import "../../global/sass/vendor/bootstrap/bootstrap";
+@import "../../global/sass/vendor/sass-list-maps/sass-list-maps";
+
+@import "../../global/sass/rubix/base/base";
+@import "../../global/sass/rubix/layout/layout";
+@import "../../global/sass/rubix/module/module";
+
+@import "../../global/sass/vendor/datatables/datatables";
+@import "../../global/sass/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker";
+
+/* IMPORT PAGE STYLES */
+@import "pages/pages";
+
+/* IMPORT PRINT STYLES */
+@import "print/print";
+
+/* IMPORTING MAIN APP STYLES */
+@import "main.app";
+
+html[dir='rtl'] {
+  [class^="icon-"].float-right-rtl,
+  [class*=" icon-"].float-right-rtl {
+    position: relative;
+    /*@noflip*/float: right;
+  }
+}
+
+body {
+  opacity: 1;
+  transition: all 0.7s ease;
+
+  &.fade-out {
+    transition: all 0.25s ease;
+    opacity: 0;
+  }
+}
+
+b {
+  font-family: NHaasGroteskDSW01-75Bd, lato, helvetica, arial, san-serif;
+}
+
+#app-preloader > .preloader {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: #E9EDF2;
+  z-index: 99999999999;
+}
+#app-preloader > .preloader > img {
+  margin: auto;
+  display: block;
+  margin-top: 150px;
+  position: relative;
+}
+

@@ -1,0 +1,2023 @@
+{
+    "package": "com.sensity.deviceproto",
+    "options": {
+        "java_package": "com.sensity.deviceproto"
+    },
+    "messages": [
+        {
+            "name": "Alarm",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "AlarmCategory",
+                    "name": "category",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "AlarmSeverity",
+                    "name": "severity",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "msg",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "KVPair",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "key",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "sValue",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "int64",
+                    "name": "lValue",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "bValue",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "ConfigGetReq",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "key",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ConfigGetResp",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "KVPair",
+                    "name": "pair",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ConfigSetReq",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "KVPair",
+                    "name": "pair",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ConfigSetResp",
+            "fields": []
+        },
+        {
+            "name": "ConfigUpdateReq",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "token",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ConfigUpdateResp",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "ConfigUpdateMethod",
+                    "name": "method",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ConfigUpdateBegin",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "ConfigUpdateMethod",
+                    "name": "method",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ConfigUpdatePair",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "KVPair",
+                    "name": "pair",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ConfigUpdateCommitReq",
+            "fields": []
+        },
+        {
+            "name": "ConfigUpdateCommitResp",
+            "fields": []
+        },
+        {
+            "name": "DeviceActionReq",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "DeviceActionType",
+                    "name": "action",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "DeviceActionResp",
+            "fields": []
+        },
+        {
+            "name": "TimeReq",
+            "fields": []
+        },
+        {
+            "name": "TimeResp",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint64",
+                    "name": "time",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "EndpointAnnounce",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "nodeId",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "clientType",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "EndpointSWInfo",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "swVerId",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "swVerName",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "EndpointWiFiNetworkInfo",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "ssid",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "bssid",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "mac",
+                    "id": 3
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "channel",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "WiFiAuthType",
+                    "name": "auth",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "localIP",
+                    "id": 6
+                }
+            ]
+        },
+        {
+            "name": "EndpointVideoInfo",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "appServer",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "bool",
+                    "name": "camera0Enable",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "bool",
+                    "name": "camera1Enable",
+                    "id": 3
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "appServerPort",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "EndpointUMTSNetworkInfo",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "network",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "imei",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "imsi",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "localIP",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "AsyncEnvelope",
+            "fields": [],
+            "extensions": [
+                20,
+                536870911
+            ]
+        },
+        {
+            "name": "ReqEnvelope",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "reqID",
+                    "id": 1
+                }
+            ],
+            "extensions": [
+                20,
+                536870911
+            ]
+        },
+        {
+            "name": "RespEnvelope",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "reqID",
+                    "id": 1
+                }
+            ],
+            "extensions": [
+                20,
+                536870911
+            ]
+        },
+        {
+            "name": "ErrorEnvelope",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "reqID",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "RespStatus",
+                    "name": "status",
+                    "id": 2
+                }
+            ],
+            "extensions": [
+                20,
+                536870911
+            ]
+        },
+        {
+            "name": "Envelope",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "srcNodeId",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "dstNodeId",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "AsyncEnvelope",
+                    "name": "asyncEnvelope",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "ReqEnvelope",
+                    "name": "reqEnvelope",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "RespEnvelope",
+                    "name": "respEnvelope",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "ErrorEnvelope",
+                    "name": "errorEnvelope",
+                    "id": 6
+                }
+            ]
+        },
+        {
+            "name": "LightingCtrl",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "pri",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "mask",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "bytes",
+                    "name": "level",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "qualifiers",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "CalendarEvent",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "sec",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "min",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "hr",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "wday",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "mday",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "mon",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "year",
+                    "id": 7
+                }
+            ]
+        },
+        {
+            "name": "LightingForceState",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "LightingCtrl",
+                    "name": "state",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "LightingForceType",
+                    "name": "ftype",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "LightingSetAuto",
+            "fields": []
+        },
+        {
+            "name": "LightingClearSchedule",
+            "fields": []
+        },
+        {
+            "name": "LightingScheduledEvent",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "CalendarEvent",
+                    "name": "event",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "LightingCtrl",
+                    "name": "state",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "SensorSample",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "sensor",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint64",
+                    "name": "time",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "uint64",
+                    "name": "value",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "units",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "SensorSamplePacked",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "sensor",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint64",
+                    "name": "time",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "uint64",
+                    "name": "samplePeriod",
+                    "id": 3
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "nSamples",
+                    "id": 4
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "bytesPerSample",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "units",
+                    "id": 6
+                },
+                {
+                    "rule": "required",
+                    "type": "bytes",
+                    "name": "data",
+                    "id": 7
+                }
+            ]
+        },
+        {
+            "name": "SensorSampleReq",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "sensor",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "SensorSampleResp",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "SensorSample",
+                    "name": "sensorSample",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "SoftwareUpdateReq",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "swUpdateURL",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "SoftwareUpdateResp",
+            "fields": []
+        },
+        {
+            "name": "SoftwareDownloadReq",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "fwId",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "fwURL",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "checksum",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "SoftwareDownloadResp",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint64",
+                    "name": "progress",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "SoftwareDownloadState",
+                    "name": "state",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "UpgradeAbortReq",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "fwId",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "SoftwareInstallReq",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "fwId",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "SoftwareInstallResp",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "SoftwareInstallState",
+                    "name": "state",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "message",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "X509UpdateReq",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "x509UpdateURL",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "X509Update",
+                    "name": "x509Update",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "httpsPort",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "X509UpdateResp",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "X509UpdateState",
+                    "name": "result",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ObjectMetadata",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "ObjectClassifier",
+                    "name": "classifier",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "ObjectDescriptor",
+                    "name": "descriptor",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "TrafficDescriptor",
+                    "name": "traffic",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "ParkingSpotDescriptor",
+                    "name": "parkingSpot",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "ParkedVehicleDescriptor",
+                    "name": "parkedVehicle",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "ObjectDescriptor",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "objectId",
+                    "id": 1
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "cameraPosition",
+                    "id": 2,
+                    "options": {
+                        "packed": true
+                    }
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "cameraVelocity",
+                    "id": 3,
+                    "options": {
+                        "packed": true
+                    }
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "worldPosition",
+                    "id": 4,
+                    "options": {
+                        "packed": true
+                    }
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "worldVelocity",
+                    "id": 5,
+                    "options": {
+                        "packed": true
+                    }
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "cameraBoundingBox",
+                    "id": 6,
+                    "options": {
+                        "packed": true
+                    }
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "worldBoundingBox",
+                    "id": 7,
+                    "options": {
+                        "packed": true
+                    }
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "dimensions",
+                    "id": 8,
+                    "options": {
+                        "packed": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "TrafficDescriptor",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "laneId",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ParkingSpotDescriptor",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "spotId",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "bool",
+                    "name": "occupied",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "counter",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "duration",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "ParkedVehicleDescriptor",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "duration",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "occupied",
+                    "id": 2,
+                    "options": {
+                        "default": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "VideoEvent",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint64",
+                    "name": "time",
+                    "id": 1
+                },
+                {
+                    "rule": "repeated",
+                    "type": "ObjectMetadata",
+                    "name": "metadata",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "cameraChannel",
+                    "id": 3,
+                    "options": {
+                        "default": 0
+                    }
+                },
+                {
+                    "rule": "optional",
+                    "type": "EngineStatus",
+                    "name": "engineStatus",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "CameraStatus",
+                    "name": "cameraStatus",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "CollisionCourseDetection",
+                    "name": "collisionCourse",
+                    "id": 10
+                },
+                {
+                    "rule": "optional",
+                    "type": "LaneDepartureDetection",
+                    "name": "laneDeparture",
+                    "id": 11
+                },
+                {
+                    "rule": "optional",
+                    "type": "LaneChangeDetection",
+                    "name": "laneChange",
+                    "id": 12
+                },
+                {
+                    "rule": "optional",
+                    "type": "ParkingSpotDetection",
+                    "name": "parkingSpot",
+                    "id": 13
+                },
+                {
+                    "rule": "optional",
+                    "type": "ParkingZoneDetection",
+                    "name": "parkingZone",
+                    "id": 14
+                },
+                {
+                    "rule": "optional",
+                    "type": "ParkedVehicleDetection",
+                    "name": "parkedVehicle",
+                    "id": 15
+                },
+                {
+                    "rule": "optional",
+                    "type": "ParkingViolationDetection",
+                    "name": "parkingViolation",
+                    "id": 16
+                },
+                {
+                    "rule": "optional",
+                    "type": "TrafficViolationDetection",
+                    "name": "trafficViolation",
+                    "id": 17
+                },
+                {
+                    "rule": "optional",
+                    "type": "ZoneViolationDetection",
+                    "name": "zoneViolation",
+                    "id": 18
+                },
+                {
+                    "rule": "optional",
+                    "type": "LoiteringDetection",
+                    "name": "loitering",
+                    "id": 19
+                },
+                {
+                    "rule": "optional",
+                    "type": "AbandonedObjectDetection",
+                    "name": "abandonedObject",
+                    "id": 20
+                },
+                {
+                    "rule": "optional",
+                    "type": "StolenObjectDetection",
+                    "name": "stolenObject",
+                    "id": 21
+                },
+                {
+                    "rule": "optional",
+                    "type": "ParkingZoneViolationDetection",
+                    "name": "parkingZoneViolation",
+                    "id": 22
+                },
+                {
+                    "rule": "optional",
+                    "type": "EventCounter",
+                    "name": "counter",
+                    "id": 100
+                },
+                {
+                    "rule": "optional",
+                    "type": "UnmarkedParkingAreaDescriptor",
+                    "name": "unmarkedParkingArea",
+                    "id": 200
+                },
+                {
+                    "rule": "optional",
+                    "type": "MarkedParkingAreaDescriptor",
+                    "name": "markedParkingArea",
+                    "id": 201
+                }
+            ]
+        },
+        {
+            "name": "EngineStatus",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "code",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "message",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "CameraStatus",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "code",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "message",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "EventCounter",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "name",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "count",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "CollisionCourseDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "vehicleId",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "deltaTime",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "LaneDepartureDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "vehicleId",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "laneId",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "float",
+                    "name": "percentage",
+                    "id": 3
+                },
+                {
+                    "rule": "required",
+                    "type": "Direction",
+                    "name": "direction",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "LaneChangeDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "vehicleId",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "departingLaneId",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "arrivingLaneId",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "ParkingSpotDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "spotId",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "vehicleId",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "bool",
+                    "name": "occupied",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "ParkingZoneDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "spotCount",
+                    "id": 1
+                },
+                {
+                    "rule": "repeated",
+                    "type": "uint32",
+                    "name": "occupiedSpots",
+                    "id": 2,
+                    "options": {
+                        "packed": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ParkedVehicleDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "vehicleId",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "occupied",
+                    "id": 2,
+                    "options": {
+                        "default": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ParkingViolationDetection",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "duration",
+                    "id": 1
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "boundingBox",
+                    "id": 2,
+                    "options": {
+                        "packed": true
+                    }
+                },
+                {
+                    "rule": "repeated",
+                    "type": "uint32",
+                    "name": "violatingSpots",
+                    "id": 3,
+                    "options": {
+                        "packed": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ParkingZoneViolationDetection",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "duration",
+                    "id": 1
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "boundingBox",
+                    "id": 2,
+                    "options": {
+                        "packed": true
+                    }
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "triggerId",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "TrafficViolationDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "triggerId",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "laneId",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint32",
+                    "name": "code",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "ZoneViolationDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "triggerId",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "zoneId",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "float",
+                    "name": "duration",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "LoiteringDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "triggerId",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "zoneId",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "float",
+                    "name": "duration",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "AbandonedObjectDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "triggerId",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "zoneId",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "float",
+                    "name": "duration",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "StolenObjectDetection",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "triggerId",
+                    "id": 1
+                },
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "zoneId",
+                    "id": 2
+                },
+                {
+                    "rule": "required",
+                    "type": "float",
+                    "name": "duration",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "UnmarkedParkingAreaDescriptor",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "lat",
+                    "id": 1,
+                    "options": {
+                        "packed": true
+                    }
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "lon",
+                    "id": 2,
+                    "options": {
+                        "packed": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "MarkedParkingAreaDescriptor",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "uint32",
+                    "name": "numberOfSpots",
+                    "id": 1
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "lat",
+                    "id": 2,
+                    "options": {
+                        "packed": true
+                    }
+                },
+                {
+                    "rule": "repeated",
+                    "type": "float",
+                    "name": "lon",
+                    "id": 3,
+                    "options": {
+                        "packed": true
+                    }
+                }
+            ]
+        },
+        {
+            "ref": "AsyncEnvelope",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "EndpointAnnounce",
+                    "name": "endpointAnnounce",
+                    "id": 20
+                },
+                {
+                    "rule": "optional",
+                    "type": "EndpointSWInfo",
+                    "name": "endpointSWInfo",
+                    "id": 21
+                },
+                {
+                    "rule": "optional",
+                    "type": "EndpointWiFiNetworkInfo",
+                    "name": "endpointWiFiNetworkInfo",
+                    "id": 22
+                },
+                {
+                    "rule": "optional",
+                    "type": "EndpointVideoInfo",
+                    "name": "endpointVideoInfo",
+                    "id": 27
+                },
+                {
+                    "rule": "optional",
+                    "type": "ConfigUpdateBegin",
+                    "name": "configUpdateBegin",
+                    "id": 26
+                },
+                {
+                    "rule": "optional",
+                    "type": "ConfigUpdatePair",
+                    "name": "configUpdatePair",
+                    "id": 23
+                },
+                {
+                    "rule": "optional",
+                    "type": "SensorSample",
+                    "name": "sensorSample",
+                    "id": 24
+                },
+                {
+                    "rule": "optional",
+                    "type": "Alarm",
+                    "name": "alarm",
+                    "id": 25
+                },
+                {
+                    "rule": "optional",
+                    "type": "LightingForceState",
+                    "name": "lightingForceState",
+                    "id": 100
+                },
+                {
+                    "rule": "optional",
+                    "type": "LightingSetAuto",
+                    "name": "lightingSetAuto",
+                    "id": 101
+                },
+                {
+                    "rule": "optional",
+                    "type": "LightingScheduledEvent",
+                    "name": "lightingScheduledEvent",
+                    "id": 102
+                },
+                {
+                    "rule": "optional",
+                    "type": "LightingClearSchedule",
+                    "name": "lightingClearSchedule",
+                    "id": 103
+                },
+                {
+                    "rule": "optional",
+                    "type": "VideoEvent",
+                    "name": "videoEvent",
+                    "id": 200
+                }
+            ]
+        },
+        {
+            "ref": "ReqEnvelope",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "ConfigGetReq",
+                    "name": "configGetReq",
+                    "id": 20
+                },
+                {
+                    "rule": "optional",
+                    "type": "ConfigSetReq",
+                    "name": "configSetReq",
+                    "id": 21
+                },
+                {
+                    "rule": "optional",
+                    "type": "ConfigUpdateReq",
+                    "name": "configUpdateReq",
+                    "id": 22
+                },
+                {
+                    "rule": "optional",
+                    "type": "ConfigUpdateCommitReq",
+                    "name": "configUpdateCommitReq",
+                    "id": 28
+                },
+                {
+                    "rule": "optional",
+                    "type": "SensorSampleReq",
+                    "name": "sensorSampleReq",
+                    "id": 23
+                },
+                {
+                    "rule": "optional",
+                    "type": "DeviceActionReq",
+                    "name": "deviceActionReq",
+                    "id": 24
+                },
+                {
+                    "rule": "optional",
+                    "type": "TimeReq",
+                    "name": "timeReq",
+                    "id": 25
+                },
+                {
+                    "rule": "optional",
+                    "type": "SoftwareUpdateReq",
+                    "name": "softwareUpdateReq",
+                    "id": 26
+                },
+                {
+                    "rule": "optional",
+                    "type": "X509UpdateReq",
+                    "name": "x509UpdateReq",
+                    "id": 27
+                },
+                {
+                    "rule": "optional",
+                    "type": "SoftwareDownloadReq",
+                    "name": "softwareDownloadReq",
+                    "id": 30
+                },
+                {
+                    "rule": "optional",
+                    "type": "SoftwareInstallReq",
+                    "name": "softwareInstallReq",
+                    "id": 31
+                },
+                {
+                    "rule": "optional",
+                    "type": "UpgradeAbortReq",
+                    "name": "upgradeAbortReq",
+                    "id": 32
+                }
+            ]
+        },
+        {
+            "ref": "RespEnvelope",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "ConfigGetResp",
+                    "name": "configGetResp",
+                    "id": 20
+                },
+                {
+                    "rule": "optional",
+                    "type": "ConfigSetResp",
+                    "name": "configSetResp",
+                    "id": 21
+                },
+                {
+                    "rule": "optional",
+                    "type": "ConfigUpdateResp",
+                    "name": "configUpdateResp",
+                    "id": 22
+                },
+                {
+                    "rule": "optional",
+                    "type": "ConfigUpdateCommitResp",
+                    "name": "configUpdateCommitResp",
+                    "id": 28
+                },
+                {
+                    "rule": "optional",
+                    "type": "SensorSampleResp",
+                    "name": "sensorSampleResp",
+                    "id": 23
+                },
+                {
+                    "rule": "optional",
+                    "type": "DeviceActionResp",
+                    "name": "deviceActionResp",
+                    "id": 24
+                },
+                {
+                    "rule": "optional",
+                    "type": "TimeResp",
+                    "name": "timeResp",
+                    "id": 25
+                },
+                {
+                    "rule": "optional",
+                    "type": "SoftwareUpdateResp",
+                    "name": "softwareUpdateResp",
+                    "id": 26
+                },
+                {
+                    "rule": "optional",
+                    "type": "X509UpdateResp",
+                    "name": "x509UpdateResp",
+                    "id": 27
+                },
+                {
+                    "rule": "optional",
+                    "type": "SoftwareDownloadResp",
+                    "name": "softwareDownloadResp",
+                    "id": 30
+                },
+                {
+                    "rule": "optional",
+                    "type": "SoftwareInstallResp",
+                    "name": "softwareInstallResp",
+                    "id": 31
+                }
+            ]
+        }
+    ],
+    "enums": [
+        {
+            "name": "Direction",
+            "values": [
+                {
+                    "name": "Left",
+                    "id": 1
+                },
+                {
+                    "name": "Right",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "AlarmCategory",
+            "values": [
+                {
+                    "name": "Network",
+                    "id": 1
+                },
+                {
+                    "name": "Hardware",
+                    "id": 2
+                },
+                {
+                    "name": "Software",
+                    "id": 3
+                },
+                {
+                    "name": "Power",
+                    "id": 4
+                },
+                {
+                    "name": "InternalSensor",
+                    "id": 5
+                },
+                {
+                    "name": "ExternalSensor",
+                    "id": 6
+                },
+                {
+                    "name": "Lighting",
+                    "id": 7
+                }
+            ]
+        },
+        {
+            "name": "AlarmSeverity",
+            "values": [
+                {
+                    "name": "Clear",
+                    "id": 0
+                },
+                {
+                    "name": "Warning",
+                    "id": 1
+                },
+                {
+                    "name": "Minor",
+                    "id": 2
+                },
+                {
+                    "name": "Major",
+                    "id": 3
+                },
+                {
+                    "name": "Critical",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "RespStatus",
+            "values": [
+                {
+                    "name": "OK",
+                    "id": 0
+                },
+                {
+                    "name": "FAIL",
+                    "id": 1
+                },
+                {
+                    "name": "FAIL_NOT_IMPLEMENTED",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "ConfigUpdateMethod",
+            "values": [
+                {
+                    "name": "ConfigUpdateAll",
+                    "id": 1
+                },
+                {
+                    "name": "ConfigUpdateSingle",
+                    "id": 2
+                },
+                {
+                    "name": "ConfigNoChange",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "DeviceActionType",
+            "values": [
+                {
+                    "name": "ColdReset",
+                    "id": 0
+                },
+                {
+                    "name": "ResetFactory",
+                    "id": 1
+                },
+                {
+                    "name": "ResetProvisioning",
+                    "id": 2
+                },
+                {
+                    "name": "ChangeFWPartition",
+                    "id": 3
+                },
+                {
+                    "name": "VideoEngineReset",
+                    "id": 200
+                }
+            ]
+        },
+        {
+            "name": "WiFiAuthType",
+            "values": [
+                {
+                    "name": "Open",
+                    "id": 1
+                },
+                {
+                    "name": "WEP",
+                    "id": 2
+                },
+                {
+                    "name": "WPA2_PSK",
+                    "id": 3
+                },
+                {
+                    "name": "WPA2_EAP_TLS",
+                    "id": 4
+                }
+            ]
+        },
+        {
+            "name": "LightingCtrlQualifier",
+            "values": [
+                {
+                    "name": "MotionSensor",
+                    "id": 0
+                },
+                {
+                    "name": "LightSensor",
+                    "id": 1
+                },
+                {
+                    "name": "NoNetwork",
+                    "id": 2
+                },
+                {
+                    "name": "RemoteMotion",
+                    "id": 3
+                },
+                {
+                    "name": "RemoteLightSensor",
+                    "id": 4
+                },
+                {
+                    "name": "Disqualified",
+                    "id": 7
+                }
+            ]
+        },
+        {
+            "name": "LightingForceType",
+            "values": [
+                {
+                    "name": "Persistent",
+                    "id": 1
+                },
+                {
+                    "name": "Volatile",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "SoftwareDownloadState",
+            "values": [
+                {
+                    "name": "Downloading",
+                    "id": 0
+                },
+                {
+                    "name": "DownloadSuceeded",
+                    "id": 1
+                },
+                {
+                    "name": "DownloadFailed",
+                    "id": 10
+                }
+            ]
+        },
+        {
+            "name": "SoftwareInstallState",
+            "values": [
+                {
+                    "name": "Installing",
+                    "id": 1
+                },
+                {
+                    "name": "Installed",
+                    "id": 2
+                },
+                {
+                    "name": "InstallFailed",
+                    "id": 10
+                },
+                {
+                    "name": "UnknownFirmware",
+                    "id": 11
+                }
+            ]
+        },
+        {
+            "name": "X509Update",
+            "values": [
+                {
+                    "name": "X509ClientOnly",
+                    "id": 0
+                },
+                {
+                    "name": "X509ServerOnly",
+                    "id": 1
+                },
+                {
+                    "name": "X509Both",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "name": "X509UpdateState",
+            "values": [
+                {
+                    "name": "UpdateSucceeded",
+                    "id": 0
+                },
+                {
+                    "name": "UpdateFailed",
+                    "id": 1
+                }
+            ]
+        },
+        {
+            "name": "ObjectClassifier",
+            "values": [
+                {
+                    "name": "Unknown",
+                    "id": 0
+                },
+                {
+                    "name": "Person",
+                    "id": 100
+                },
+                {
+                    "name": "Vehicle",
+                    "id": 200
+                },
+                {
+                    "name": "Car",
+                    "id": 201
+                },
+                {
+                    "name": "Bus",
+                    "id": 202
+                },
+                {
+                    "name": "Truck",
+                    "id": 203
+                },
+                {
+                    "name": "Cyclist",
+                    "id": 300
+                },
+                {
+                    "name": "Bicycle",
+                    "id": 301
+                },
+                {
+                    "name": "Motorcycle",
+                    "id": 302
+                },
+                {
+                    "name": "Parking",
+                    "id": 400
+                },
+                {
+                    "name": "ParkingSpot",
+                    "id": 401
+                },
+                {
+                    "name": "ParkedVehicle",
+                    "id": 402
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+version: '3'
+services:
+  sse-service-simulator:
+    image: sensitydockerrepo/sse-service-simulator:latest
+    environment:
+      - org-name=Verizon-Lowell
+      - org-id=f40b080f-1dce-4c1d-ad7a-f1deec50d569
+      - site-name=verizon-crosspoint-lowell
+      - site-id=ef30d1fb-729c-4dcb-ba90-1d11fc54e44d
+      - node-name=falcon-penguin
+      - node-id-prefix=falcon-q_
+      - numer-of-node=1
+      - message-count=1
+      - subscribe-count=1
+      - no-of-parallel-process=1
+      - is-init-sse-db=true
+      - is-simulate-login-req=true
+      - is-simulate-sensor-sample=true
+      - is-simulate-device-alarm=true
+      - is-simulate-connection-status=true
+      - is-simulate-subscribe=false
+      - is-simulate-heartbeat=true
+      - is-simulate-disconnect=false
+      - message-initial-delay=1
+      - message-interval=1
+      - subscribe-interval=600
+      - heart-beat-interval=180
+      - disconnect-interval=300
+      - streaming-topic-prefix=/streamv1/
+      - akka-log-level=INFO
+      - log-dead-letters=10
+      - log-dead-letters-during-shutdown=on
+      - sse-lookup-table=orghierarchy_by_nodeid
+      - sse-stream-subscribe-ttl-table=sse_filter
+      - sse-stream-subscribe-ttl=600
+      - kafka_service=kafka_service
+      - kafka_port=9092
+      - kafka-sse-producer-group-name=sse_sim_consumer_group1$suffix
+      - kafka-sse-client-id=sse-simulator-client$suffix
+      - kafka-sse-offset-reset=latest
+      - kakfka-sse-login-topic=login$suffix
+      - kafka-sse-sensor-topic=sensor$suffix
+      - kafka-sse-alert-topic=alert$suffix
+      - kafka-sse-connectionstatus-topic=connectionstatus$suffix
+      - kafka-sse-filter-topic-name=ms.request.sse$suffix
+      - kafka-sse-filter-reply-topic=api.reply.interface$suffix
+      - metrics_enabled=true
+      - metrics_period_in_sec=30
+      - graphite_service=graphite_service
+      - graphite_port=2003
+      - build={{commit-hash}}
+      - cassandra_service=cassandra_service
+      - cassandra_keyspace=farallones$suffix
+      - env_suffix=$suffix
+    links:
+      - cassandra
+      - kafka
+      - graphite
+  cassandra:
+    container_name: cassandra_service
+    image: cassandra:2.2.9
+    ports:
+      - "9042:9042"
+  graphite:
+    container_name: graphite_service
+    image: sensitydockerrepo/graphite:latest
+    ports:
+      - "10080:80"
+      - "2003:2003"
+  zookeeper:
+    container_name: zookeeper_service
+    image: wurstmeister/zookeeper:latest
+    ports:
+      - "2181:2181"
+  kafka:
+    container_name: kafka_service
+    image: wurstmeister/kafka:0.10.1.0
+    environment:
+      - KAFKA_CREATE_TOPICS=connectionstatus:1:1,config:1:1,sensor:1:1,api.reply.interface:1:1,ms.request.alert:1:1,ms.request.sse:1:1,ms.request.config:1:1,ms.request.sensor:1:1,ms.request.acl:1:1,node.command:1:1,corenode.command:1:1,login:1:1,alarm:1:1,alert:1:1,config.reply:1:1,dd.capeworker.in:1:1,dd.capeworker.out:1:1,parking.policy.req:1:1,parking.tag.req:1:1,parking.policygroup.req:1:1,ambient_light:1:1,driver_level:1:1,presence:1:1,trigger_lux:1:1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper_service:2181
+    ports:
+      - "9092:9092"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    links:
+      - zookeeper

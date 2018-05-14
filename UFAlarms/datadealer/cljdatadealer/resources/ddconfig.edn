@@ -1,0 +1,12 @@
+{:test        {:device-thread-pool-size 40
+               :async-buffer-size 1000
+               :cape-thread-pool-size 10}
+ :development {:device-thread-pool-size 40
+               :async-buffer-size 1000
+               :cape-thread-pool-size 10}
+ :production  {:device-thread-pool-size 40
+               :async-buffer-size 1000
+               :cape-thread-pool-size 10}
+ :docker      {:device-thread-pool-size 40
+               :async-buffer-size 1000
+               :cape-thread-pool-size 10}}

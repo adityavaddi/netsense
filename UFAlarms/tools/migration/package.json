@@ -1,0 +1,17 @@
+{
+  "name": "migration",
+  "version": "1.0.0",
+  "description": "Tool for prompted migration of data from 1x & 2x servers to 3x platform",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Dragan Ignjatic",
+  "license": "ISC",
+  "dependencies": {
+    "prompt": "^1.0.0"
+  },
+  "bin": {
+    "mig": "./index.js"
+  }
+}

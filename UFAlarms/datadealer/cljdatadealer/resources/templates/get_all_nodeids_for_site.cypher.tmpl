@@ -1,0 +1,4 @@
+MATCH (s:Site {siteid:"{{siteid}}"})-[:HAS]->(n:Node:Active)
+RETURN {
+nodeid: n.nodeid
+} AS items

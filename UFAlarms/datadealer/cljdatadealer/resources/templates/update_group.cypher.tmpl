@@ -1,0 +1,31 @@
+MATCH (s:Site {siteid:"{{siteid}}"})-[:HAS]->(g:Group {groupid: "{{groupid}}"})
+OPTIONAL MATCH (o:Node)-[:BELONGS_TO]->(g)
+OPTIONAL MATCH (sch:Schedule)-[:LINKED]->(g)
+OPTIONAL MATCH (:Node)-[old:BELONGS_TO|HAS]-(g)
+SET
+g.description = "{{description}}",
+g.name = "{{name}}"
+WITH DISTINCT old, g, s, sch, COLLECT(o.nodeid) AS current
+DELETE old
+WITH { props } AS props, g, s, current, sch
+UNWIND props.nodeList AS nodeid
+    MATCH (s)-[:HAS]->(n:Node {nodeid: nodeid})
+    CREATE UNIQUE (n)-[:BELONGS_TO]->(g)
+    CREATE UNIQUE (g)-[:HAS]->(n)
+WITH DISTINCT n, g, current, sch
+ORDER BY n.nodeid
+WITH
+COLLECT(n.nodeid) AS nodeList, g, current, sch
+WITH
+[nodeid in nodeList WHERE NOT(nodeid IN current) | nodeid] AS incoming,
+[nodeid in current WHERE NOT(nodeid IN nodeList) | nodeid] AS outgoing,
+nodeList, g, sch
+OPTIONAL MATCH (leaving:Node)-[old:HAS|BELONGS_TO]-(another:Group)<-[:LINKED]-(:Schedule)
+WHERE another <> g AND leaving.nodeid IN nodeList
+DELETE old
+RETURN DISTINCT {
+    groupid: g.groupid,
+    name: g.name,
+    description: g.description,
+    nodeList: nodeList
+} AS group

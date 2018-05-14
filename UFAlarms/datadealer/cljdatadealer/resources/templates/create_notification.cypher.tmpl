@@ -1,0 +1,43 @@
+MATCH (s:Site {siteid:"{{siteid}}"})
+CREATE  (n:Notification:Active {
+    notificationid: "{{notificationid}}",
+    created: timestamp(),
+    updated: timestamp()
+})
+CREATE UNIQUE (n)-[:BELONGS_TO]->(s)
+CREATE UNIQUE (s)-[:HAS]->(n)
+WITH { props } AS params, n,s
+SET n += { props }
+FOREACH (euserid IN params.emailUsersList |
+    MERGE (eu:User {userid: euserid})
+    CREATE UNIQUE (n)-[:SEND_EMAIL]->(eu)
+    CREATE UNIQUE (eu)-[:RECEIVE_EMAIL]->(n))
+WITH params, n,s
+FOREACH (suserid IN params.smsUsersList |
+    MERGE (su:User {userid: suserid})
+    CREATE UNIQUE (n)-[:SEND_SMS]->(su)
+    CREATE UNIQUE  (su)-[:RECEIVE_SMS]->(n))
+WITH n,s, params
+OPTIONAL MATCH (n)-[:SEND_SMS]->(su:User)
+OPTIONAL MATCH (n)-[:SEND_EMAIL]->(se:User)
+RETURN {
+    notificationid: n.notificationid,
+    description: n.description,
+    rules: n.rules,
+    window: n.window,
+    hold_off: n.hold_off,
+    resend_interval: n.resend_interval,
+    smsUsersList: COLLECT(DISTINCT su.userid),
+    emailUsersList: COLLECT(DISTINCT se.userid),
+    additionalEmails: n.additionalEmails,
+    active: n.active,
+    msg: n.msg,
+    name: n.name,
+    notificationtype: n.notificationtype,
+    severity: n.severity,
+    rule_selector: n.rule_selector,
+    scope: s.siteid,
+    created: n.created,
+    updated: n.updated,
+    params : params
+} AS notification

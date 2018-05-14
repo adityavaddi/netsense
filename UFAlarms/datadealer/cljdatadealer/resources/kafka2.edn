@@ -1,0 +1,16 @@
+{:development {:host ["127.0.0.1"]
+               :port 9092
+               :alarm-topic "corenode.alarm"
+               :gps-topic "ms.request.gps"}
+ :production {:host ["127.0.0.1"]
+              :port 9092
+              :alarm-topic "corenode.alarm"
+              :gps-topic "ms.request.gps"}
+ :test       {:host ["127.0.0.1"]
+              :port 9092
+              :alarm-topic "corenode.alarm"
+              :gps-topic "ms.request.gps"}
+ :docker     {:host ["kafka_service"]
+              :port 9092
+              :alarm-topic "corenode.alarm"
+              :gps-topic "ms.request.gps"}}

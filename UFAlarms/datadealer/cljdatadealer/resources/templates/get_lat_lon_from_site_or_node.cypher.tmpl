@@ -1,0 +1,18 @@
+MATCH (n:Node {nodeid: "{{ nodeid }}"})-[:BELONGS_TO]-(s:Site)
+RETURN
+      CASE
+      WHEN (s.latitude IS NOT NULL AND s.latitude <> "" AND
+            s.longitude IS NOT NULL AND s.longitude <> "")
+
+      THEN {latitude: s.latitude,
+            longitude: s.longitude,
+            source: "site"}
+      WHEN (n.latitude IS NOT NULL AND n.latitude <> "" AND
+            n.longitude IS NOT NULL AND n.longitude <> "")
+      THEN {latitude: n.latitude,
+            longitude: n.longitude,
+            source: "node"}
+      ELSE null
+      END
+
+      AS coordinates;

@@ -1,0 +1,252 @@
+//Header.jsx - src/jsx/app/common
+.nav-icon-group {
+  display: inline-block;
+  margin-left: 30px;
+  position: relative;
+  top: 14px;
+}
+
+.nav-icon {
+  cursor: pointer;
+  display: table-cell;
+  text-align: center;
+  min-width: 90px;
+  line-height: 18px;
+  padding: 3px 0px;
+  border-radius: 8px;
+
+  &:hover {
+    text-shadow: 0px 0px 6px $grey;
+    background-color: $navy-blue;
+    transition: all 0.3s ease;
+  }
+}
+
+.nav-sitename {
+  font-size: 32px;
+  font-weight: bold;
+  display: inline-block;
+  min-width: 200px;
+  cursor: pointer;
+  &:hover {
+    color: $light-grey;
+    transition: all 0.3s ease;
+  }
+}
+.nav-localtime {
+  color: $white;
+  font-size: 36px;
+}
+
+
+html.default body {
+  #rubix-nav-header {
+    .navbar-nav:first-child, .navbar-nav:last-child {
+      margin-right: -12px !important;
+    }
+  }
+}
+
+
+// NAV issue : (logout button , git commit icon and password reset icon)
+.nav > li{
+  display: inline;
+}
+
+// Scroll Issue of the header
+html.default body #container.container-open #rubix-nav-header{
+  position: absolute !important;
+}
+
+
+@media (max-width: 990px)  {
+  .nav-sitename{
+    font-size: 21px !important;
+  }
+}
+
+
+@media (max-width: 1209px)  {
+  .nav-icon-group{
+    display: none !important;
+  }
+}
+
+
+@media (min-width: 990px) and (max-width: 1024px) {
+  .nav-icon-group {
+    display: none !important;
+  }
+}
+
+// For new header navigation (6/6/17)
+        html.default body #body {
+          margin-top: 76px !important;
+          z-index: 1 !important;
+          padding-bottom:0px !important;
+          background: #F6F6F6 !important;
+        }
+        #container {
+          background-color: #CCC;
+        }
+        
+        #auth-container {
+          background-image: url("/imgs/loginbackground.jpg"); 
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        #auth-cell > div{
+          width:550px;
+        }
+        
+        #auth-row {
+          margin-top:calc(50vh - 225px);
+        }
+
+        .login-form-control {
+          border-radius:25px !important;
+          border-width:1px;
+          font-size:14px !important;
+          border: 1px solid #ccc !important;
+          color: #000000;
+          height:40px;
+          padding-left:15px;
+          width:100%;
+        }
+
+        .loginButton{
+          color:#ffffff !important;
+          width:120px;
+          border:1px solid #000000;
+          font-size:14px;
+          border-radius:25px !important;
+          background-color:#000000 !important;
+        }
+
+        .input-group{
+          display:block;
+        }
+
+        .navbar {
+          border-radius: 0px;
+          position:absolute;
+          width:100%;
+          z-index:1000;
+        }
+        .navbar-default {
+          border-color: #000;
+        }
+        .navbar-default .navbar-nav > li > a,
+        .navbar-default .navbar-nav > li > a:hover {
+          color:#000 !important
+        }
+        .navbar-default .navbar-nav > li > a:focus {
+          color:#000 !important
+        }
+        .navbar-default .navbar-nav > .active > a,
+        .navbar-default .navbar-nav > .active > a:focus {
+          color:#000 !important
+        }
+        ul.navbar-nav > li > a {
+          /* padding: 30px 25px 10px !important; */
+        }
+        li.dropdown a:hover {
+          color: #000 !important;
+          cursor: pointer;
+        }
+        nav {
+          position:relative;
+          z-index:20;
+        }
+        .navbar-default {
+          border:1px solid transparent !important;
+          border-bottom-color:#D8DADA !important;
+        }
+        .subnav {
+          position:absolute;
+          top:55px;
+          width:280px;
+          margin:0px;
+          background-color:#FFF;
+          color:#333;
+          display:none; 
+        }
+        .subnav.hovered {
+          display:block;
+        }
+        .subnav ul {
+          background-color:#FFF;
+          border:1px solid #CCC;
+          padding-left:0px;
+          color:#333;
+          margin-bottom:0px !important;
+        }
+        .subnav ul > li {
+          color:#000;
+          font-size:16px;
+          display:block;
+          margin:8px 0px;
+          padding-left:0px;
+          list-style-type:none;
+        }
+        .subnav ul > li img {
+          vertical-align:text-top;
+        }
+
+        .subnav ul > li a:hover {
+          color: #D52B1E;
+        }
+
+        .subnavlist li a {
+          padding:4px 0px 4px 10px !important;
+          cursor:pointer;
+          color:#000;
+        }
+
+        a.dropdown-toggle,
+
+        a.dropdown-toggle:active,
+        a.dropdown-toggle:visited {
+          color:#333 !important;
+        }
+        a.dropdown-toggle:hover {
+          color:#cd040b;
+        }
+
+      .tabtitle {
+        font-weight:bold;
+        font-size:16px;
+        padding-top: 8px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid transparent;
+      }
+      .tabtitle.active {
+        border-color: #D52B1E;
+      }
+      .tabtitle.hovered {
+        color: #D52B1E;
+      }
+
+
+.netsense__search__sites {
+    list-style-type: none;
+    margin-bottom: 0px;
+    &--section {
+        border-bottom-color: rgba(128, 128, 128, 0.42);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        padding: 10px;
+        cursor: pointer;
+    }
+    &--item {
+        color: $black;
+        font-size: 13px;
+    }
+    &--item:before {
+        content: "-";
+        padding-right: 10px;
+        color: $black;
+    }
+}

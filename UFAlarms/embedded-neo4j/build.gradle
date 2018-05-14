@@ -1,0 +1,43 @@
+group 'com.sensity.netsense'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'java-library-distribution'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+
+distributions {
+    main{
+        baseName = 'embedded-neo4j'
+        contents {
+            from {'src/dist'}
+        }
+    }
+}
+
+
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'org.neo4j', name: 'neo4j-cypher', version: '2.2.5'
+    compile group: 'org.neo4j', name: 'neo4j-ha', version: '2.2.5'
+    compile group: 'org.neo4j', name: 'neo4j-lucene-index', version: '2.2.5'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.12'
+}
+
+
+jar {
+    manifest {
+        attributes(
+                "Main-Class": "com.sensity.netsense.neo4j.embedded.Node",
+                "Class-Path": configurations.compile.collect { 'lib/' + it.getName() }.join(' '))
+    }
+}

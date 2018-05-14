@@ -1,0 +1,186 @@
+.ns-list-editor{
+  background-color: $white;
+  width: 250px;
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  top: 103px;
+  right: 27px;
+  padding-bottom: 4px;
+  border:1px solid $grey;
+  box-shadow: 3px 4px 0px rgba(136, 136, 136, 0.67);
+  color: $grey;
+
+  h4{
+    margin-top:20px;
+    color: $black;
+  }
+
+  &-close-icon{
+    position: relative;
+    left: 110px;
+    top: 0px;
+    font-size: 23px;
+    cursor: pointer;
+  }
+  h4, p{
+    padding:0 20px;
+  }
+  &-list{
+    list-style-type: none;
+    padding-right:28px;
+  }
+
+  &-item{
+    padding: 24px 0 16px 0;
+
+    // input[type="checkbox"]:focus{
+    //   outline: 0 none;
+    //   box-shadow: none;
+    // }
+
+    // // styling for checkbox in the list editor
+    // .checkBox-style{
+    //   cursor: pointer;
+    //   -webkit-appearance: none;
+    //   appearance: none;
+    //   border-radius: 1px;
+    //   box-sizing: border-box;
+    //   position: relative;
+    //   box-sizing: content-box ;
+    //   border:1px solid rgba(0, 0, 0, 0.46);
+    //   width: 20px;
+    //   height: 20px;
+    //   float:right;
+    //   border-width: 1px;
+    //   transition: all .3s linear;
+    // }
+
+    // input[type="checkbox"]{
+    //   background: white;
+    //   @extend .checkBox-style
+
+    // }
+
+    // input[type="checkbox"]:disabled{
+    //   background: rgba(128, 128, 128, 0.45);
+    //   @extend .checkBox-style;
+    // }
+
+    // // Checkbox tick inside the checkbox
+    // .checkedClass{
+    //   content: '';
+    //   display: block;
+    //   width: 7px;
+    //   height: 16px;
+    //   /* "Center" the checkmark */
+    //   position:relative;
+    //   top:1px;
+    //   left:7px;
+    //   border: solid #63a158;
+    //   border-width: 0 2px 2px 0;
+    //   transform: rotate(45deg);
+    // }
+    // input[type="checkbox"]:checked:after {
+    //   @extend .checkedClass;
+    // }
+
+    // input[type="checkbox"]:disabled:after {
+    //  // border: solid $white;
+    //   content: '';
+    //   display: block;
+    //   width: 7px;
+    //   height: 16px;
+    //   /* "Center" the checkmark */
+    //   position:relative;
+    //   top:1px;
+    //   left:7px;
+    //   border-width: 0 2px 2px 0;
+    //   transform: rotate(45deg);
+    // }
+
+  }
+
+  .control-label{
+     width:120px;
+    text-align:left;
+    font-weight:400;
+    color:#666262;
+  }
+
+  .btn-success{
+    margin:20px;
+  }
+
+}
+
+// #checkAll{
+//     position: relative;
+//     // left: 15px;
+//     // opacity: 0;
+//     cursor:pointer;
+
+//   height: 20px;
+//   width: 22px;
+//   border-radius: 20px;
+//   margin-bottom: 0; 
+//   text-align: center;
+//   color: #000000;
+//   vertical-align: middle;
+//   font-size: 14px;
+//   position: relative;
+//   background-color: #ffffff;
+//   cursor: pointer;
+//   border: 1px solid #000000;
+//   white-space: nowrap;
+
+
+
+
+
+//   span{
+//     color:blue;
+//   }
+
+// }
+// .checkall:hover, .checkall:visited, .checkall:link, .checkall:active
+// {
+//   text-decoration: none;
+//   border:none;
+// }
+.ns-filter-icon{
+  background: url(/imgs/new-icons/filter.svg) no-repeat;
+  height: 20px;
+  width: 22px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+  margin-right: 34px;
+  left: 11%;
+  top: 55px;
+  z-index: 2;}
+.ns-map-filter-icon{
+  background: url(/imgs/new-icons/filter.svg) no-repeat;
+  height: 20px;
+  width: 22px;
+  position: relative;
+  cursor: pointer;
+  left: 93%;
+  top: 62px;
+  z-index: 2;
+  float: left;}
+.ns-apply-btn{
+  height: 30px;
+  width: 65px;
+  margin-bottom: 0; 
+  text-align: center;
+  color: #ffffff;
+  vertical-align: middle;
+  font-size: 14px;
+  border-radius: 20px;
+  margin-top: 10px;
+  position: relative;
+  background-color: #000000;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;}

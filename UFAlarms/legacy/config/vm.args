@@ -1,0 +1,8 @@
+## Name of the node
+-name legacy@127.0.0.1
+
+## Cookie for distributed erlang
+-setcookie random
+
+## SSL
+-ssl session_lifetime 120

@@ -1,0 +1,16 @@
+MATCH(:Node:PDController {nodeid: "{{nodeid}}"})-[:BELONGS_TO]->(p:PDProfile)-[:HAS]->(n:Node:PDController)
+WITH {
+     nodeid: n.nodeid,
+     lat: n.latitude,
+     lon: n.longitude
+} AS nodes,
+{
+     pdprofileid: p.pdprofileid,
+     minLevel: p.minLevel,
+     maxLevel: p.maxLevel,
+     beginTime: p.beginTime,
+     endTime: p.endTime,
+     radius: p.radius,
+     detection_duration: p.detection_duration
+} AS profile
+RETURN nodes, profile

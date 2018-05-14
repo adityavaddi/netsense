@@ -1,0 +1,5 @@
+MATCH (o:Org {orgid:"{{orgid}}"})
+CREATE (s:Site:Active { props })
+SET s.created = timestamp()
+CREATE (s)-[:BELONGS_TO]->(o)
+CREATE (o)-[:HAS]->(s)

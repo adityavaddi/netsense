@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="defaultApp">
+
+  <head nowrap="nowrap">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> Sensity Systems </title>
+
+    <!--**************************************  CSS Stylesheet Dependencies **************************************-->
+
+    <link rel="stylesheet" type="text/css" href="themes/blue/layout.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="themes/blue/typography.css" media="all" />
+
+    <!--**************************************  End CSS Stylesheet Dependencies **************************************-->
+
+  </head>
+
+  <body>
+
+    <!--************************************** Start Container **************************************-->
+     
+    <div ng-view> </div>
+
+    <!--************************************** End Container **************************************-->
+
+
+
+    <!--************************************** Javascript Dependencies **************************************-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.js"></script>
+    <script src="https://code.angularjs.org/1.4.0/angular-route.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="scripts/core.js"></script>
+
+    <!-- Angular Controllers -->
+
+    <script src="controllers/collapseController.js"></script>
+    <script src="controllers/defaultController.js"></script>
+    <script src="controllers/routingController.js"></script>
+
+    <!-- End Angular Controllers -->
+
+
+    <!-- Dependencies JS-->
+
+    <script src="scripts/vendor/utility.js"></script>
+    <script src="scripts/vendor/breadcrumb.js"></script>
+    <script src="scripts/vendor/modal.js"></script>
+    <script src="scripts/vendor/csvUpload.js"></script>
+
+    <!-- End Dependencies JS-->
+
+    <!--**************************************  End Javascript Dependencies **************************************-->
+
+
+  </body>
+    
+</html>

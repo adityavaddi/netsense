@@ -1,0 +1,962 @@
+[
+  {
+    "alarmtype": "Assert",
+    "nodemodels": ["unode"],
+    "ufname": "Software Detected Fault",
+    "description": "Various software detected faults will generate this alarm, such as receiving a bad time from the platform (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "BadSensorData",
+    "nodemodels": ["unode"],
+    "ufname": "Bad Sensor Data",
+    "description": "The server is receiving bad data from a sensor (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "CommFail",
+    "nodemodels": ["unode"],
+    "ufname": "Node Connection Failure",
+    "description": "Node Disconnected from Netsense Platform.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "ConfigFail",
+    "nodemodels": ["unode"],
+    "ufname": "Configuration Failed",
+    "description": "The device is mis-configured or partially configured (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "DegradedNetwork",
+    "nodemodels": ["unode"],
+    "ufname": "Degraded Network",
+    "description": "Low RSSI or SNR (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "DownrevSoftware",
+    "nodemodels": ["unode"],
+    "ufname": "Down Rev Software",
+    "description": "The device is running an old software (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "DriverFail",
+    "nodemodels": ["unode"],
+    "ufname": "Light Driver Failed",
+    "description": "One or more lighting drivers have failed. Please check your lighting fixture.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "Epic_Fail",
+    "nodemodels": ["unode"],
+    "ufname": "Epic_Fail",
+    "description": "This is Epic Failure!",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "FarmUSPFail",
+    "nodemodels": ["unode"],
+    "ufname": "CO2 Sensor Failed",
+    "description": "The CO2 sensor has failed.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "HardFault",
+    "nodemodels": ["unode"],
+    "ufname": "HardFault",
+    "description": "A processor hard fault occurred such as an attempt to access an invalid memory location.",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_EEPROM",
+    "nodemodels": ["unode"],
+    "ufname": "EEPROM Failed",
+    "description": "Microcontroller EEPROM failed, such as not responding (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_generic",
+    "nodemodels": ["unode"],
+    "ufname": "Generic Hardware Failure",
+    "description": "General hardware related fault for which there are no more specific details (non-customer facing)",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFAIL_GPS",
+    "nodemodels": ["unode"],
+    "ufname": "GPS Failed",
+    "description": "The device GPS has failed or it is not responding (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_HIH6131",
+    "nodemodels": ["unode"],
+    "ufname": "Sensor Hardware Error",
+    "description": "Hardware error at the sensor (non-customer facing).",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_ISL29023",
+    "nodemodels": ["unode"],
+    "ufname": "Light Sensor Failed",
+    "description": "The light sensor has failed or is not communicating with device.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "HWFail_MMA8451",
+    "nodemodels": ["unode"],
+    "ufname": "MMA8451 Motion Sensor Failed",
+    "description": "The motion sensor has failed or is not communicating with device.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "HWFail_NIGHTHAWK",
+    "nodemodels": ["unode"],
+    "ufname": "External Sensor Pod Failed",
+    "description": "The external sensor pod is not responding and may be disconnected.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "HWFail_PCT2075",
+    "nodemodels": ["unode"],
+    "ufname": "HWFail_PCT2075",
+    "description": "",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_PodBus",
+    "nodemodels": ["unode"],
+    "ufname": "HWFail_PodBus",
+    "description": "The pod bus as a whole is failing such as the Yamar controller chip itself not responding.",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_ProdBus",
+    "nodemodels": ["unode"],
+    "ufname": "HWFail_ProdBus",
+    "description": "",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_RTC",
+    "nodemodels": ["unode"],
+    "ufname": "Real Time Clock Failed",
+    "description": "RTC real time clock failure, such as not responding or reporting that its time may be invalid due to low battery voltage (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_SE95",
+    "nodemodels": ["unode"],
+    "ufname": "HWFail_SE95",
+    "description": "Sensory alert: no response required.",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFAIL_SIHAWK",
+    "nodemodels": ["unode"],
+    "ufname": "Internal Sensor Pod Failed",
+    "description": "The internal sensor pod is not responding and/or may be disconnected.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "HWFail_STUCK_RELAY",
+    "nodemodels": ["unode"],
+    "ufname": "Lighting Control Relay Is Not Opening",
+    "description": "The lighting control relay is not operating properly when the light is turned off. Please confirm your light is fully turned off. If the light is not off, please power cycle the light ON and OFF to clear.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "HWFail_StuckRelay",
+    "nodemodels": ["unode"],
+    "ufname": "Relay Stuck Closed",
+    "description": "Firmware detected the main (LED) relay to be stuck closed due to high power draw after relay was commanded to be opened (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_Temperature",
+    "nodemodels": ["unode"],
+    "ufname": "Temperature Sensor Failed",
+    "description": "Temperature sensor failure such as not responding on i2c bus (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_TSC3414",
+    "nodemodels": ["unode"],
+    "ufname": "HWFail_TSC3414",
+    "description": "Hardware error at the sensor.",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_UrbanUSP",
+    "nodemodels": ["unode"],
+    "ufname": "HWFail_UrbanUSP",
+    "description": "Hardware error at the device USP board.",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HWFail_ZMotion",
+    "nodemodels": ["unode"],
+    "ufname": "ZMotion Sensor Failed",
+    "description": "The motion sensor has failed or is not communicating with device.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "NotTested",
+    "nodemodels": ["unode"],
+    "ufname": "NotTested",
+    "description": "Device Not Testes",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "OverPower",
+    "nodemodels": ["unode"],
+    "ufname": "Power Consumed Over Expected Threshold",
+    "description": "Device is operating above the expected power threshold. Check lighting fixture to confirm it is operating properly.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "PMACFail",
+    "nodemodels": ["unode"],
+    "ufname": "Power Monitor Failed",
+    "description": "The device is no longer able to monitor and report on consumed power.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "PostRuninFail",
+    "nodemodels": ["unode"],
+    "ufname": "PostRuninFail",
+    "description": "Post Run Failure",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "PreRuninFail",
+    "nodemodels": ["unode"],
+    "ufname": "PreRuninFail",
+    "description": "Pre Run Failure",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "ScheduleFail",
+    "nodemodels": ["unode"],
+    "ufname": "Schedule Failed",
+    "description": "Schedule is not working with this device (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SensorFail",
+    "nodemodels": ["unode"],
+    "ufname": "Sensor Failed",
+    "description": "A sensor has failed.",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SimFail",
+    "nodemodels": ["unode"],
+    "ufname": "Cellular Card Failure",
+    "description": "Cellular SIM card has failed.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "SoftwareUpdateFail",
+    "nodemodels": ["unode"],
+    "ufname": "Software Update Failed",
+    "description": "The device was not successfully updated (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "StrangeReboot",
+    "nodemodels": ["unode"],
+    "ufname": "Node Rebooted",
+    "description": "The node rebooted for an unexpected reason, such as for a hard fault, or watchdog reset (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SWUpdateFail_Pod",
+    "nodemodels": ["unode"],
+    "ufname": "Sensor Pod SW Update Failed",
+    "description": "Failure to update software on sensor pod after 9 attempts (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SWUpdateFail_Prod",
+    "nodemodels": ["unode"],
+    "ufname": "SWUpdateFail_Prod",
+    "description": "",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SWUpdateFail_SENSORPOD",
+    "nodemodels": ["unode"],
+    "ufname": "Sensor Pod Update Failed",
+    "description": "The sensor pod update failed to complete (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "UnderPower",
+    "nodemodels": ["unode"],
+    "ufname": "Power Consumed Under Expected Threshold",
+    "description": "Device is operating below the expected power threshold. Check lighting fixture to confirm it is operating properly.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "USPFail",
+    "nodemodels": ["unode"],
+    "ufname": "USPFail",
+    "description": "The USP board on the node has failed",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "X509ClientFail",
+    "nodemodels": ["unode"],
+    "ufname": "Client Certificate Fault",
+    "description": "Invalid client certificate. Please contact your netsense administrator (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "X509ServerFail",
+    "nodemodels": ["unode"],
+    "ufname": "Server Certificate Fault",
+    "description": "Invalid server certificate. Please contact your netsense administrator (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/camera/0",
+    "nodemodels": ["falcon-q","merlin"],
+    "ufname": "Camera 0 Failed",
+    "description": "Hardware issue with Camera 0 (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/camera/0/streaming",
+    "nodemodels": ["falcon-q","merlin"],
+    "ufname": "Camera 0 Video Stream Failed",
+    "description": "Video streaming is not working (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/camera/0/temperature",
+    "nodemodels": ["falcon-q","merlin"],
+    "ufname": "Camera 0 Temperature Out of Range",
+    "description": "Camera 0 temperature is outside of recommended range (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/camera/1",
+    "nodemodels": ["falcon-q","merlin"],
+    "ufname": "Camera 1 Failed",
+    "description": "Hardware issue with Camera 1 (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/camera/1/streaming",
+    "nodemodels": ["falcon-q","merlin"],
+    "ufname": "Camera 1 Video Stream Failed",
+    "description": "Camera 1 video streaming not working (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/camera/1/temperature",
+    "nodemodels": ["falcon-q","merlin"],
+    "ufname": "Camera 1 Temperature Out of Range",
+    "description": "Camera 1 temperature is outside of recommended range (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/FPGA/PCIe_bus",
+    "nodemodels": ["merlin"],
+    "ufname": "PCIe Connectivity Failed",
+    "description": "No PCIe bus connectivity from Tegra to SOC-Fpga (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/FPGA/Serial_bus",
+    "nodemodels": ["merlin"],
+    "ufname": "Serial Bus Connectivity Failed",
+    "description": "No serial bus connectivity from Tegra to SOC-Fpga (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/FPGA/USB_bus",
+    "nodemodels": ["merlin"],
+    "ufname": "USB Connectivity Failed",
+    "description": "No USB connectivity from Tegra to SOC-Fpga (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/cam_mgr/not_running",
+    "nodemodels": ["falcon-q","merlin"],
+    "ufname": "Camera Manager Not Running",
+    "description": "Camera Manager application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/storage",
+    "nodemodels": ["falcon-q","merlin"],
+    "ufname": "Disk Usage Check Failed",
+    "description": "Video archive disk usage checking fails (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/device/usb/cable/conn",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Android Board Not Connected or Registered",
+    "description": "Android board is not connected or not registering (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassl/DC/null/cable_io",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Display Controller Failed-Cable I/O",
+    "description": "Glass-Left: Display controller IO failed (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassl/DC/null/cable_power_off",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Display Controller Failed-Powered-off",
+    "description": "Glass-Left: Display controller is powered off (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassl/DC/null/cable_sync",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Display Controller Failed-No video sync",
+    "description": "Glass-Left: Display controller has no video sync. Check HDMI cable (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassl/DC/null/cable_timeout",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Display Controller Failed-Connection timeout",
+    "description": "Glass-Left: Display controller did not respond in time. Check if disconnected (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassl/DC/null/cable_unknown",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Display Controller Failed-Unknown state",
+    "description": "Glass-Left: Display controller is in unknown state (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassl/system/null/reboot",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Android Board Reboot Complete",
+    "description": "Glass-Left: System reboot complete (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassl/usb/cable/conn",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Android Board Failed-Not connected",
+    "description": "Glass-Left Android board is not connected or not registering (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassr/DC/null/cable_io",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Display Controller Failed-Cable I/O",
+    "description": "Glass-Right: Display controller IO failed (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassr/DC/null/cable_power_off",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Display Controller Failed-Powered-off",
+    "description": "Glass-Right: Display controller is powered off (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassr/DC/null/cable_sync",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Display Controller Failed-No video sync",
+    "description": "Glass-Right: Display controller has no video sync (check HDMI cable) (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassr/DC/null/cable_timeout",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Display Controller Failed-Connection timeout",
+    "description": "Glass-Right: Display controller did not respond in time. Check if disconnected (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassr/DC/null/cable_unknown",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Display Controller Failed-Unknown state",
+    "description": "Glass-Right: Display controller is in unknown state (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassr/system/null/reboot",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Android Board Reboot Complete",
+    "description": "Glass-Right: System reboot complete (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/glassr/usb/cable/conn",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Android Board Failed-Not connected",
+    "description": "Glass-Right: Glass Right Android board is not connected or not registering (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/pebble/DC/null/cable_io",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Display Controller Failed-Cable I/O",
+    "description": "Pebble: Display controller IO failed (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/pebble/DC/null/cable_power_off",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Display Controller Failed-Powered-off",
+    "description": "Pebble: Display controller is powered off (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/pebble/DC/null/cable_sync",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Display Controller Failed-No video sync",
+    "description": "Pebble: Display controller has no video sync (check HDMI cable) (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/pebble/DC/null/cable_timeout",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Display Controller Failed-Connection timeout",
+    "description": "Pebble: Display controller did not respond in time (check if disconnected) (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/pebble/DC/null/cable_unknown",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Display Controller Failed-Unknown state",
+    "description": "Pebble: Display controller is in unknown state (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/pebble/system/null/reboot",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Android Board Reboot Complete",
+    "description": "Pebble: System reboot complete (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/pebble/usb/cable/conn",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Android Board Failed-Not connected",
+    "description": "Pebble: Pebble Android board is not connected or not registering (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/vdkmaster/door/null/intr_batt",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Trap Door Intrusion Detected",
+    "description": "Intrusion alert on Trap Door (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/vdkmaster/door/null/intr_door",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Door Intrusion Detected",
+    "description": "Intrusion alert on VDK Door (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/vdkmaster/door/null/intr_small_cell",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Service Door Intrusion Detected",
+    "description": "Intrusion alert on Small Cell (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/vdkmaster/envboard/null/conn",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Environmental Board Failed",
+    "description": "Environmental board not connected or not registering (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "NET/glassl/ethernet/cable/conn_host",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Android Board Failed-Host not found",
+    "description": "Glass-Left: Host not found (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "NET/glassl/ethernet/cable/conn_network",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Android Board Failed-Network failure",
+    "description": "Glass-Left: Network problem found (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "NET/glassr/ethernet/cable/conn_host",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Android Board Failed-Host not found",
+    "description": "Glass-Right: Host not found (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "NET/glassr/ethernet/cable/conn_network",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Android Board Failed-Network failure",
+    "description": "Glass-Right: Network problem found (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "NET/pebble/ethernet/cable/conn_host",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Android Board Failed-Host not found",
+    "description": "Pebble: Host not found (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "NET/pebble/ethernet/cable/conn_network",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Android Board Failed-Network failure",
+    "description": "Pebble: Network problem found.",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/glassl/application/bootactivity/stuck",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Android Board Failed-Boot failure",
+    "description": "Glass-Left: Stuck in LQD boot activity (spinning blue circle) (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/glassl/application/null/crash",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Left Android Board Failed-Crashed",
+    "description": "Glass-Left: Android application crashed (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/glassr/application/bootactivity/stuck",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Android Board Failed-Boot failure",
+    "description": "Glass-Right: Stuck in LQD boot activity (spinning blue circle) (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/glassr/application/null/crash",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Right Android Board Failed-Crashed",
+    "description": "Glass-Right: Android application crashed (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/pebble/application/bootactivity/stuck",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Android Board Failed-Boot failure",
+    "description": "Pebble: Stuck in LQD boot activity (spinning blue circle) (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/pebble/application/null/crash",
+    "nodemodels": ["vdkmaster"],
+    "ufname": "Touchscreen Android Board Failed-Crashed",
+    "description": "Pebble: Android application crashed (non-customer facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/CPU_throttle",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "CPU Throttled",
+    "description": "CPU not running at maximum speed (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "HW/temperature",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "HW/temperature",
+    "description": "tsys (chassis_0) extreme temperature.",
+    "displaytopartner": false,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "NET/connectivity",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Connection Failure",
+    "description": "There is a problem with network connectivity.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  },
+  {
+    "alarmtype": "SW/database",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Lifeboat Used to Recover Device",
+    "description": "DB lifeboat was used to recover node (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/database/memory_usage",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Excessive Database Memory",
+    "description": "Redis database is using excessive memory (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/database/misconfig/eth-x/port-forwarding",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Port Forwarding Missconfigured",
+    "description": "Port forwarding misconfiguration (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/diskfree/data",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Data Volume Almost Full",
+    "description": "Data volume more than 98% full (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/diskfree/disk",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Disk Volume Almost Full",
+    "description": "Disk volume more than 98% full (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/diskfree/rootfs",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Root File System Almost Full",
+    "description": "Root filesystem more than 98% full (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/cfgsvc/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Config Server Not Running",
+    "description": "Config Service application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/device-ui/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Device UI Not Running",
+    "description": "Device UI application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/genetec_client/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Genetec Client Not Running",
+    "description": "Genetec Client application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/mediaserver/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Media Server Not Running",
+    "description": "Mediaserver application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/mnopenvpn/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "VPN Not Running",
+    "description": "Medianode Openvpn application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/mnrecorder/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Recorded Not Running",
+    "description": "Medianode Recorder application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/NetworkManager/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "NetworkManager Not Running",
+    "description": "NetworkManager application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/nmm/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "NetworkManager Manager Not Running",
+    "description": "NetworkManager Manager application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/remoteio/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Remote I/O Not Running",
+    "description": "Remote IO application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/rtspserver/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "RTSP Server Not Running",
+    "description": "RTSP Server application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/secmgmnt/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Security Manager Not Running",
+    "description": "Security Management application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/service/sys_mon/not_running",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "System Monitor Not Running",
+    "description": "System Monitoring application is not running (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/storage/volmissing/data",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Data Volume Missing",
+    "description": "Data volume missing (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/storage/volmissing/disk",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Disk Volume Missing",
+    "description": "Disk volume missing (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "SW/storage/volmissing/rootfs",
+    "nodemodels": ["falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Root Volume Missing",
+    "description": "Root filesystem volume missing (non-customer-facing).",
+    "displaytopartner": true,
+    "displaytocustomer": false
+  },
+  {
+    "alarmtype": "Disconnect",
+    "nodemodels": ["unode","falcon-q","merlin","vdkmaster","cnext"],
+    "ufname": "Device Disconnected",
+    "description": "Node Disconnected from Netsense Platform.",
+    "displaytopartner": true,
+    "displaytocustomer": true
+  }
+]

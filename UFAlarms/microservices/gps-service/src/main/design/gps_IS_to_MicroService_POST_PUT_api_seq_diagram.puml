@@ -1,0 +1,40 @@
+@startuml
+    participant Client_Application
+    participant Interface_Service
+    participant Kafka
+    participant Gps_Service
+    participant Cassandra
+    participant DataDealer
+    participant ZMQ
+    box  #LightGreen
+       participant Client_Application
+       participant Interface_Service
+    end box
+    box #LightGrey
+        participant Kafka
+        participant ZMQ
+    end box
+    box  #LightBlue
+       participant Gps_Service
+       participant DataDealer
+       participant Cassandra
+    end box
+
+    Client_Application -> Interface_Service: API call
+    Interface_Service -> ZMQ: Create/update node request
+    DataDealer -> ZMQ: Consume request
+    DataDealer -> DataDealer: Enrich and persist node
+    DataDealer -> ZMQ: response with node status
+    Interface_Service -> ZMQ: Consume node status response
+    Interface_Service -> Client_Application: response
+
+
+    hnote over Kafka : Topic: GPS Service REQUEST topic
+    DataDealer -> Kafka: Node's gps info request
+    Kafka <- Gps_Service: subscribes to the REQUEST topic
+    Gps_Service -> Gps_Service: on new message, validate the request
+    Gps_Service -> Gps_Service: business logic based on the request type
+    Gps_Service -> Cassandra: read/write/update/delete gps
+    Cassandra -> Gps_Service: result
+
+@enduml

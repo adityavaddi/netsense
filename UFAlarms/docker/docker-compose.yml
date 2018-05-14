@@ -1,0 +1,26 @@
+version: '2'
+services:
+  cassandra:
+    container_name: cassandra
+    image: cassandra:2.2.7
+    ports:
+      - "9042:9042"
+    volumes:
+      - "/data/cassandra:/var/lib/cassandra"
+  neo4j:
+    container_name: neo4j
+    image: neo4j:3.0.3-enterprise
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+       - /data/neo4j:/data
+  rabbitmq:
+    image: rabbitmq:3.6.9-management
+    container_name: rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
+    environment:
+      - RABBITMQ_DEFAULT_USER=farallones
+      - RABBITMQ_DEFAULT_PASS=sensity1

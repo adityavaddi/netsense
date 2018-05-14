@@ -1,0 +1,66 @@
+ @startuml
+
+group LSS + STS Flow
+Node -> MQTT: Device sends \nsystem_info
+MQTT -> Bridge: Bridge drains\nLoginRequest\nv1/<nodeid>/out/UNSOL\n/event/system_info\n/Update
+Bridge -> Kafka: Bridge publishes the \nevents to node systeminfo\n Topic(node.systeminfo$suffix)
+
+Kafka -> ScheduleService :  Consumes Node SystemInfo]n [RestPack]
+                   activate ScheduleService
+
+ScheduleService -> ScheduleService: Parse the schedule_id \nschedule_time for \n**tk** array
+                   activate ScheduleService#FFBBBB
+ScheduleService -> Cassandra: Get Light by nodeid.
+Cassandra       --> ScheduleService: Get schedule_id\n schedule_time\n applied for Light
+ScheduleService -> ScheduleService: Check if schedule_token\n matches store schedule\n in Light table
+                   activate ScheduleService#FFBBBB
+group Token matches
+rnote over ScheduleService
+ Light is working
+ on the intended schedule
+ Skip resending Schedule
+endrnote
+end
+group Token mismatch
+rnote over ScheduleService
+ Light is not working on the intended schedule
+ Resending Schedule..
+
+ LSS will generate an internal LoginRequest to
+ send assigned Schedule to the nod
+endrnote
+ScheduleService -> Neo4j: Get the Schedule for the node\nelse apply **default** Schedule
+Neo4j           --> ScheduleService: Assigned ScheduleObj for the node
+ScheduleService -> Cassandra: Update Light table\n with scheduled_id, \nschedule_time(currentMillis)
+rnote over ScheduleService
+isscheduled: true
+policy: scheduled
+startdt: null
+pri: 7
+schedule_id: scheduleId
+schedule_time: scheduleTime(currentTimeMillis)
+endrnote
+ScheduleService -> Kafka: Send [Normal + NoNetwork] SlotActions\n to Schedule Transformer Service(**STS**)\n(schedule.commands$suffix)
+                   deactivate ScheduleService
+ScheduleService --> Neo4j: Log last_delivered timestamp to Schedule
+                   deactivate ScheduleService
+                   deactivate ScheduleService
+Kafka -> ScheduleTransform: Consumes STS event from Kafka
+                   activate ScheduleTransform#FFBBBB
+ScheduleTransform -> ScheduleTransform: Transforms Actions/Commands into \ndevice specific ctrl messages
+ScheduleTransform -> ScheduleTransform: Check if timeout = (currentdt - startdt) > 0 \n send override if exists
+ScheduleTransform -> Cassandra: Get **Light** for nodeid
+Cassandra --> ScheduleTransform: isscheduled, startdt
+rnote over ScheduleTransform
+STS will have
+all the slot array
+in a single aio message
+endrnote
+group Schedule Commands
+ScheduleTransform --> MQTT: Schedule **aio** command send to node v1/<nodeid>/in/PUT/light/schedule/aio
+ScheduleTransform --> MQTT: **LightingForceState** command send to node(**if** manual override is **active**)
+end
+                   deactivate ScheduleTransform
+MQTT --> Node: Device consumes \n commands
+end
+@enduml

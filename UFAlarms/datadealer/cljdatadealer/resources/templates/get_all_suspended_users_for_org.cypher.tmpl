@@ -1,0 +1,11 @@
+MATCH (o:Org {orgid:"{{orgid}}" })-[:HAS_USER]->(u:User:Inactive) RETURN {
+userid: u.userid,
+name: u.name,
+email: u.email,
+phone: u.phone,
+title: u.title,
+roles: u.roles,
+sites: u.sites,
+created: u.created,
+updated: u.updated
+} AS items

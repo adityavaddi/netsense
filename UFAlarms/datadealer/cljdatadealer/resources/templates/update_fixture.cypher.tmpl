@@ -1,0 +1,47 @@
+MATCH (f:Fixture {
+fixtureid: "{{fixtureid}}"})
+SET
+f.name = "{{name}}",
+f.fixtureType = "{{fixtureType}}",
+f.MaxPower0 = "{{MaxPower0}}",
+f.MaxPower10 = "{{MaxPower10}}",
+f.MaxPower50 = "{{MaxPower50}}",
+f.MaxPower100 = "{{MaxPower100}}",
+f.MinPower100 = "{{MinPower100}}",
+f.MinPower50 = "{{MinPower50}}",
+f.MinPower10 = "{{MinPower10}}",
+f.MinPower0 = "{{MinPower0}}",
+f.PowerDraw = "{{PowerDraw}}",
+f.nemasocket = "{{nemasocket}}",
+f.description = "{{description}}",
+f.manufacturer = "{{manufacturer}}",
+f.manufacturersku = "{{manufacturersku}}",
+f.MinimumLightLevelForFailureDetection = "{{MinimumLightLevelForFailureDetection}}",
+f.BallastCost = "{{BallastCost}}",
+f.BulbCost = "{{BulbCost}}",
+f.LegacyPowerDraw = "{{LegacyPowerDraw}}",
+f.DailyOperatingTime = "{{DailyOperatingTime}}"
+
+RETURN {
+name: f.name,
+fixtureid: f.fixtureid,
+fixtureType: f.fixtureType,
+MaxPower0: f.MaxPower0,
+MaxPower10: f.MaxPower10,
+MaxPower50: f.MaxPower50,
+MaxPower100: f.MaxPower100,
+MinPower100: f.MinPower100,
+MinPower50: f.MinPower50,
+MinPower10: f.MinPower10,
+MinPower0: f.MinPower0,
+PowerDraw: f.PowerDraw,
+nemasocket: f.nemasocket,
+description: f.description,
+manufacturer: f.manufacturer,
+manufacturersku: f.manufacturersku,
+MinimumLightLevelForFailureDetection: f.MinimumLightLevelForFailureDetection,
+BallastCost: f.BallastCost,
+BulbCost: f.BulbCost,
+LegacyPowerDraw: f.LegacyPowerDraw,
+DailyOperatingTime: f.DailyOperatingTime
+} AS fixture

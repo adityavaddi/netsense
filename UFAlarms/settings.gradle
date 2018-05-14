@@ -1,0 +1,3 @@
+rootProject.name = 'Farallones'
+
+include 'embedded-neo4j'

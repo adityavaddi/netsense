@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="20px" viewBox="0 0 15 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Templates" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="8-Groups_04" transform="translate(-1030.000000, -197.000000)">
+            <g id="Group-13" transform="translate(703.000000, 182.000000)">
+                <g id="Group-6">
+                    <g id="Group-14">
+                        <g id="Group-15">
+                            <g id="Group-12">
+                                <g id="float_02" transform="translate(332.000000, 25.000000) scale(-1, 1) translate(-332.000000, -25.000000) translate(322.000000, 15.000000)">
+                                    <g id="float_01">
+                                        <path d="M7,1.5 L7,18.5 L1.5,18.5 L1.5,1.5 L7,1.5 L7,1.5 Z M8.5,0 L0,0 L0,20 L8.5,20 L8.5,0 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                                        <path d="M13.5,7.5 L13.5,12.5 L8.5,12.5 L8.5,7.5 L13.5,7.5 L13.5,7.5 Z M15,6 L7,6 L7,14 L15,14 L15,6 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                                        <rect id="Rectangle-path" x="0" y="0" width="20" height="20"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

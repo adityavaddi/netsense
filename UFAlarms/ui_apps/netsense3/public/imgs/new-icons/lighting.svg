@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="20px" viewBox="0 0 14 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Templates" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="6-Groups_02" transform="translate(-1132.000000, -536.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="hover" transform="translate(1044.000000, 299.000000)">
+                <g id="Group-8" transform="translate(75.000000, 227.000000)">
+                    <g id="Lighting" transform="translate(10.000000, 10.000000)">
+                        <path d="M9.75,1.54 C11.1316547,1.52400349 12.4626517,2.05961857 13.4481048,3.02817822 C14.433558,3.99673787 14.9921056,5.31827523 15,6.7 C14.9404684,8.17072908 14.3258788,9.5642753 13.28,10.6 C12.5310641,11.4360594 11.9474252,12.4065286 11.56,13.46 L8,13.46 C7.60357268,12.404189 7.00965428,11.4335567 6.25,10.6 C5.2077935,9.56269644 4.59686028,8.16933998 4.54,6.7 C4.43202181,5.29224207 4.94800673,3.90813352 5.95116783,2.91459968 C6.95432893,1.92106585 8.34334876,1.41845185 9.75,1.54 L9.75,1.54 Z M9.75,7.23379689e-16 C7.93512748,-0.117540755 6.156964,0.548727446 4.86619497,1.82993523 C3.57542593,3.11114301 2.89595578,4.88430375 3,6.7 C3,10.91 6.66,11.93 6.66,15 L12.84,15 C12.84,11.94 16.5,10.91 16.5,6.7 C16.4834652,2.98702739 13.4629929,-0.01107102 9.75,7.23379689e-16 Z" id="Shape"></path>
+                        <rect id="Rectangle-path" x="6.75" y="16" width="6" height="1.5"></rect>
+                        <rect id="Rectangle-path" x="7.75" y="18.5" width="4" height="1.5"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

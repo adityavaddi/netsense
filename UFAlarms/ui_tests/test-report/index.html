@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Netsense 3</title>
+    
+    <link rel="stylesheet" href="css/mochawesome.css">
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="report-info-cnt">
+          <h1 class="report-title">Netsense 3 : Functional Test Report</h1>
+          <h3 class="report-date">Wednesday, June 28 2017, 01:23pm</h3>
+        </div>
+        <div class="nav-right">
+          <div class="quick-summary-cnt">
+              <ul class="list-unstyled quick-summary">
+                <li class="qs-item summary-duration" title="Duration">15.377<span>S</span></li>
+                <li class="qs-item summary-suites" title="Suites">4</li>
+                <li class="qs-item summary-tests" title="Tests">8</li>
+                <li class="qs-item summary-passes" title="Passed" data-filter="passed">6</li>
+                <li class="qs-item summary-failures" title="Failed" data-filter="failed">2</li>
+                <li class="qs-item summary-pending" title="Pending" data-filter="pending">0</li>
+              </ul>          </div>
+          <button class="nav-menu-btn open-menu"><i class="icon-menu"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report Summary -->
+    <div class="summary">
+      <div class="container">
+          <div class="row">
+            <div class="summary-col summary-duration">
+              <h1 class="summary-count">15.377<span>S</span></h1>
+              <h4 class="summary-label">S</h4>
+            </div>
+            <div class="summary-col summary-suites" title="Suites">
+              <h1 class="summary-count">4</h1>
+              <h4 class="summary-label">Suites</h4>
+            </div>
+            <div class="summary-col summary-tests" title="Tests">
+              <h1 class="summary-count">8</h1>
+              <h4 class="summary-label">Tests</h4>
+            </div>
+            <div class="summary-col summary-passes" data-filter="passed" title="Passed">
+              <h1 class="summary-count">6</h1>
+              <h4 class="summary-label">Passed</h4>
+            </div>
+            <div class="summary-col summary-failures" data-filter="failed" title="Failed">
+              <h1 class="summary-count">2</h1>
+              <h4 class="summary-label">Failed</h4>
+            </div>
+            <div class="summary-col summary-pending" data-filter="pending" title="Pending">
+              <h1 class="summary-count">0</h1>
+              <h4 class="summary-label">Pending</h4>
+            </div>
+          </div>      </div>
+    </div>
+    <div class="statusbar">
+      <div class="container">
+          <div class="row">
+            <div class="status-item status-item-pending-pct">0% Pending</div>
+            <div class="status-item status-item-passing-pct warning">75% Passing</div>
+          </div>      </div>
+    </div>
+
+    <!-- Suites -->
+    <div class="details container">
+            <section class="suite-wrap">
+          <div id="442e8f18-50f3-413b-8a19-fed4be62b8aa" class="suite has-tests has-passed">
+            <h3 class="suite-title">login screen</h3>
+            <h5 class="suite-filename">/specs/login/role/sensity_user.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="442e8f18-50f3-413b-8a19-fed4be62b8aa" class="suite-chart" width="50" height="50" data-total-passes="1" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">816 ms</li>
+                <li class="suite-summary-item tests">1</li>
+                <li class="suite-summary-item passed">1</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#442e8f18-50f3-413b-8a19-fed4be62b8aa-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="442e8f18-50f3-413b-8a19-fed4be62b8aa-test-list" class="list-group test-list collapse in">
+                    <div id="029c2070-5b9b-4ce9-aa09-a027c8fca517" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              User login as Sensity User
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#029c2070-5b9b-4ce9-aa09-a027c8fca517 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#029c2070-5b9b-4ce9-aa09-a027c8fca517 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">816 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">browser.wait(until.visibilityOf(loginPage.username), waitTimeout);<br>loginPage.login(_mockData.loginData.username_sensity_user, _mockData.loginData.password_sensity_user);</code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+            <section class="suite-wrap">
+          <div id="85e35e8b-0e2b-4d43-9a13-fd25a8eebfa1" class="suite has-tests has-passed has-failed">
+            <h3 class="suite-title">As Sensity User Create a Customer</h3>
+            <h5 class="suite-filename">/specs/createCustomer/role/createCustomer.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="85e35e8b-0e2b-4d43-9a13-fd25a8eebfa1" class="suite-chart" width="50" height="50" data-total-passes="4" data-total-failures="1" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">3.267 s</li>
+                <li class="suite-summary-item tests">5</li>
+                <li class="suite-summary-item passed">4</li>
+                <li class="suite-summary-item failed">1</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#85e35e8b-0e2b-4d43-9a13-fd25a8eebfa1-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="85e35e8b-0e2b-4d43-9a13-fd25a8eebfa1-test-list" class="list-group test-list collapse in">
+                    <div id="fd9d8449-0761-4470-b5ea-d65ace45e9c8" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Pull up a new from to add customer
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#fd9d8449-0761-4470-b5ea-d65ace45e9c8 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#fd9d8449-0761-4470-b5ea-d65ace45e9c8 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.176 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">browser.wait(until.visibilityOf(createCustomerPage.addCustomerBtn), waitTimeout);<br>createCustomerPage.addCustomerBtn.click();<br>createCustomerPage.form_name.getText().then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">isNameEmpty</span>) </span>{<br>  assert.equal(isNameEmpty, <span class="hljs-string">''</span>);<br>});</code></pre>
+          </div>
+        </div>            <div id="b3d9f7a3-e0d5-4693-b7d4-c580da056f4d" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Fill new customer form
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#b3d9f7a3-e0d5-4693-b7d4-c580da056f4d > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#b3d9f7a3-e0d5-4693-b7d4-c580da056f4d > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.216 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">createCustomerPage.fillForm(_mockData.input);</code></pre>
+          </div>
+        </div>            <div id="c1511afe-62e7-411d-a96e-654bccc90321" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Hit save and check for pop-up message
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#c1511afe-62e7-411d-a96e-654bccc90321 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#c1511afe-62e7-411d-a96e-654bccc90321 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">255 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">createCustomerPage.form_saveCustomer_btn.click();<br>browser.wait(until.visibilityOf(createCustomerPage.popUp), waitTimeout);</code></pre>
+          </div>
+        </div>            <div id="66fa8599-1b9f-4d8f-961f-b2df343e961d" class="list-group-item test failed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              validate popup text
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#66fa8599-1b9f-4d8f-961f-b2df343e961d > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#66fa8599-1b9f-4d8f-961f-b2df343e961d > .test-code.collapse">Code </button>
+              <span class="test-duration ">57 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+            <p class="test-error-message">AssertionError: expected &#x27;Customer &quot;Verizon New - 12321&quot; added.&#x27; to equal &#x27;Customer &quot;Verizon New - 12321&quot; already exists.&#x27;
+              <button class="btn btn-link btn-sm toggle-btn toggle-stack collapsed" data-toggle="collapse" data-target="#66fa8599-1b9f-4d8f-961f-b2df343e961d > .test-error-stack.collapse">Stack </button><button class="btn btn-link btn-sm toggle-btn toggle-stack collapsed" data-toggle="collapse" data-target="#66fa8599-1b9f-4d8f-961f-b2df343e961d > .test-error-scr.collapse">Screenshot </button>
+            </p>
+        <br>  <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-comment">// createCustomerPage.isCustomerCreated();</span><br>createCustomerPage.isDuplicateCustomerPresent();</code></pre>
+          </div>
+          <div class="test-error-stack collapse">
+            <pre><code class="hljs small">Difference between Expected(+) and Actual(-):
+        
+              expected 'Customer "Verizon New - 12321" added.' to equal 'Customer "Verizon New - 12321" already exists.'
+              + expected - actual
+        
+              -Customer "Verizon New - 12321" added.
+              +Customer "Verizon New - 12321" already exists.
+              
+        
+        Expected:
+        Customer "Verizon New - 12321" already exists.
+        
+        Actual:
+        Customer "Verizon New - 12321" added.
+        
+        Stack:
+        AssertionError: expected <span class="hljs-string">'Customer "Verizon New - 12321" added.'</span> to equal <span class="hljs-string">'Customer "Verizon New - 12321" already exists.'</span><br>    at specs/createCustomer/page.js:<span class="hljs-number">67</span>:<span class="hljs-number">23</span><br>    at elementArrayFinder_.then (<span class="hljs-regexp">/Users/</span>patilas/.nvm/versions/node/v6<span class="hljs-number">.9</span><span class="hljs-number">.2</span>/lib/node_modules/protractor/lib/element.ts:<span class="hljs-number">840</span>:<span class="hljs-number">22</span>)<br>    at ManagedPromise.invokeCallback_ (<span class="hljs-regexp">/Users/</span>patilas/.nvm/versions/node/v6<span class="hljs-number">.9</span><span class="hljs-number">.2</span>/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:<span class="hljs-number">1366</span>:<span class="hljs-number">14</span>)<br>    at TaskQueue.execute_ (<span class="hljs-regexp">/Users/</span>patilas/.nvm/versions/node/v6<span class="hljs-number">.9</span><span class="hljs-number">.2</span>/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:<span class="hljs-number">2970</span>:<span class="hljs-number">14</span>)<br>    at TaskQueue.executeNext_ (<span class="hljs-regexp">/Users/</span>patilas/.nvm/versions/node/v6<span class="hljs-number">.9</span><span class="hljs-number">.2</span>/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:<span class="hljs-number">2953</span>:<span class="hljs-number">27</span>)<br>    at asyncRun (<span class="hljs-regexp">/Users/</span>patilas/.nvm/versions/node/v6<span class="hljs-number">.9</span><span class="hljs-number">.2</span>/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:<span class="hljs-number">2813</span>:<span class="hljs-number">27</span>)<br>    at /Users/patilas/.nvm/versions/node/v6<span class="hljs-number">.9</span><span class="hljs-number">.2</span>/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:<span class="hljs-number">676</span>:<span class="hljs-number">7</span><br>    at process._tickCallback (internal/process/next_tick.js:<span class="hljs-number">103</span>:<span class="hljs-number">7</span>)<br>From: Task: As Sensity User Create a Customer validate popup text<br>    at Context.ret (<span class="hljs-regexp">/Users/</span>patilas/.nvm/versions/node/v6<span class="hljs-number">.9</span><span class="hljs-number">.2</span>/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:<span class="hljs-number">185</span>:<span class="hljs-number">10</span>)</code></pre>
+          </div>
+          <div class="test-error-scr collapse">
+            <pre><code class="hljs small"><img src="./screenshots/11323_as_sensity_user_create_a_customer_validate_popup_text.png"></code></pre>
+          </div>
+        </div>            <div id="a23aac5d-883d-4f54-a919-a198e138240d" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Search grid for added customer
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#a23aac5d-883d-4f54-a919-a198e138240d > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#a23aac5d-883d-4f54-a919-a198e138240d > .test-code.collapse">Code </button>
+              <span class="test-duration slow">563 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">createCustomerPage.searchAddedCustomer(_mockData.input);</code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+            <section class="suite-wrap">
+          <div id="7fff09ba-6123-43c9-9b71-7ef4cf3f95a1" class="suite has-tests has-failed">
+            <h3 class="suite-title">Logout application</h3>
+            <h5 class="suite-filename">/specs/logout/logout.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="7fff09ba-6123-43c9-9b71-7ef4cf3f95a1" class="suite-chart" width="50" height="50" data-total-passes="0" data-total-failures="1" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">5.723 s</li>
+                <li class="suite-summary-item tests">1</li>
+                <li class="suite-summary-item passed">0</li>
+                <li class="suite-summary-item failed">1</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#7fff09ba-6123-43c9-9b71-7ef4cf3f95a1-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="7fff09ba-6123-43c9-9b71-7ef4cf3f95a1-test-list" class="list-group test-list collapse in">
+                    <div id="3d9b73de-455b-45b6-9460-3ee468bf188f" class="list-group-item test failed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              User Logout
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#3d9b73de-455b-45b6-9460-3ee468bf188f > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#3d9b73de-455b-45b6-9460-3ee468bf188f > .test-code.collapse">Code </button>
+              <span class="test-duration ">5.723 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+            <p class="test-error-message">WebDriverError: unknown error: Element &lt;li class=&quot;logout&quot; title=&quot;Log out&quot; style=&quot;font-size:40px;&quot; id=&quot;logoutButton&quot; href=&quot;#&quot; data-reactid=&quot;.1.0.0.1.1.0.0.0.6&quot;&gt;...&lt;/li&gt; is not clickable at point (1365, 38). Other element would receive the click: &lt;div class=&quot;noty_message&quot; style=&quot;font-size: 13px; line-height: 16px; text-align: left; padding: 8px 10px 9px; width: auto; position: relative;&quot;&gt;...&lt;/div&gt;
+          (Session info: chrome=58.0.3029.110)
+          (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64) (WARNING: The server did not provide any stacktrace information)
+        Command duration or timeout: 43 milliseconds
+        Build info: version: &#x27;3.4.0&#x27;, revision: &#x27;unknown&#x27;, time: &#x27;unknown&#x27;
+        System info: host: &#x27;TTX0109ALKVTCDS&#x27;, ip: &#x27;fe80:0:0:0:14cf:fc75:f694:a982%en0&#x27;, os.name: &#x27;Mac OS X&#x27;, os.arch: &#x27;x86_64&#x27;, os.version: &#x27;10.12.5&#x27;, java.version: &#x27;1.8.0_131&#x27;
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262), userDataDir=/var/folders/8_/bbbx6031583f7nd5192fbfmj19ddgm/T/.org.chromium.Chromium.z6N5ZG}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.110, platform=MAC, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+        Session ID: 75cf79bb3ee69b93cacbf84abf7bb258
+              <button class="btn btn-link btn-sm toggle-btn toggle-stack collapsed" data-toggle="collapse" data-target="#3d9b73de-455b-45b6-9460-3ee468bf188f > .test-error-stack.collapse">Stack </button><button class="btn btn-link btn-sm toggle-btn toggle-stack collapsed" data-toggle="collapse" data-target="#3d9b73de-455b-45b6-9460-3ee468bf188f > .test-error-scr.collapse">Screenshot </button>
+            </p>
+        <br>  <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">browser.sleep(5000);<br>browser.wait(until.visibilityOf(logoutPage.logoutBtn), waitTimeout);<br>logoutPage.logout();</code></pre>
+          </div>
+          <div class="test-error-stack collapse">
+            <pre><code class="hljs small">Difference between Expected(+) and Actual(-):
+        unknown error: Element <li class="logout" title="Log out" style="font-size:40px;" id="logoutButton" href="#" data-reactid=".1.0.0.1.1.0.0.0.6">...</li> is not clickable at point (1365, 38). Other element would receive the click: <div class="noty_message" style="font-size: 13px; line-height: 16px; text-align: left; padding: 8px 10px 9px; width: auto; position: relative;">...</div>
+          (Session info: chrome=58.0.3029.110)
+          (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64) (WARNING: The server did not provide any stacktrace information)
+        Command duration or timeout: 43 milliseconds
+        Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+        System info: host: 'TTX0109ALKVTCDS', ip: 'fe80:0:0:0:14cf:fc75:f694:a982%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_131'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262), userDataDir=/var/folders/8_/bbbx6031583f7nd5192fbfmj19ddgm/T/.org.chromium.Chromium.z6N5ZG}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.110, platform=MAC, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+        Session ID: 75cf79bb3ee69b93cacbf84abf7bb258
+        
+        Expected:
+        undefined
+        
+        Actual:
+        undefined
+        
+        Stack:
+        WebDriverError: unknown error: Element &lt;li class="logout" title="Log out" style="font-size:40px;" id="logoutButton" href="#" data-reactid=".1.0.0.1.1.0.0.0.6"&gt;...&lt;/li&gt; is not clickable at point (1365, 38). Other element would receive the click: &lt;div class="noty_message" style="font-size: 13px; line-height: 16px; text-align: left; padding: 8px 10px 9px; width: auto; position: relative;"&gt;...&lt;/div&gt;<br>  (Session info: chrome=58.0.3029.110)<br>  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64) (WARNING: The server did not provide any stacktrace information)<br>Command duration or timeout: 43 milliseconds<br>Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'<br>System info: host: 'TTX0109ALKVTCDS', ip: 'fe80:0:0:0:14cf:fc75:f694:a982%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_131'<br>Driver info: org.openqa.selenium.chrome.ChromeDriver<br>Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262), userDataDir=/var/folders/8_/bbbx6031583f7nd5192fbfmj19ddgm/T/.org.chromium.Chromium.z6N5ZG}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.110, platform=MAC, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]<br>Session ID: 75cf79bb3ee69b93cacbf84abf7bb258<br>    at WebDriverError (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/error.js:27:5)<br>    at Object.checkLegacyResponse (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/error.js:505:15)<br>    at parseHttpResponse (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/http.js:509:13)<br>    at doSend.then.response (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/http.js:440:13)<br>    at process._tickCallback (internal/process/next_tick.js:103:7)<br>From: Task: WebElement.click()<br>    at thenableWebDriverProxy.schedule (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver.js:816:17)<br>    at WebElement.schedule_ (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver.js:1921:25)<br>    at WebElement.click (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver.js:2002:17)<br>    at actionFn (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/lib/element.ts:94:34)<br>    at Array.map (native)<br>    at actionResults.getWebElements.then (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/lib/element.ts:484:67)<br>    at ManagedPromise.invokeCallback_ (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1366:14)<br>    at TaskQueue.execute_ (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2970:14)<br>    at TaskQueue.executeNext_ (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2953:27)<br>    at asyncRun (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2813:27)Error<br>    at ElementArrayFinder.applyAction_ (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/lib/element.ts:482:23)<br>    at ElementArrayFinder.(anonymous function) [as click] (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/lib/element.ts:96:21)<br>    at ElementFinder.(anonymous function) [as click] (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/lib/element.ts:873:14)<br>    at Page.logout (specs/logout/page.js:9:20)<br>    at Context.&lt;anonymous&gt; (specs/logout/logout.js:10:20)<br>    at runTest (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:166:22)<br>    at /Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:187:16<br>    at new ManagedPromise (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1067:7)<br>    at controlFlowExecute (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:186:14)<br>    at TaskQueue.execute_ (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2970:14)<br>From: Task: Logout application User Logout<br>    at Context.ret (/Users/patilas/.nvm/versions/node/v6.9.2/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:185:10)</code></pre>
+          </div>
+          <div class="test-error-scr collapse">
+            <pre><code class="hljs small"><img src="./screenshots/11947_logout_application_user_logout.png"></code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+            <section class="suite-wrap">
+          <div id="80392d4a-338b-49b9-977d-044ded440b5e" class="suite has-tests has-passed">
+            <h3 class="suite-title">login screen as Sensity Admin</h3>
+            <h5 class="suite-filename">/specs/login/role/sensity_admin.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="80392d4a-338b-49b9-977d-044ded440b5e" class="suite-chart" width="50" height="50" data-total-passes="1" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">762 ms</li>
+                <li class="suite-summary-item tests">1</li>
+                <li class="suite-summary-item passed">1</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#80392d4a-338b-49b9-977d-044ded440b5e-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="80392d4a-338b-49b9-977d-044ded440b5e-test-list" class="list-group test-list collapse in">
+                    <div id="ab707715-2d33-4d25-a4f5-a2ce16987ce6" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              User login as Sensity Admin
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#ab707715-2d33-4d25-a4f5-a2ce16987ce6 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#ab707715-2d33-4d25-a4f5-a2ce16987ce6 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">762 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">browser.wait(until.visibilityOf(loginPage.username), waitTimeout);<br>loginPage.login(_mockData.loginData.username_sensity_admin, _mockData.loginData.password_sensity_admin);</code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Report generated by <a href="http://adamgruber.github.io/mochawesome/" target="_blank">mochawesome</a>.<br>Designed and built by <a href="https://github.com/adamgruber" target="_blank">adamgruber</a>. &copy;2017.</p>
+      </div>
+    </footer>
+
+    <!-- Nav Menu -->
+    <div class="nav-menu-wrap">
+      <div class="menu-overlay close-menu"></div>
+      <nav class="menu">
+        <button class="nav-menu-btn close-menu"><i class="icon-failed"></i></button>
+        <ul class="list-unstyled main-menu">
+                <li class="nav-menu-item">
+                <a href="#442e8f18-50f3-413b-8a19-fed4be62b8aa" class="nav-menu-item-link has-passes">login screen</a>
+            </li>
+                <li class="nav-menu-item">
+                <a href="#85e35e8b-0e2b-4d43-9a13-fd25a8eebfa1" class="nav-menu-item-link has-failures">As Sensity User Create a Customer</a>
+            </li>
+                <li class="nav-menu-item">
+                <a href="#7fff09ba-6123-43c9-9b71-7ef4cf3f95a1" class="nav-menu-item-link has-failures">Logout application</a>
+            </li>
+                <li class="nav-menu-item">
+                <a href="#80392d4a-338b-49b9-977d-044ded440b5e" class="nav-menu-item-link has-passes">login screen as Sensity Admin</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/vendor.js"></script>
+    <script src="js/mochawesome.js"></script>
+  </body>
+</html>

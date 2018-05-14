@@ -1,0 +1,11 @@
+MATCH (s:Site {siteid:"{{siteid}}"}) MERGE (pg:ParkingGroup:Active {
+parkinggroupid: "{{parkinggroupid}}",
+name: "{{name}}",
+description: "{{description}}",
+vehicle_types: "{{vehicle_types}}",
+policy: "{{policy}}",
+parkingzones: "{{parkingzones}}"
+})
+MERGE (pg)-[:BELONGS_TO]->(s)
+MERGE (s)-[:HAS]->(pg)
+ON CREATE SET pg.created=timestamp()

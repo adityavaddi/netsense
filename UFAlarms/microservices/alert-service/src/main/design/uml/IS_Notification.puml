@@ -1,0 +1,65 @@
+@startuml
+    box  "Client" #LightGrey
+    participant REST_API
+    end box
+
+    box "Interface Service" #white
+       participant NotificationController
+    end box
+
+    box "Kafka" #white
+           participant api.reply.interface
+           participant ms.request.acl
+           participant ms.request.alert
+    end box
+
+    box "Alert Service" #LightGrey
+       participant AlertMicroService
+    end box
+
+    alt Scenario: Get All Notifications For Site
+        NotificationController -> ms.request.acl
+        ms.request.acl -> ms.request.acl
+        ms.request.acl -> api.reply.interface
+        api.reply.interface -> NotificationController
+
+        NotificationController -> ms.request.alert
+        ms.request.alert -> AlertMicroService
+        AlertMicroService -> AlertMicroService
+        AlertMicroService -> api.reply.interface
+        api.reply.interface -> NotificationController: Notifications
+        NotificationController -> REST_API: Notifications
+    end
+
+    alt Scenario: Add/Update/Activate/De-Activate/Delete/GetNotificationById
+        REST_API -> NotificationController: Notification CRUD (Add/Update/Activate/De-Activate/Delete/GetNotificationById)
+        NotificationController -> ms.request.acl
+        ms.request.acl -> ms.request.acl
+        ms.request.acl -> api.reply.interface
+        api.reply.interface -> NotificationController
+
+        NotificationController -> ms.request.alert
+        ms.request.alert -> AlertMicroService
+        AlertMicroService -> AlertMicroService
+        AlertMicroService -> api.reply.interface
+        api.reply.interface -> NotificationController: Notification
+        NotificationController -> REST_API: Notification
+    end
+
+    alt Scenario: Internal API - Get All Notifications By Name
+        NotificationController -> ms.request.alert
+        ms.request.alert -> AlertMicroService
+        AlertMicroService -> AlertMicroService
+        AlertMicroService -> api.reply.interface
+        api.reply.interface -> NotificationController: Notifications
+    end
+
+    alt Scenario: Internal API - Get Notification By Sys
+        NotificationController -> ms.request.alert
+        ms.request.alert -> AlertMicroService
+        AlertMicroService -> AlertMicroService
+        AlertMicroService -> api.reply.interface
+        api.reply.interface -> NotificationController: Notification
+    end
+
+@enduml

@@ -1,0 +1,15 @@
+MATCH (s:Site {siteid: "{{siteid}}"})
+CREATE (p:DHProfile { props })
+CREATE UNIQUE (p)-[:BELONGS_TO]->(s)
+CREATE UNIQUE (p)<-[:HAS]-(s)
+RETURN {
+    dhprofileid: p.dhprofileid,
+    name: p.name,
+    description: p.description,
+    setPoint: p.setPoint,
+    gain: p.gain,
+    resetTime: p.resetTime,
+    minDrive: p.minDrive,
+    maxDrive: p.maxDrive,
+    slewRate: p.slewRate
+} as dhprofile

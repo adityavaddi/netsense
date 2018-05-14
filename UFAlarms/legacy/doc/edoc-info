@@ -1,0 +1,16 @@
+%% encoding: UTF-8
+{application,legacy}.
+{modules,[astronomicalEvent,calendarEvent,configResp,configRespDone,
+          deviceActionReq,deviceAlarm,deviceMessages_pb,disconnect,envelope,
+          gpsActionReq,gpsActionRsp,gpsSample,kVPair,lager_stderr_backend,
+          legacy_app,legacy_cmd_handler,legacy_config,legacy_helpers,
+          legacy_listeners,legacy_metrics,legacy_msg_handler,
+          legacy_ota_handler,legacy_ota_helpers,legacy_ota_scheduler,
+          legacy_ota_sup,legacy_ota_worker,legacy_s3_worker,
+          legacy_status_handler,legacy_sup,legacy_ws_handler,
+          lightingAstronomicalEvent,lightingClearSchedule,lightingCtrl,
+          lightingForceState,lightingScheduledEvent,lightingSetAuto,loginReq,
+          loginResp,messages_pb,rabbit_conn_watcher,rabbit_conn_worker,
+          rabbit_feed,rabbit_helper,rabbit_load_balancer,rabbit_pub_worker,
+          rabbit_sub_worker,rabbit_sup,sensorSample,sensorSampleReq,
+          softwareUpdateReq,timeReq,timeResp,unusedConfigReq,x509UpdateReq]}.

@@ -1,0 +1,22 @@
+WITH { props } AS props
+MATCH(u:User {userid: props.user}),(po:Org {orgid: props.orgprops.po})
+WHERE NOT (po:Org)-[:IS_CUSTOMER_OF*2]->(:Org)
+WITH  props, po
+CREATE (o:Org:Active {
+orgid: props.orgprops.orgid,
+name: props.orgprops.name,
+type: props.orgprops.type,
+street1: props.orgprops.street1,
+street2: props.orgprops.street2,
+city: props.orgprops.city,
+state: props.orgprops.state,
+postal_code: props.orgprops.postal_code,
+country: props.orgprops.country,
+contact_email: props.orgprops.contact_email,
+contact_phone: props.orgprops.contact_phone,
+contact_name: props.orgprops.contact_name,
+created: timestamp()
+})
+WITH o, po
+CREATE UNIQUE (o)-[:IS_CUSTOMER_OF]->(po)
+CREATE UNIQUE (po)-[:HAS_CUSTOMER]->(o)

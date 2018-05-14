@@ -1,0 +1,10 @@
+MATCH (p:ParkingGroup {parkinggroupid:"{{parkinggroupid}}"}), (n:Node {nodeid:"{{nodeid}}"})
+OPTIONAL MATCH (:ParkingGroup)-[old1:HAS]-(n)
+OPTIONAL MATCH (n:Node)-[old2:BELONGS_TO]->(:ParkingGroup)
+DELETE old1, old2
+CREATE UNIQUE (n)-[:BELONGS_TO]->(p)
+CREATE UNIQUE (p)-[:HAS]->(n)
+RETURN {
+nodeid: "{{nodeid}}",
+parkinggroupid: "{{parkinggroupid}}"
+} AS node

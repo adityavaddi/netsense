@@ -1,0 +1,65 @@
+
+/************************************** Typography **************************************/
+
+h1{
+  font-size: 36px !important;
+}
+
+h2{
+  font-size: 30px !important;
+}
+
+h3{
+  font-size: 24px !important;
+}
+
+h4{
+  font-size: 18px !important;
+}
+
+h5{
+  font-size: 14px !important;
+}
+
+h6{
+  font-size: 12px !important;
+}
+
+small{
+  font-size: 85% !important;
+}
+
+b,strong{
+  font-weight: bold !important;
+}
+
+abbr[title], abbr[data-original-title] {
+  border-bottom: 1px dotted #999999;
+  cursor: help;
+}
+
+abbr.initialism {
+  font-size: 90% !important;
+  text-transform: uppercase !important;
+}
+
+address {
+  display: block;
+  font-style: normal;
+  line-height: 1.42857;
+  margin-bottom: 20px;
+}
+
+dt{
+  font-weight: bold !important;
+}
+
+dt,dd{
+  line-height: 1.42857 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+/************************************** End Typography **************************************/

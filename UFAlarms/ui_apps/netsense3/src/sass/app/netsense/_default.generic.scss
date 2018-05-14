@@ -1,0 +1,84 @@
+html.default{
+  body{
+    background-color: transparent !important;
+    color: #000 !important;
+
+    #rubix-nav-header {
+      .navbar-nav>li.divider {
+        border: none !important;
+      }
+    }
+    .sidebar-nav>li>a {
+      color: $white !important;
+    }
+
+    #navbar~#body {
+      padding-top: 18px !important;
+    }
+
+  }
+  .sidebar, #sidebar, .sidebar-item{
+    background-color: #FFF;
+    color: #333;
+  }
+å
+  #navbar, .navbar, body #rubix-nav-header{
+    background-color: #FFF !important;
+    color: #333;
+  }
+}
+
+html.default body #navbar ~ #body{
+  padding-top:0px !important; 
+}
+
+html.xauthentication {
+  background: transparent url(/imgs/freeway.jpg) no-repeat center center fixed !important;
+  background-size: cover !important;
+}
+
+html.authentication body {
+  background-color: transparent !important;
+}
+
+// Public/app/common/notydefaults.js
+.noty_message {
+  padding: 12px 60px !important;
+}
+
+ul.noty_inline_layout_container,
+ul#noty_topRight_layout_container {
+  font-size: 22px !important;
+  width: auto !important;
+  min-width: 40% !important;
+  line-height: 30px !important;
+}
+
+ul#noty_topRight_layout_container li {
+  width: 100% !important;
+  background-image: none !important;
+}
+
+.noty_text {
+  line-height: 30px !important;
+  font-size: 22px !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/* hack to hide React warning msgs in development mode*/
+
+#__bs_notify__ {
+  opacity: 0 !important;
+  top:-500px !important;
+}
+
+

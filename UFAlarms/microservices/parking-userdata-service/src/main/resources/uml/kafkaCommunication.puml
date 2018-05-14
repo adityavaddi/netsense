@@ -1,0 +1,32 @@
+@startuml
+    participant Client_Application
+    participant Interface_Service
+    participant Kafka
+    participant Parking_Policy_Service
+    participant Cassandra
+    box  #LightGreen
+       participant Client_Application
+       participant Interface_Service
+    end box
+    box #LightGrey
+        participant Kafka
+    end box
+    box  #LightBlue
+       participant Parking_Policy_Service
+       participant Cassandra
+    end box
+
+    Client_Application -> Interface_Service: API call
+    Interface_Service -> Kafka: publish query to request topic
+    hnote over Kafka : Topic: REQUEST
+    Kafka <- Parking_Policy_Service: subscribes query from request topic
+    Parking_Policy_Service -> Parking_Policy_Service: unmarshall and triggers \nrespective function \nbased on "type" in request body
+    Parking_Policy_Service -> Parking_Policy_Service: business logic
+    Parking_Policy_Service -> Cassandra: persist/fetch data
+    Cassandra -> Parking_Policy_Service: result
+    Parking_Policy_Service -> Kafka: publish result to reponse topic
+    hnote over Kafka : Topic: RESPONSE
+    Kafka <- Interface_Service: subscribes result from reponse topic
+    Interface_Service -> Client_Application: response
+
+@enduml

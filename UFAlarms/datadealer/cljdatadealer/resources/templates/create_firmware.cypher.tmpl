@@ -1,0 +1,14 @@
+CREATE (f:Firmware {
+    firmwareid: "{{firmwareid}}",
+    name: "{{name}}",
+    release: "{{release}}",
+    released: {{released}},
+    commit: "{{commit}}",
+    deprecated: {{deprecated}},
+    version: "{{release}}.{{commit}}",
+    checksum: "{{checksum}}",
+    builder: "{{builder}}",
+    build_date: "{{build_date}}",
+    image_size: {{image_size}},
+    date_created: timestamp()
+})

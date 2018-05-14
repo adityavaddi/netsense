@@ -1,0 +1,16 @@
+{
+  "name": "clients",
+  "version": "1.0.0",
+  "description": "Clients for generating data traffic using NodeJS",
+  "main": "rrclient.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chiradip Mandal",
+  "license": "SeSL",
+  "dependencies": {
+    "minimist": "^1.1.1",
+    "msgpack5": "^2.3.0",
+    "zmq": "^2.11.1"
+  }
+}

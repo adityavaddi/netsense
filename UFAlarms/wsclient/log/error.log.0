@@ -1,0 +1,20 @@
+
+2015-08-24 23:17:05.394 [error] <0.80.0> CRASH REPORT Process <0.80.0> with 1 neighbours exited with reason: {handler,undef} in websocket_client:websocket_close/3 line 225
+2015-09-14 00:47:00.521 [error] <0.80.0> ** Websocket handler wsclient terminating
+** for the reason remote
+** Handler state was {state,[{binary,<<10,19,10,5,78,83,49,95,49,16,1,26,8,117,110,111,100,101,45,118,51>>}],undefined}
+** Stacktrace: [{lager_trunc_io,alist,3,[{file,"src/lager_trunc_io.erl"},{line,448}]},{lager_trunc_io,alist,3,[{file,"src/lager_trunc_io.erl"},{line,424}]},{lager_trunc_io,print,3,[{file,"src/lager_trunc_io.erl"},{line,168}]},{lager_trunc_io,list_bodyc,4,[{file,"src/lager_trunc_io.erl"},{line,323}]},{lager_trunc_io,list_body,4,[{file,"src/lager_trunc_io.erl"},{line,312}]},{lager_trunc_io,print,3,[{file,"src/lager_trunc_io.erl"},{line,269}]},{lager_trunc_io,fprint,3,[{file,"src/lager_trunc_io.erl"},{line,80}]},{lager_format,control2,8,[{file,"src/lager_format.erl"},{line,238}]}]
+
+2015-09-14 00:47:00.522 [error] <0.80.0> CRASH REPORT Process <0.80.0> with 1 neighbours exited with reason: remote in websocket_client:websocket_close/3 line 225
+2015-09-14 23:51:52.394 [error] <0.80.0> ** Websocket handler wsclient terminating
+** for the reason {remote,1011}
+** Handler state was {state,[],undefined}
+** Stacktrace: []
+
+2015-09-14 23:51:52.395 [error] <0.80.0> CRASH REPORT Process <0.80.0> with 1 neighbours exited with reason: {remote,1011} in websocket_client:websocket_close/3 line 225
+2015-09-14 23:54:48.048 [error] <0.86.0> ** Websocket handler wsclient terminating
+** for the reason {remote,1011}
+** Handler state was {state,[],undefined}
+** Stacktrace: []
+
+2015-09-14 23:54:48.048 [error] <0.86.0> CRASH REPORT Process <0.86.0> with 1 neighbours exited with reason: {remote,1011} in websocket_client:websocket_close/3 line 225

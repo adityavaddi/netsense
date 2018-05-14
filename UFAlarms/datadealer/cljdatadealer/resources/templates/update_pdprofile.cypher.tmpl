@@ -1,0 +1,14 @@
+MATCH (p:PDProfile {pdprofileid: "{{pdprofileid}}"})
+SET p += { props }
+RETURN {
+    pdprofileid: p.pdprofileid,
+    name: p.name,
+    description: p.description,
+    minLevel: p.minLevel,
+    maxLevel: p.maxLevel,
+    beginTime: p.beginTime,
+    endTime: p.endTime,
+    mode: p.mode,
+    radius: p.radius,
+    detection_duration: p.detection_duration
+} as pdprofile

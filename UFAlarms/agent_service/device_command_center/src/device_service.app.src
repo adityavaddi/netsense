@@ -1,0 +1,36 @@
+{application, device_service, [
+	{description, ""},
+	{vsn, "0.1.0"},
+	{id, "git"},
+	{modules, []},
+	{registered, []},
+	{applications, [
+		kernel,
+        stdlib,
+        syntax_tools,
+        compiler,
+        crypto,
+        ssl,
+		tools,
+		lager,
+		runtime_tools,
+		emqttc,
+ 		msgpack,
+ 		mnesia,
+		gen_logger,
+		poolboy,
+		ezmq,
+		recon,
+		observer_cli,
+		uuid,
+		ecache,
+		exometer,
+		jsx,
+		folsom
+	]},
+	{mod, {device_service_app, []}},
+	{env,[{pools, [
+	{dcc_zmq_pool, [{size, 1},{max_overflow, 200}], []},
+	{dcc_zmq_listener_pool, [{size, 1},{max_overflow, 100}], []}
+	]}]}
+]}.

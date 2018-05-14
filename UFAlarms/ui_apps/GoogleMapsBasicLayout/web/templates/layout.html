@@ -1,0 +1,36 @@
+
+<!--************************************** Layout Template **************************************-->
+
+  <section>
+    <input id="slide-sidebar" type="checkbox" role="button" />
+    <label for="slide-sidebar"><span> &#187; </span></label>
+    <div class="sidebarLeftPanel">
+      <div class="spacer firstChild ignorePadding">
+        <ul class="sidebarWrapper" ng-controller="itemsFocusController">
+          <li ng-class="{selectedList:isActive('/')}"> <a href="#/"><span class="verticalAlignContainer"> <span class="verticalAlign"> Menu1 </span></span> </a> </li>
+          <li ng-class="{selectedList:isActive('/menuTwo')}"> <a href="#/menuTwo"><span class="verticalAlignContainer"> <span class="verticalAlign"> Menu2 </span></span> </a></li>
+          <li ng-class="{selectedList:isActive('/menuThree')}"> <a href="#/menuThree"><span class="verticalAlignContainer"><span class="verticalAlign"> Menu3 </span> </span> </a></li>
+          <li ng-class="{selectedList:isActive('/menuFour')}"> <a href="#/menuFour"><span class="verticalAlignContainer"><span class="verticalAlign"> Menu4 </span></span> </a></li>
+          <li ng-class="{selectedList:isActive('/menuFive')}"> <a href="#/menuFive"><span class="verticalAlignContainer"><span class="verticalAlign"> Menu5 </span></span> </a></li>
+          <li ng-class="{selectedList:isActive('/menuSix')}"> <a href="#/menuSix"><span class="verticalAlignContainer"><span class="verticalAlign"> Menu6 </span> </span></a></li>
+          <li ng-class="{selectedList:isActive('/menuSeven')}"> <a href="#/menuSeven"><span class="verticalAlignContainer"><span class="verticalAlign"> Menu7 </span> </span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="negativeSpacer">
+      <div class="layoutRightPanel">
+        <div ng-controller="defaultController">
+          <div data-ng-include="templatetab.url">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </section>
+
+<!--************************************** End Layout Template **************************************-->
+
+
+
+
+

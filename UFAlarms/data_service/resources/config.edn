@@ -1,0 +1,10 @@
+
+{ :databases { :cassandra     { :ip "127.0.0.1" }
+               :elasticsearch { :ip "127.0.0.1" }
+               :neo4j         { :ip "127.0.0.1"
+                                :username "neo4j"
+                                :password "lettherebelight" } }
+  :listen-ports { :backend { :msgpack  [ 5558 ]
+                             :plaintxt [ 5559 ] }
+                  :frontend [ 5560 ] } }
+

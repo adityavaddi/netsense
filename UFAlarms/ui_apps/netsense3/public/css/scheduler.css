@@ -1,0 +1,318 @@
+/* CSS for scheduler */
+
+.sched-container {
+	margin:0px 2%;
+}
+
+.sched-workspace {
+	height: 400px;
+	position:relative;
+	background:none !important;
+}
+
+.sched-daydate {
+	float:right;
+	margin:6px 0px;
+}
+
+.sched-timeline {
+	border:3px solid #CCC;
+	border-top:none;
+	position:relative;
+	height:250px;
+}
+
+.sched-timeline-delete {
+	float:right;
+	margin-right:8px;
+	display:none;
+}
+
+.ui-state-active .sched-timeline-delete {
+	display:block;
+}
+
+.sched-grid {
+	position:absolute;
+	top:0px;
+	left:0px;
+	border-collapse:collapse;
+	width:100%;
+}
+
+.sched-grid, .sched-grid tr, .sched-grid td {
+	border:1px solid #CCC;
+}
+
+.sched-grid tr {
+	height:25px;
+}
+
+.sched-grid td {
+	width:4.1666666%;
+}
+
+.sched-legend {
+	position:relative;
+	left:-2.083%;
+	margin-bottom:20px;
+}
+
+.sched-legend-light {
+	position:absolute;
+	text-align:right;
+	width:30px;
+	left:-38px;
+}
+
+.sched-daylight {
+	height:100%;
+	position:absolute;
+	bottom:0px;
+	background-color:#FF0;
+	opacity:0.15;
+}
+
+.sched-block {
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	height:20px;
+	width:20px;
+	border:2px solid #008ABF;
+}
+
+.sched-harvesting {
+	display:inline-block;
+	width:49%;
+	float:right;
+}
+
+.sched-dimming {
+	display:inline-block;
+	width:49%;
+}
+
+.sched-controls {
+	position:absolute;
+	top:10px;
+	left:62px;
+}
+
+.sched-controls .sched-marker-time {
+	position:absolute;
+}
+
+.sched-controls .sched-marker-sun {
+	position:absolute;
+	top:0px;
+	left:40px;
+}
+.sched-controls .sched-trash {
+	position:absolute;
+	top:0px;
+	left:100px;
+}
+
+.sched-container input[type="checkbox"],
+.sched-container input[type="radio"] {
+	width:15px;
+	height:15px;
+	cursor: pointer;
+	position: relative !important; 
+}
+
+.sched-marker, .sched-arrow, .sched-trash {
+	position:absolute;
+	min-height:24px;
+	min-width:24px;
+	cursor:pointer;
+	outline: none;
+	background-repeat:no-repeat;
+}
+
+.sched-marker:active {
+	border: none;
+	outline: none;
+}
+.sched-marker-time {
+	background-image:url(/imgs/scheduler/clock1.svg);
+	z-index:10;
+}
+
+.sched-marker-sun {
+	background-image:url(/imgs/scheduler/sun1.svg);
+	z-index:11;
+}
+
+.sched-arrow-down {
+	background-image:url(/imgs/scheduler/down.png);
+	z-index:1;
+}
+
+.sched-arrow-up {
+	background-image:url(/imgs/scheduler/up.png);
+	z-index:1;
+}
+
+.sched-trash {
+	background-image:url(/imgs/scheduler/trash.svg);
+	cursor:default;
+	z-index:1;
+}
+
+.sched-arrow, .sched-trash {
+	opacity:0.6;
+	background-size:100%;
+}
+
+.sched-tooltip {
+	position:relative;
+	top:-36px;
+	left:24px;
+	min-width:154px;
+	min-height:36px;
+	display:none;
+	background-color:#FFF;
+	border-radius:3px 18px 18px 3px;
+	border:1px solid #666;
+	box-shadow:1px 1px 1px #999;
+	padding:4px 8px;
+	font-size:14px;
+	color:#008abf;
+	line-height:16px;
+	z-index:9999;
+}
+
+.sched-addbar {
+	text-align:center;
+	margin-top:20px;
+}
+
+.sched-addbar button {
+	padding:0px;
+	font-size:18px;
+	width:40%;
+	min-width:300px;
+    text-align: center;
+    color: #000000;
+    vertical-align: middle;
+    background-color: #ffffff;
+	border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid #000000;
+}
+
+.sched-addbar button:hover {
+	background-color:#000000;
+	color: #ffffff;
+	border: 1px solid #000000;
+}
+
+.sched-line-h {
+	height:6px;
+	border:1px solid #CCC;
+	box-shadow:1px 1px 3px 3px #CCC;
+	position:absolute;
+	background-color:#FF0;
+	z-index:5;
+}
+
+/* Only For Read Only View of the Schedule in Nodes and Groups page*/
+.sched-line-h-view{
+	position:absolute;
+	background-color:rgba(254, 221, 135, 0.83);
+	z-index:5;
+}
+
+.sched-line-v {
+	width:2px;
+	position:absolute;
+	background-color:#CCC;
+	z-index:5;
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.sched-container .ui-widget-content, .sched-container .ui-state-active {
+	border-width:2px; 
+}
+
+.sched-container .ui-state-active {
+	border-color: #000000;
+	color: #000000;
+	background-image:none;
+	background-color:#EEE;
+}
+
+.sched-container .ui-state-default {
+	border:1px solid #CCC !important;
+	background-image:none;
+	background-color:#F8F8F8;
+}
+
+
+.sched-container.ui-accordion .ui-accordion-content {
+	padding-top: 0px !important;
+}
+
+.sched-container.ui-accordion .ui-accordion-content-active {
+	border-color:#CCCCCC;
+}
+
+.sched-dh {
+top:0px;
+height:100%;
+opacity:0.75;
+position:absolute;
+z-index:10;
+	background: -webkit-radial-gradient(rgb(112, 232, 148) 5%, rgba(180, 207, 243, 1)100%  ); /* Safari 5.1-6.0 */
+	background: -o-radial-gradient( rgb(112, 232, 148)  5%,rgba(180, 207, 243, 1) 100% ); /* For Opera 11.6 to 12.0 */
+	background: -moz-radial-gradient(rgb(112, 232, 148)  5%, rgba(180, 207, 243, 1)100% ); /* For Firefox 3.6 to 15 */
+	background: radial-gradient( rgb(112, 232, 148)  5%, rgba(180, 207, 243, 1)100% ); /* Standard syntax (must be last) */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#39c711+0,39c711+60,39c711+79&1+0,0+73 */
+/*background: -moz-linear-gradient(top, rgba(57,199,17,1) 0%, rgba(57,199,17,0.18) 60%, rgba(57,199,17,0) 73%, rgba(57,199,17,0) 79%); !* FF3.6-15 *!*/
+/*background: -webkit-linear-gradient(top, rgba(57,199,17,1) 0%,rgba(57,199,17,0.18) 60%,rgba(57,199,17,0) 73%,rgba(57,199,17,0) 79%); !* Chrome10-25,Safari5.1-6 *!*/
+/*background: linear-gradient(to bottom, rgba(57,199,17,1) 0%,rgba(57,199,17,0.18) 60%,rgba(57,199,17,0) 73%,rgba(57,199,17,0) 79%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!*/
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#39c711', endColorstr='#0039c711',GradientType=0 ); !* IE6-9 *!*/
+}
+
+.sched-dh > div {
+	font-size:14px;
+	letter-spacing:4px;
+	position:relative;
+	top:-17px;
+	color:#070;
+}
+
+.sched-pd{
+	top:0px;
+	height:20px;
+	position:absolute;
+	background:#b3a5ef;
+	z-index:10;
+	opacity:0.65;
+
+}
+.sched-pd > div {
+	font-size:14px;
+	letter-spacing:4px;
+	position:relative;
+	top:-17px;
+	color:#070;
+}
+
+
+.sunrise-header, .sunset-header{
+	font-style: italic;
+	color: rgba(0, 0, 0, 0.67);
+	margin-left: 60px;
+	margin-right: 40px;
+
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Nav" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-NetSense_Home_Dropdown" transform="translate(-589.000000, -205.000000)" fill-rule="nonzero" fill="#000000">
+            <g id="Group-9" transform="translate(0.000000, 152.000000)">
+                <g id="sortby">
+                    <g id="Group-2" transform="translate(153.000000, 50.000000)">
+                        <g id="Group-6-Copy" transform="translate(436.000000, 0.000000)">
+                            <g id="Search_747676" transform="translate(0.000000, 3.000000)">
+                                <path d="M6,1.125 C7.88779712,1.12700099 9.60474395,2.21873454 10.4073258,3.92743124 C11.2099076,5.63612793 10.9538354,7.65459656 9.75,9.10875 L9.4575,9.46125 L9.105,9.75375 C7.44886294,11.1260695 5.08907764,11.2508839 3.2974159,10.0609264 C1.50575415,8.87096884 0.705639619,6.64746215 1.32828233,4.58873273 C1.95092503,2.53000331 3.84917575,1.12259096 6,1.125 L6,1.125 Z M6,1.93884571e-16 C3.35325616,-0.00143905406 1.01821644,1.73155905 0.252984305,4.26526677 C-0.512247831,6.79897449 0.473113963,9.53480253 2.67816348,10.9987054 C4.883213,12.4626083 7.78700655,12.3087385 9.825,10.62 L14.205,15 L15,14.205 L10.62,9.825 C12.1014442,8.03460169 12.4158248,5.54975329 11.4269618,3.44681414 C10.4380988,1.34387499 8.32383347,0.00104635593 6,1.93884571e-16 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

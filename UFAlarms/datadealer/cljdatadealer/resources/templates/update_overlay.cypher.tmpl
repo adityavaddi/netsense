@@ -1,0 +1,21 @@
+MERGE (o:Overlay {
+overlayid: "{{overlayid}}"})
+ON MATCH SET
+o.fileName = "{{fileName}}",
+o.description = "{{description}}",
+o.users = "{{users}}",
+o.imageBounds = "{{imageBounds}}",
+o.imageData = "{{imageData}}",
+o.imageType = "{{imageType}}",
+o.buildingLevel = "{{buildingLevel}}"
+
+RETURN {
+overlayid: o.overlayid,
+fileName: o.fileName,
+description: o.description,
+users: o.users,
+imageBounds: o.imageBounds,
+imageData: o.imageData,
+imageType: o.imageType,
+buildingLevel: o.buildingLevel
+} AS overlay

@@ -1,0 +1,103 @@
+.sensor-display{
+  font-size: 16px;
+  right:16px;
+  z-index: 9999999;
+  width: 800px;
+  left: 30%;
+  top: 15%;
+  position: absolute;
+  background-color: white;
+  border-width: 1px;
+  border-color: grey;
+  border-style: solid;
+}
+
+#sensorMonitorOverlay{
+  background: transparent url(/imgs/overlay.png) repeat top left;
+  position: fixed;
+  top:0px;
+  bottom:0px;
+  right:0px;
+  z-index: 9999998;
+}
+.energyForm, .reportingForm{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#downloadImage{
+  color: black !important;
+  text-decoration: none !important;
+}
+
+#downloadImage:hover, #downloadImage:active{ 
+  text-decoration:none !important;
+  border-bottom: 1px solid black;
+  border-color: black !important;
+  background-color: white;
+}
+
+#downloadEnergyImage{
+  color: black !important;
+  text-decoration: none !important;
+}
+
+#downloadEnergyImage:hover, #downloadEnergyImage:active{ 
+  text-decoration:none !important;
+  border-bottom: 1px solid black;
+  border-color: black !important;
+  background-color: white;
+}
+
+#rotateTextLeft{
+  width: 385px; 
+  height: 418px; 
+  padding-top: 14px;
+  //  position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translateX(-50%) translateY(200%) rotate(-90.0deg);
+
+  /* FF3.5+ */
+  -moz-transform: rotate(-90.0deg);
+  /* Opera 10.5 */
+  -o-transform: rotate(-90.0deg);
+  /* Saf3.1+, Chrome */
+  -webkit-transform: rotate(-90.0deg);
+
+  /* Standard */
+  transform: rotate(-90.0deg);
+
+}
+#rotateTextRight{
+  width: 385px; 
+  height: 435px; 
+ // padding-top: 14px;
+  //  position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translateX(-50%) translateY(200%) rotate(-90.0deg);
+
+  /* FF3.5+ */
+  -moz-transform: rotate(-90.0deg);
+  /* Opera 10.5 */
+  -o-transform: rotate(-90.0deg);
+  /* Saf3.1+, Chrome */
+  -webkit-transform: rotate(-90.0deg);
+
+  /* Standard */
+  transform: rotate(-90.0deg);
+
+}
+
+#left-report-panel{
+  width: 1.3% !important;
+}
+
+#right-report-panel{
+  width: 1.3% !important;
+}
+
+#sensor-report-panel{
+  width: 79% !important;
+}

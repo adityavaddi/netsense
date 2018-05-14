@@ -1,0 +1,260 @@
+.site-tile {
+  width: 326px;
+  height: 357px;
+
+  background-color: $white;
+  border: 1px solid #D8DADA;
+  margin: 20px -10px 10px 35px;
+  // To not float it and display each site in a single line
+  //float: left;
+  padding:0;
+  h3{
+    font-size : 18px;
+    font-weight: bold;
+  }
+  .sites-icon{
+    font-size:22px;
+    position: relative;
+    top:-2px;
+  }
+  .site-tile-map {
+    height: 237px;
+  }
+  .site-tile-buttons {
+    width: 100%;
+    height: 50px;
+  }
+  .site-tile-button {
+    cursor: pointer;
+    display: table-cell;
+    color: $sensity-blue-theme;
+    text-align: center;
+    line-height: 18px;
+    background-color: $shade-light-grey;
+    width: 18%;
+    padding-top: 8px;
+    padding-bottom: 4px;
+  }
+
+  .site-tile-button:hover {
+    color: $white;
+    background-color: $sensity-blue-theme;
+  }
+
+  .site-tile-button:first-child {
+    border-bottom-left-radius: 10px;
+  }
+
+  .site-tile-button:last-child {
+    border-bottom-right-radius: 10px;
+  }
+}
+
+.site-tile.tile-selected {
+  border-color: $sensity-blue-theme;
+  background-color: $sensity-blue-theme;
+  color: $white;
+}
+
+
+// Tablet view site tile size
+@media (min-width: 768px) and (max-width: 1024px){
+  .site-tile {
+    width: 280px;
+    font-size:14px;
+    padding:0;
+    h3{
+      font-size:16px;
+    }
+    .site-tile-button {
+      width: 14%;
+      font-size: 12px;
+    }
+    .sites-icon{
+      font-size:20px;
+    }
+  }
+
+  #selectSites, #xschedule, #dhprofile, #pdprofile{
+    border:1px;
+    border-color: $black;
+    border-style:outset;
+    border-width:1px;
+  }
+}
+
+@media (min-width: 990px) and (max-width: 1024px) {
+  #selectSites, #xschedule, #dhprofile, #pdprofile{
+    border:1px;
+    border-color: $black;
+    border-style:outset;
+    border-width:1px;
+
+  }
+}
+
+// New Design changes as per new UXD
+#site-tiles-container{
+  background: #F6F6F6;
+  border-top: 1px solid #D8DADA;
+  height: -webkit-fill-available;
+  overflow-y: auto;
+}
+
+.netsense__site{
+  &__single{
+    padding: 0px 0px 30px 0px;
+    display:-webkit-inline-box;
+    margin-bottom: -45px;
+  }
+  &__header{
+    width: 100%;
+    padding: 3px 10px 10px 10px;
+    background: #ffffff;
+  }
+  &--description{
+    padding-left:15px;
+    padding-top: 5px;
+    width:240px;
+
+    h2{
+      margin-top:7px;
+      color: $charcoal;
+      cursor: pointer;
+      font-size:20px;
+    }
+    &--name{
+      width:320px;
+      padding-left:15px;
+      padding-top: 5px;
+          h2{
+      margin-top:7px;
+      color: $charcoal;
+      cursor: pointer;
+      font-size:20px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    }
+    &-location{
+      color: $charcoal;
+    }
+    &--edit{
+      display:-webkit-inline-box;
+      font-size:20px;
+      position: relative;
+      left:60px;
+      float: right;
+      bottom: 20px;
+    }
+    &-location{
+       font-size:14px;
+       position: relative;
+       bottom: 10px;
+    }
+    &--bell{
+      padding-left:10px;
+    }
+    &--edit-icon{
+      padding-left:27px;
+      cursor:pointer;
+    }
+    &--body{
+      margin-top:12px;
+      border-top:1px solid #ccc;
+    }
+    &--body--hierarchy{
+      margin-top:12px;
+      border-top:1px solid #ccc;
+      max-height:100px;
+     // overflow-y: scroll;
+      width: 1080px;
+    }
+    &--span{
+      height: 1px;
+      background-color: #D8DADA;
+      position: static;
+      display: block;
+      width: 90%;
+      margin-left: 16px;
+    }
+
+    &--more{
+      color:$black;
+      font-weight:900;
+      position:relative;
+      left:280px;
+      font-size:21px;
+      cursor: pointer;
+      display:-webkit-inline-box;
+      .more-icon{
+        position: relative;
+        left:10px;
+        color:$font-blue !important;
+      }
+    }
+  }
+}
+.medium-width{
+  width:10%;
+}
+.rubix-site-panel-body{
+  padding: 0px 0px 8px 0px !important;
+  // min-height: calc(100vh - 82px) !important;
+  background-color: #F6F6F6;
+}
+.ns-navigate{
+  height: 35px;
+  width: 85px;
+  cursor: pointer;
+  position: relative;
+  right: 4px;
+}
+.ns-sitesubnav{
+  position: relative;
+  z-index: 200;
+  bottom: 236px;
+  width:210px;
+  margin:-1px;
+  border: 1px solid #D8DADA;
+  background-color:#FFF;
+  color:#333;
+}
+.ns-navigationclass{
+  cursor: default;
+  height: 235px;
+  overflow-y: scroll;
+  list-style-type:none;
+}
+.ns-sitesubnav ul {
+  background-color:#FFF;
+  padding-left:15px;
+  color:#333;
+  margin-bottom:0px !important;
+}
+.ns-sitesubnav ul > li {
+  color:#000;
+  font-size:13px;
+  display:block;
+  margin:6px 1px 0px;
+  padding-left:0px;
+  font-size: 15px;
+  list-style-type:none;
+  a{
+    cursor: pointer;
+    letter-spacing: 0.08px;
+    color: #000; 
+    border-color: #FFFFFF;
+  }
+  a:hover {
+    text-decoration:none !important; 
+    cursor:pointer;
+    box-shadow: none; 
+    color: #D52B1E;
+    border-color: #FFFFFF; 
+  }
+}
+.ns-sitesubnav ul > li :hover {
+  color: #D52B1E;
+}

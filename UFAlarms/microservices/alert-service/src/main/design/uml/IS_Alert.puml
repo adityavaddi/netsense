@@ -1,0 +1,67 @@
+@startuml
+    box  "Client" #LightGrey
+    participant REST_API
+    end box
+
+    box "Interface Service" #white
+       participant AlertController
+    end box
+
+    box "Authentication" #white
+           participant ms.request.acl
+    end box
+
+    box "Kafka" #white
+           participant api.reply.interface
+           participant ms.request.acl
+           participant ms.request.alert
+    end box
+
+    box "Alert Service" #LightGrey
+       participant AlertMicroService
+    end box
+
+    alt Scenario: Get All Alerts/Alerts For Node
+        REST_API -> AlertController: Get all alerts
+        AlertController -> ms.request.acl
+        ms.request.acl -> ms.request.acl
+        ms.request.acl -> api.reply.interface
+        api.reply.interface -> AlertController
+
+        AlertController -> ms.request.alert
+        ms.request.alert -> AlertMicroService
+        AlertMicroService -> AlertMicroService
+        AlertMicroService -> api.reply.interface
+        api.reply.interface -> AlertController: Alerts
+        AlertController -> REST_API: Alerts
+    end
+
+    alt Scenario: Add Alert/Update Alerts will be feature toggled
+
+    end
+
+    alt Scenario: Get/Delete/Dismiss Alert
+    REST_API -> AlertController: Alert Get/Delete/Dismiss
+    AlertController -> ms.request.acl
+    ms.request.acl -> ms.request.acl
+    ms.request.acl -> api.reply.interface
+    api.reply.interface -> AlertController
+
+    AlertController -> ms.request.alert
+    ms.request.alert -> AlertMicroService
+    AlertMicroService -> AlertMicroService
+    AlertMicroService -> api.reply.interface
+    api.reply.interface -> AlertController: Alert
+    AlertController -> REST_API: Alert
+    end
+
+    alt Scenario: Internal api.reply.interface - Get Alert Sys
+
+    AlertController -> ms.request.alert: Get Alert Sys
+    ms.request.alert -> AlertMicroService
+    AlertMicroService -> AlertMicroService
+    AlertMicroService -> api.reply.interface
+    api.reply.interface -> AlertController: Alert
+    end
+
+@enduml

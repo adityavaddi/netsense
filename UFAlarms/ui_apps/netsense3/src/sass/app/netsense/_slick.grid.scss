@@ -1,0 +1,189 @@
+.ui-widget-content {
+  color: $black !important;
+}
+
+.slick-header-column {
+  height: 32px !important;
+  background-color: $white !important;
+  color: $black !important;
+  font-size: 16px !important;
+  padding-top: 8px !important;
+  font-family: "NHaasGroteskDSW01-75Bd";
+}
+
+.slick-cell {
+  padding-top: 11px !important;
+  border-right: 1px solid transparent !important;
+  font-size:17px;
+  font-family: "NeueHaasGroteskTextW01";
+}
+
+.slick-cell.selected {
+  background-color: #F6F6F6 !important;
+}
+
+.slick-cell.flashing {
+    background: #F6F6F6 !important;
+}
+
+.slick-headerrow input[type=text] {
+  width: 90% !important;
+  height: 28px;
+  padding-left: 4px;
+  color:$charcoal;
+  font-weight:100;
+  font-family: "FontAwesome","NHaasGroteskDSW01-75Bd";
+}
+
+::placeholder {
+  color: #d8dada !important;
+  font-size:14px;
+  font-family:"FontAwesome","NeueHaasGroteskTextW01";
+}
+
+.border-focus-grey:focus {
+  border-color: #767474 !important;
+}
+
+
+.slick-headerrow-column {
+  background-color: $white !important;
+}
+
+.slick-column-name {
+  input[type="checkbox"]{
+  -webkit-appearance: none ;
+  -moz-appearance: none;
+  background-color: white;
+  border: 1px solid black;
+ // padding: 7px;
+  width: 15px !important;
+  height: 15px !important;
+  display: inline-block;  
+  position : absolute;
+  transform: none !important;
+    // margin-left: 4px !important;
+  }
+  input[checked="checked"]:after{
+  content: '\2713';
+  font-size: 14px;
+  position: absolute;
+  width: 15px !important;
+  height: 15px !important;
+  line-height: 16.5px;
+  //padding: 3px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  bottom: 0.5px;
+  right: 0.1px;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  }
+  input[checked="checked"]{
+  background-color: white;
+  border: 1px solid black;
+  }
+}
+.slick-sort-indicator {
+  display: inline-block;
+  /*  float: left; */
+  margin-bottom: 100px;
+  position:relative;
+  top:6px;
+}
+
+// Data Grid checkboxes
+
+.slick-cell-checkboxsel{
+  input[type="checkbox"]{
+  -webkit-appearance: none ;
+  -moz-appearance: none;
+  background-color: white;
+  border: 1px solid black;
+ // padding: 7px;
+  width: 15px !important;
+  height: 14px !important;
+  display: inline-block;  
+  position : absolute;
+    // transform: scale(1.8);
+    // margin-left: 4px !important;
+  }
+  input[checked="checked"]:after{
+  content: '\2713';
+  font-size: 14px;
+  position: absolute;
+  width: 15px !important;
+  height: 14px !important;
+  line-height: 16.5px;
+  //padding: 3px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  bottom: 0.5px;
+  right: 0.1px;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  }
+  input[checked="checked"]{
+  background-color: white;
+  border: 1px solid black;
+  }
+  input[disabled="disabled"]{
+  background-color:white;
+  border: 1px solid #D8DADA;
+  }
+}
+.slick-column-name{
+  input[type="checkbox"]{
+    transform: scale(1.8);
+    margin-left: 6px !important;
+  }
+}
+
+ // Styles for new slick grid headers
+.slick-header-columns {
+  /*background: url('images/header-columns-bg.gif') repeat-x center bottom;*/
+  border-bottom: 0px !important;
+
+}
+.slick-headerrow-column{
+  border-right: 0px !important;
+}
+
+.slick-headerrow-columns{
+   width: auto !important
+ }
+
+.slick-row.odd {
+  background-color: $white !important;
+}
+
+.slick-header-column:hover, .slick-header-column-active {
+  background-color: #FFF !important;
+}
+#Customer-grid,
+#Group-grid,
+#Node-grid,
+#Notification-grid,
+#Notification-inactive-grid, 
+#Alert-grid, 
+#Commissioning-grid, 
+#Config-grid, 
+#Firmware-grid,
+#Ota-grid, 
+#Usermanagement-grid, 
+#Suspendedusers-grid,
+#Fixture-grid, 
+#Proximity-grid, 
+#Daylight-grid, 
+#Trafficconfig-grid, 
+#Parkinggroup-grid, 
+#Parkingzone-grid,
+#Schedule-grid,
+#Parkingspace-grid,
+#Audit-grid{
+  margin-left: 25px !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}

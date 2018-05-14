@@ -1,0 +1,7 @@
+MATCH (u:User {userid: "{{userid}}" })-[*..5]-(a)
+WHERE a.name contains "{{query}}" AND "{{categories}}" contains HEAD(LABELS(a))
+RETURN distinct {
+   name: a.name,
+   id: a[lower(HEAD(LABELS(a)))+"id"],
+   type: HEAD(LABELS(a))
+} AS matches

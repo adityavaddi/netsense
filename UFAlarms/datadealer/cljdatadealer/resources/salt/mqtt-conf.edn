@@ -1,0 +1,12 @@
+{:test {
+    :host "tcp://{{ interface.local-hostname }}:3002"
+    :client-id "data-dealer"}
+ :development {
+    :host "tcp://{{ interface.local-hostname }}:3002"
+    :client-id "data-dealer"}
+ :production {
+    :host "tcp://{{ interface.local-hostname }}:3002"
+    :client-id "data-dealer"}
+ :docker {
+    :host "tcp://mqtt_service:1883"
+    :client-id "data-dealer"}}

@@ -1,0 +1,4 @@
+MATCH (s:Site {siteid: {props}.siteid})-[:HAS]->(lg:LightingGroup)-[:HAS]->(n:Node)
+WHERE NOT (lg)<-[:LINKED]-(:{{type}}) AND
+      NOT (lg:SiteLightingGroup)
+RETURN COLLECT(DISTINCT({nodeid: n.nodeid})) as nodeids

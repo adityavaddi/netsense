@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class='default' dir='{dir}'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=Edge,chrome=1' />
+  <meta name='description' content='NetSense Site Administrator Dashboard'>
+  <meta name='viewport' content='width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <link rel='shortcut icon' href='/imgs/verizon.ico'>
+  <meta name='msapplication-TileColor' content='#E76049'>
+  <meta name='msapplication-TileImage' content='/mstile-144x144.png'>
+  <meta name='application-name' content='NetSense'>
+  <link media='screen' rel='stylesheet prefetch' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css'>
+  <link media='screen' rel='stylesheet prefetch' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/fonts/fontawesome-webfont.svg'>
+  <link media='screen' rel='stylesheet' type='text/css' href='/css/vendor/pace/pace.css' />
+  <link media='screen' rel='stylesheet' type='text/css' href='/bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css'>
+  <link media='screen' rel='stylesheet' type='text/css' href='/css/vendor/perfect-scrollbar/perfect-scrollbar.css'>
+  <link media='screen' rel='stylesheet' type='text/css' href='/css/vendor/morris/morris.css'>
+  <link media='screen' rel='stylesheet' type='text/css' href='/css/vendor/multiselectdropdown/multiselect.css'>
+  <link media='screen' rel='stylesheet' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.0/jquery.timepicker.css'>
+  <link media='screen' rel='stylesheet' type='text/css' href='/css/scheduler.css'>
+  <link media='screen' rel='stylesheet' type='text/css' href='/css/vendor/slickgrid/slick.grid.css'>
+  <link media='screen' rel='stylesheet' type='text/css' href='/css/vendor/slickgrid/slick-default-theme.css'>
+  <link media='screen' rel='stylesheet' type='text/css' href='/bower_components/vex/css/vex.css'> {stylesheets}
+  <link media='screen' rel='stylesheet' type='text/css' href='/css/fonts/{app}/fonts.css'>
+    <style type="text/less">
+     
+      #selected { float:left; width:100%; margin-top:20px; }
+            
+      .vertical-centre (@height) { height:@height; line-height:@height !important; display:inline-block; vertical-align:middle; }
+      .border-box { box-sizing:border-box; -moz-box-sizing:border-box; }
+      .transition (@value1,@value2:X,...) { @value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`; -webkit-transition: @value; -moz-transition: @value; -ms-transition: @value; -o-transition: @value; transition: @value; }
+      .transform (@value1,@value2:X,...) { @value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`; transform:@value; -ms-transform:@value; -webkit-transform:@value; -o-transform:@value; -moz-transform:@value; }
+      
+      @height:40px;
+      @spacing:10px;
+      @select-colour:#FFF;
+      @font-size:14px;
+      @border-colour:#CCC;
+      
+      div.dropdown-container { float:left; display:block; width:100%;
+        &.show>div.dropdown-list { .transform(scale(1, 1)); }
+        
+        >div.dropdown-display { float:left; width:100%; background:white; height:@height; cursor:pointer; border:solid 1px @border-colour; border-bottom-color: #000; .border-box;
+          @icon-width:14px;
+          >* { float:left; height:100%; .vertical-centre(@height); }
+          >span { font-size:@font-size; width:100%; position:relative; .border-box; padding-right:@icon-width+@spacing*2; padding-left:@spacing; }
+          >i { position:relative; width:@icon-width; margin-left:(@spacing+@icon-width)*-1; font-size:1.125em; font-weight:bold; padding-right:@spacing; text-align:right; }
+        }
+
+        >div.dropdown-list { float:left; width:100%; position:relative; z-index:1000; width:100%; .transform(scale(1, 0)); .transition(-webkit-transform ease 250ms); .transition(transform ease 250ms);
+          >div { position:absolute; width:100%; z-index:2; cursor:pointer; border-bottom:1px solid #CCC; background:white; max-height:300px; overflow-y:auto; box-shadow: 1px 1px 0px 0px #000;
+            >div { float:left; width:100%; padding:0 @spacing; font-size:@font-size; .border-box; border:solid 1px @border-colour; border-top:none;
+              @icon-width:20px;
+              box-shadow: 3px 0px 0px #FFF inset; 
+              &:hover { box-shadow: 3px 0px 0px #000 inset; }
+              &.selected { box-shadow: 3px 0px 0px #F00 inset;background:@select-colour; }
+              >* { .vertical-centre(@height); }
+              >span { float:left; width:100%; position:relative; padding-right:@icon-width+@spacing; .border-box; color:inherit; }
+              >i { float:left; width:@icon-width; margin-left:@icon-width*-1; display:none; }
+              &.selected>i { display:inline-block; }
+            }
+          }
+        }
+      }
+        </style>
+
+</head>
+
+<body class="fade-out" data-version='{version}'>
+  <div id='pace-loader' class='pace-big'></div>
+  <div id='app-preloader'></div>
+  <div id='app-container'>{container}</div>
+  <div id='app-modal'></div>
+  <script type='text/javascript' src='/js/common/pace/pace.js'></script>
+  <script type='text/javascript' src='/js/common/uuid/uuid.js'></script>
+  <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/async/1.5.2/async.js'></script>
+  <script type="text/javascript" src='//cdn.jsdelivr.net/lodash/4.13.1/lodash.min.js'></script>
+  <script type='text/javascript' src='/bower_components/modernizr/modernizr.js'></script>
+  <script type="text/javascript">
+    window.Modernizr._config = {enableClasses: true, classPrefix: ''};
+    window.ModernizrOverride = {touch: false};
+  </script>
+  <script type='text/javascript' src='/bower_components/modernizr/modernizr-override.js'></script>
+  <script type='text/javascript' src='/bower_components/jquery/dist/jquery-3.3.1.js'></script>
+  <script type='text/javascript' src='/bower_components/jquery-ui/jquery-ui.min.js'></script>
+  <script type="text/javascript" src='/js/vendor/jquery-easy-confirm-dialog/jquery.easy-confirm-dialog.min.js'></script>
+  <script type='text/javascript' src='/bower_components/moment/moment.js'></script>
+  <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.4/moment-timezone-with-data.min.js'></script>
+  <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.6/jstz.min.js'></script>
+  <script type='text/javascript' src='/bower_components/eventemitter2/lib/eventemitter2.js'></script>
+  <script type='text/javascript' src='/bower_components/vex/js/vex.combined.min.js'></script>
+  <script type='text/javascript' src='/js/vendor/p-scrollbar/min/perfect-scrollbar.min.js'></script>
+  <script type='text/javascript' src='/bower_components/react/react-with-addons.js'></script>
+  <script type="text/javascript" src="/js/vendor/noty/jquery.noty.packaged.min.js"></script>
+  <script type="text/javascript" src="/js/common/notydefaults.js"></script>
+  <script type='text/javascript' src='/js/common/react-l20n/react-l20n.js'></script>
+  <script type='text/javascript' src='/js/common/rubix-bootstrap/rubix-bootstrap.js'></script>
+  <script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA_GF7hf_BZsdY6LS9zZ-Jl9nXKffKc6Lw&libraries=drawing"></script>
+  <script type='text/javascript' src="/js/vendor/slickgrid/jquery.event.drag-2.3.0.js"></script>
+  <script type='text/javascript' src="/js/vendor/slickgrid/jquery.event.drop-2.3.0.js"></script>
+  <script type='text/javascript' src='/js/vendor/slickgrid/slick.dataview.js'></script>
+  <script type='text/javascript' src='/js/vendor/slickgrid/slick.core.js'></script>
+  <script type='text/javascript' src='/js/vendor/slickgrid/slick.grid.js'></script>
+  <script type='text/javascript' src='/js/vendor/slickgrid/plugins/slick.checkboxselectcolumn.js'></script>
+  <script type='text/javascript' src='/js/vendor/slickgrid/plugins/slick.rowselectionmodel.js'></script>
+  <script type='text/javascript' src='/js/vendor/slickgrid/plugins/slick.autotooltips.js'></script>
+  <script type='text/javascript' src='/js/vendor/gmaps/gmaps.js'></script>
+  <script type='text/javascript' src='/js/vendor/gmaps/markerclustererplus.js'></script>
+  <script type='text/javascript' src='/js/vendor/bootstrap/bootstrap.js'></script>
+  <script type='text/javascript' src='/js/vendor/multiselectdropdown/multiselect.js'></script>
+  <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.0/jquery.timepicker.js'></script>
+  <script type='text/javascript' src='/js/vendor/bootstrap-slider/bootstrap-slider.js'></script>
+  <script type='text/javascript' src='/js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.js'></script>
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script>
+  <script type='text/javascript' src='/js/vendor/charts/Chart.bundle.min.js'></script>
+  <script type='text/javascript' src='/js/vendor/ion.rangeSlider/ion.rangeSlider.min.js'></script>
+  <script type='text/javascript' src='/js/vendor/d3/d3.js'></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"></script>
+  <script type='text/javascript' src='/js/vendor/prism/prism.js'></script>
+  <script type='text/javascript' src='/js/common/rubix/rubix.js'></script>
+  <script type='text/javascript' src='/js/common/globals.js'></script>
+  <script type='text/javascript' src='/js/common/globals-common-appendix.js'></script>
+  <script type='text/javascript' src='{appscript}'></script>
+</body>
+
+</html>

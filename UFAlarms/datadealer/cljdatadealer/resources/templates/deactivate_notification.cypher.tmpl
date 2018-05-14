@@ -1,0 +1,4 @@
+MATCH (s:Site {siteid: "{{siteid}}"})-[:HAS]->(n:Notification {notificationid: "{{notificationid}}"})
+REMOVE n:Notification:Active
+SET n:Notification:Inactive
+    

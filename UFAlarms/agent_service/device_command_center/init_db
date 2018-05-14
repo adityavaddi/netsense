@@ -1,0 +1,28 @@
+#!/usr/local/bin/escript
+-record(dcc_msgs, {node_id, msg_name, time_stamp, msg_bytes}).
+
+main(_Args) ->
+  	init_db().
+
+%{ok,[["/Users/ginahagg"]]}
+init_db () ->
+  {ok,[[Homedir]]} = init:get_argument(home),
+  application:set_env(mnesia, dir, filename:join(Homedir, "DCC_mnesia")),
+  mnesia:create_schema([node()]),
+  mnesia:start(),
+  mnesia:create_table(dcc_msgs,[{type, bag},{disc_copies, [node()]},{attributes, record_info(fields, dcc_msgs)}]),
+  %io:format("Res: ~p~n",[Res]),
+  mnesia:stop().
+
+
+
+  %Root = filename:absname_join(filename:dirname(?FILE), "."),
+   %Root = code:which(?MODULE),
+    %Root = filename:dirname(?FILE), 
+    %Privdir = code:priv_dir("device_service"),
+    %application:set_env(mnesia, dir, Root),
+    %mnesia:create_schema([node()]),
+  %code:priv_dir("device_service"),
+  %"/Users/ginahagg/sensity/Farallones/agent_service/device_command_center/_rel/device_service_release/lib/device_service-0.1.0/priv"
+  %Priv = code:priv_dir("device_service"),
+  %application:set_env(mnesia, dir, Priv),

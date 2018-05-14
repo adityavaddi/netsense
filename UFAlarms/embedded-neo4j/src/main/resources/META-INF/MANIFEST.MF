@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Main-Class: com.sensity.netsense.neo4j.embedded.Node

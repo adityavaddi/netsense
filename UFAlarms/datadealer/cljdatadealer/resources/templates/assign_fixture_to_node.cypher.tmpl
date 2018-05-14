@@ -1,0 +1,12 @@
+MATCH (f:Fixture:Active {fixtureid: "{{fixtureid}}"})
+WITH { props } AS props, f
+UNWIND props.nodeids AS nodeid
+    MATCH (n:Node {nodeid: nodeid})
+    OPTIONAL MATCH (:Fixture)-[oldHas:HAS]->(n)-[oldBelongs:BELONGS_TO]->(:Fixture)
+    DELETE oldHas, oldBelongs
+    MERGE (n)-[:BELONGS_TO]->(f)
+    MERGE (f)-[:HAS]->(n)
+RETURN {
+    fixtureid: f.fixtureid,
+    nodeids: COLLECT( n.nodeid )
+} AS result

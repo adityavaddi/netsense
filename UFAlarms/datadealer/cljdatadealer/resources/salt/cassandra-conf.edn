@@ -1,0 +1,28 @@
+{:development {:host ["{{cassandra.local-ip}}"]
+               :keyspace "farallones"
+               :class "SimpleStrategy"
+               :factor 1
+               :max-connections-per-host 100
+               :base-delay-ms 200
+               :max-delay-ms 1000}
+ :production {:host ["{{cassandra.local-ip}}"]
+              :keyspace "farallones"
+              :class "SimpleStrategy"
+              :factor 1
+              :max-connections-per-host 100
+              :base-delay-ms 200
+              :max-delay-ms 1000}
+ :test       {:host ["{{cassandra.local-ip}}"]
+              :keyspace "farallones_test"
+              :class "SimpleStrategy"
+              :factor 1
+              :max-connections-per-host 100
+              :base-delay-ms 200
+              :max-delay-ms 1000}
+ :docker     {:host ["cassandra_service"]
+              :keyspace "farallones"
+              :class "SimpleStrategy"
+              :factor 1
+              :max-connections-per-host 100
+              :base-delay-ms 200
+              :max-delay-ms 1000}}

@@ -1,0 +1,611 @@
+.searchSiteList {
+    background: rgba(0, 0, 0, 0.85) url(/imgs/overlay.png) repeat top left;
+    position: fixed;
+    top: 74px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 100000;
+}
+
+.searchWrapper {
+    position: fixed;
+    top: -1134px;
+    width:277px;
+    right: 211px;
+    height: 990px;
+    overflow-y: scroll; // height: 480px;
+    margin-top: -92px;
+    background-color: #FFFFFF;
+    padding: 0px;
+    border: 1px solid #000;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    z-index: 100001;
+}
+
+.customerForm,
+.sitesForm,
+.otaForm,
+.fixtureForm,
+.firmwareForm,
+.daylightForm,
+.commissioningForm,
+.configForm,
+.newConfigForm,
+.proximityForm,
+.userManagementForm,
+.notificationForm,
+.groupNodeList,
+.scheduleForm{
+    background: rgba(0, 0, 0, 0.47) url(/imgs/overlay.png) repeat top left; //background: transparent url(/imgs/overlay.png) repeat top left;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 100000;
+}
+
+//  Added so that the heasder does not have any clickable items
+.newBackDrop {
+    background: rgba(0, 0, 0, 0.47) url(/imgs/overlay.png) repeat top left !important;
+    z-index: 9999999;
+    pointer-events: none;
+}
+
+//  Adding the extra background to body to get rid of the corner white sections
+.bodyBackdrop {
+    background: rgba(0, 0, 0, 0.87) url(/imgs/overlay.png) repeat top left !important;
+}
+
+.customerWrapper {
+    position: fixed;
+    color: grey;
+    left: 16%;
+    right: 12%; //width:1261px;
+    //height:600px;
+    background-color: #FFFFFF;
+    padding: 0;
+    border: 1px solid #CCCCCC;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    -moz-box-shadow: 0 1px 5px #333333;
+    -webkit-box-shadow: 0 1px 5px #333333;
+    z-index: 100001;
+}
+
+.fixtureWrapper {
+    position: fixed;
+    top: -800px;
+    color: grey;
+    left: 13%;
+    right: 13%;
+    background-color: #FFFFFF;
+    padding: 0 !important;
+    border: 1px solid #CCCCCC;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    -moz-box-shadow: 0 1px 5px #333333;
+    -webkit-box-shadow: 0 1px 5px #333333;
+    z-index: 100001;
+}
+
+.commissioningWrapper {
+    position: fixed;
+    top: -800px;
+    color: grey;
+    left: 31%;
+    right: 31%;
+    background-color: #FFFFFF;
+    padding: 0 !important;
+    border: 1px solid #CCCCCC;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    -moz-box-shadow: 0 1px 5px #333333;
+    -webkit-box-shadow: 0 1px 5px #333333;
+    z-index: 100001;
+} //Adding the extra background to body to get rid of the corner white sections
+.bodyBackdrop {
+    background: rgba(0, 0, 0, 0.87) url(/imgs/overlay.png) repeat top left !important;
+}
+
+.overlayGrey {
+    background: #20657f !important;
+}
+
+.wrapper {
+    position: fixed;
+    top: -800px;
+    color: grey;
+    left: 16%;
+    right: 12%; //width:1261px;
+    //height:600px;
+    background-color: #FFFFFF;
+    padding: 0;
+    border: 1px solid #CCCCCC;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    -moz-box-shadow: 0 1px 5px #333333;
+    -webkit-box-shadow: 0 1px 5px #333333;
+    z-index: 100001;
+}
+
+.customerWrapper {
+    @extend .wrapper
+}
+
+.configWrapper {
+    left: 17%;
+    right: 17%;
+    padding: 0;
+    @extend .wrapper
+}
+
+.newConfigWrapper {
+    left: 26%;
+    right: 26%;
+    padding: 0; //height:200px;
+    @extend .wrapper
+}
+
+.newConfigWrapper {
+    @extend .wrapper
+}
+
+.proximityWrapper {
+    @extend .wrapper
+}
+
+.closeOverlay {
+    float: right;
+    margin-right: 0px;
+    cursor: pointer;
+    color: $white;
+    font-size: 40px;
+}
+
+a.customeroverlayClose {
+    @extend .closeOverlay;
+    margin-top: -3px;
+}
+
+a.fixtureoverlayClose {
+    @extend .closeOverlay;
+    margin-top: -54px;
+}
+
+a.resetPasswordoverlayClose,{
+    @extend .closeOverlay;
+    margin-top: -54px;
+
+}
+
+a.commissioningoverlayClose {
+    @extend .closeOverlay;
+    margin-top: -49px;
+}
+
+.overlayGrey {
+    background: #20657f !important;
+}
+
+// Modal for commissioning will replace
+.commissioning-modal-body {
+    padding: 0px !important;
+    height: 230px;
+}
+
+.Commissioning-modal-header {
+    margin: 0;
+    padding-top: 10px;
+    color: black;
+    margin-left: 11px;
+}
+
+.Commissioning-modal-content {
+    padding: 40px;
+}
+
+#CommissioningoverlayClose,
+#customeroverlayClose,
+#otaoverlayClose,
+#firmwareoverlayClose,
+#daylightoverlayClose,
+#scheduleoverlayClose,
+#sitesoverlayClose,
+#fixtureoverlayClose,
+#proximityoverlayClose,
+#configoverlayClose,
+#userManagementoverlayClose,
+#notificationOverlayClose {
+    float: right;
+    margin-top: -49px;
+    margin-right: 0px;
+    cursor: pointer;
+    color: $white;
+    font-size: 40px;
+}
+
+#CommissioningoverlayClose{
+    margin-top: 0px !important;
+}
+
+//  New Modal Styles overridden from the bootstrap-react
+.modal {
+    right: 0 !important;
+    left: 0 !important;
+}
+
+a.customeroverlayClose {
+    @extend .closeOverlay;
+    margin-top: -3px;
+}
+
+a.proximityoverlayClose {
+    @extend .closeOverlay;
+    margin-top: -51px;
+}
+
+a.configoverlayClose {
+    @extend .closeOverlay;
+    margin-top: -13px;
+}
+
+a.newConfigoverlayClose {
+    @extend .closeOverlay;
+    margin-top: -52px;
+}
+
+#applyConfig {
+    float: right;
+}
+
+.modal-body {
+    position: relative;
+    padding-bottom: 20px;
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+    padding-left: 0px !important;
+} // Customer Edit form and modal overlay - for other modal's as well
+.netsense__form {
+    &--icon {
+        font-size: 30px;
+    }
+    &__header {
+        background-color: #cccccc;
+        height: 50px;
+        width: 100%;
+        h3 {
+            margin: 0;
+            padding: 14px;
+            color: $black;
+        }
+    }
+    &__body {
+        padding: 12px 32px;
+        overflow-y: auto;
+//        height: 450px;
+        h4 {
+            font-weight: 700;
+        }
+        .form-horizontal {
+            padding: 0 24px;
+        }
+    }
+    &--list {
+        display: -webkit-inline-box;
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 3.5px !important;
+        &--item {
+            padding-left: 19px;
+            padding-top: 14px;
+            font-size: 18px;
+        }
+        &--sites {
+            cursor: pointer;
+            letter-spacing: 0.08px;
+            color: $new-sites-icon-color;
+        }
+        a{
+            cursor: pointer;
+            letter-spacing: 0.08px;
+            color: $new-sites-icon-color; 
+            border-color: #FFFFFF;
+        }
+        a:hover {
+            text-decoration:none !important; 
+            cursor:pointer;
+            box-shadow: none; 
+            color: $new-sites-icon-color;
+            border-color: #FFFFFF; 
+        }
+    }
+    &__second--set {
+        padding-left: 70px;
+    }
+    &__input {
+        border: 1px solid #ccc !important;
+        margin-bottom: 6px !important;
+        font-size: 16px !important;
+        color: $black;
+    }
+    margin-top: -51px;
+}
+
+a.otaoverlayClose {
+    @extend .closeOverlay;
+    margin-top: -51px;
+}
+
+a.firmwareoverlayClose {
+    @extend .closeOverlay;
+    margin-top: -51px;
+}
+
+a.daylightoverlayClose {
+    @extend .closeOverlay;
+    margin-top: -51px;
+}
+
+a.configoverlayClose {
+    @extend .closeOverlay;
+    margin-top: -13px;
+}
+
+a.newConfigoverlayClose {
+    @extend .closeOverlay;
+    margin-top: -52px;
+}
+
+#applyConfig {
+    float: right;
+}
+
+.modal-body {
+    position: relative;
+    padding-bottom: 20px;
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+    padding-left: 0px !important;
+} // Customer Edit form and modal overlay - for other modal's as well
+
+.more--customer{
+    left:200px !important;
+}
+.icon-simple-line-icons-arrow-left{
+    font-size:39px !important;
+    position:relative !important;
+    color:#858383;
+    cursor: pointer;
+
+}
+.icon-simple-line-icons-arrow-right{
+    font-size:39px !important;
+    position: relative !important;
+    color:#858383;
+    cursor: pointer;
+}
+
+.generic-previous{
+    @extend .icon-simple-line-icons-arrow-left;
+    left:5px !important;
+    top:40% !important;
+    position:absolute !important;
+}
+
+.generic-next{
+    @extend .icon-simple-line-icons-arrow-right;
+    right:5px !important;
+    top:40% !important;
+    position:absolute !important;
+}
+
+.customer-previous{
+    @extend .icon-simple-line-icons-arrow-left;
+    //left: -95%;
+    top:-8px !important;
+    left:-28px !important;
+}
+
+.customer-next{
+    top:-8px !important;
+}
+
+.schedule-previous{
+    @extend .icon-simple-line-icons-arrow-left;
+    left:-20px;
+    top:240px;
+}
+
+.schedule-next{
+    @extend .icon-simple-line-icons-arrow-right;
+    left:95%;
+    top:240px;
+}
+
+.fixture-previous{
+    @extend .icon-simple-line-icons-arrow-left;
+    left:2px;
+    top:140px;
+}
+
+.fixture-next{
+    @extend .icon-simple-line-icons-arrow-right;
+    /*left:92%;*/
+    top:140px;
+}
+
+.firmware-previous{
+    @extend .icon-simple-line-icons-arrow-left;
+    left:2px;
+    top:140px;
+}
+
+.firmware-next{
+    @extend .icon-simple-line-icons-arrow-right;
+   /* left:92%; */
+    top:140px;
+}
+
+.daylight-previous{
+    @extend .icon-simple-line-icons-arrow-left;
+    left:2px;
+    top:140px;
+}
+
+.daylight-next{
+    @extend .icon-simple-line-icons-arrow-right;
+    /*left:92%;*/
+    top:140px;
+}
+
+.config-previous{
+    @extend .icon-simple-line-icons-arrow-left;
+    left:-28px;
+    top:240px;
+}
+
+.config-next{
+    @extend .icon-simple-line-icons-arrow-right;
+    /*left:95%;*/
+    top:240px;
+}
+
+.user-previous{
+    @extend .icon-simple-line-icons-arrow-left;
+    left:-28px;
+    top:240px;
+}
+.user-next{
+    @extend .icon-simple-line-icons-arrow-right;
+    /*left:95%;*/
+    top:240px;
+}
+
+.proximity-previous{
+    @extend .icon-simple-line-icons-arrow-left;
+    left:-28px;
+    top:240px;
+
+}
+.proximity-next{
+    @extend .icon-simple-line-icons-arrow-right;
+    left:98%;
+    top:240px;
+}
+.notification-previous{
+    @extend .icon-simple-line-icons-arrow-left;
+    left:7px;
+    top:240px;
+}
+
+.notification-next{
+    @extend .icon-simple-line-icons-arrow-right;
+    /*left:95%;*/
+    top:240px;
+}
+
+.netsense__form {
+    &--icon {
+        font-size: 30px;
+    }
+    &__header {
+        background-color: #cccccc;
+        height: 50px;
+        width: 100%;
+        h3 {
+            margin: 0;
+            padding: 14px;
+            color: $black;
+        }
+    }
+    &__body {
+        padding: 12px 32px;
+        h4 {
+            font-weight: 700;
+        }
+        .form-horizontal {
+            padding: 0 24px;
+        }
+    }
+    &--list {
+        display: -webkit-inline-box;
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 8.5px !important;
+        &--item {
+            padding-left: 19px;
+            padding-top: 14px;
+            font-size: 18px;
+        }
+        &--sites {
+            cursor: pointer;
+            letter-spacing: 0.08px;
+            color: $new-sites-icon-color;
+        }
+    }
+    &__second--set {
+        padding-left: 70px;
+    }
+    &__input {
+        border: 1px solid #ccc !important;
+        margin-bottom: 6px !important;
+        font-size: 16px !important;
+        color: $black;
+    }
+    &__input:focus {
+        border-color: #3C3 !important;
+        border-radius: 6px !important;
+        box-shadow: 0px 0px 2px 1px #6C6 !important;
+        transition: all 0.3s ease !important;
+    }
+    &__label {
+        text-align: inherit !important;
+        color: #989595;
+    }
+    &__buttons--set {
+        margin: 50px 10px 10px 10px;
+        .col-md-2:nth-child(2) {
+            padding-left: 31px !important;
+        }
+    }
+    &__checkbox {
+        transform: scale(1.2);
+        margin-left: 45px !important;
+        display: inline-block;
+    } // To Display the buttons at equal distance in the UI as per UXD
+    #validateAddress {
+        margin-left: 35px;
+    }
+    #reset {
+        margin-left: 22px;
+    }
+    &--hierarchy {
+        padding-bottom: 40px;
+    }
+    &--sites {
+        padding-bottom: 90px;
+    }
+} //  new modal - dialog changes : Sass - width
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 1250px;
+        //width: 860px;
+        margin: 20px auto;
+    }
+}
+
+.pin-detail-icon{
+    position: relative;
+    left: 76%;
+    top: 30px;
+    z-index: 1000;
+
+}

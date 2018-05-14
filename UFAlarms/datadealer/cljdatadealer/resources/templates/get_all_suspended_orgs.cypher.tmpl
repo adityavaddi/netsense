@@ -1,0 +1,16 @@
+MATCH(o:Org:Inactive)-[:IS_CUSTOMER_OF*0..4]->(Org)-[:HAS_USER]->(u:User {userid:"{{userid}}"})
+OPTIONAL MATCH (do:Org)-[:HAS_CUSTOMER]->(o:Org)
+RETURN {
+orgid: o.orgid,
+name: o.name,
+street1: o.street1,
+street2: o.street2,
+city: o.city,
+state: o.state,
+postal_code: o.postal_code,
+country: o.country,
+contact_email: o.contact_email,
+contact_phone: o.contact_phone,
+contact_name: o.contact_name,
+po: do.orgid
+} AS items

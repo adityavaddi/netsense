@@ -1,0 +1,29 @@
+.dashboardWrapper .rubix-panel-body,
+.notificationsWrapper .rubix-panel-body {
+  max-height: calc(50vh - 65px) !important;
+  min-height: calc(50vh - 75px) !important;
+}
+
+.rubix-panel-container {
+  z-index: 1 !important;
+  border-radius: 0 !important;
+   margin-bottom:5px !important;
+}
+
+// Rubix-bootstrap.js
+.rubix-panel-controls {
+  position: absolute;
+  width: 100px;
+  left: -2000px;
+}
+.rubix-panel-body {
+  background-color: $white;
+  padding: 20px 0px 12px 0px !important;
+  min-height: calc(100vh - 82px) !important;
+  border-left:1px solid #DDD;
+  border-right:1px solid #DDD;
+}
+/*        #navbar {
+      z-index: 100 !important;
+    }
+*/

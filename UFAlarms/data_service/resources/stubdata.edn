@@ -1,0 +1,103 @@
+{ :principals [{:id "1" :name "Sensity" :partners ["1" "2"]}]
+  :partners  [{:id "1" :name "GE" :address "1" :principal "1" } {:id "2" :name "Acuity" :address "2" :principal "1" }]
+  :customers [{:id "1" :name "Simon" :address "3" :sites ["1" "2"] :organizations ["1" "2"] :provider [:principal "1"]}]
+  :sites [{:id "1" :name "Westfield Valley Fair" :address "4" :owner "Customer$1" :nodeGroups ["1"]}]
+  :nodeGroups [{:id "1" :nodes [
+      "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23"
+      "24" "25" "26" "27" "28" "29" "30" "31" "32" "33" "34" "35" "36" "37" "38" "39" "40" "41" "42" "43" "44"
+      "45" "46" "47"] :type "2"}]
+  :nodes [
+    {:id "1"  :hardwareID "N0123076b" :hardwareModel "2" :latitude "37.32641132781336"
+      :longitude "-121.94854657312135" :localIP "192.168.101.89" :fixtures []}
+    {:id "2"  :hardwareID "N0123076c" :hardwareModel "2" :latitude "37.32611962515193"
+      :longitude "-121.94861916359514" :localIP "192.168.100.188" :fixtures []}
+    {:id "3"  :hardwareID "N0123076e" :hardwareModel "2" :latitude "37.325952193496924"
+      :longitude "-121.94840133188791" :localIP "192.168.100.159" :fixtures []}
+    {:id "4"  :hardwareID "N0123076f" :hardwareModel "2" :latitude "37.32629922149461"
+      :longitude "-121.94806169080726" :localIP "192.168.100.80" :fixtures []}
+    {:id "5"  :hardwareID "N01230770" :hardwareModel "2" :latitude "37.32645025283504"
+      :longitude "-121.94882753459751" :localIP "192.168.102.40" :fixtures []}
+    {:id "6"  :hardwareID "N01230771" :hardwareModel "2" :latitude "37.32628708766094"
+      :longitude "-121.94772246444245" :localIP "192.168.103.193" :fixtures []}
+    {:id "7"  :hardwareID "N01230772" :hardwareModel "2" :latitude "37.32595272671936"
+      :longitude "-121.94812774656839" :localIP "192.168.100.237" :fixtures []}
+    {:id "8"  :hardwareID "N01230773" :hardwareModel "2" :latitude "37.32645073529117"
+      :longitude "-121.9476356015922" :localIP "192.168.100.23" :fixtures []}
+    {:id "9"  :hardwareID "N01230776" :hardwareModel "2" :latitude "37.325875389908845"
+      :longitude "-121.94839073974231" :localIP "192.168.102.62" :fixtures []}
+    {:id "10"  :hardwareID "N01230778" :hardwareModel "2" :latitude "37.32637133636518"
+      :longitude "-121.94923925359944" :localIP "192.168.102.101" :fixtures []}
+    {:id "11"  :hardwareID "N0123077c" :hardwareModel "2" :latitude "37.3258114226448"
+      :longitude "-121.94782935093826" :localIP "192.168.101.49" :fixtures []}
+    {:id "12"  :hardwareID "N0123077d" :hardwareModel "2" :latitude "37.32604914091605"
+      :longitude "-121.94785516071312" :localIP "192.168.100.76" :fixtures []}
+    {:id "13"  :hardwareID "N0123077e" :hardwareModel "2" :latitude "37.32579167385587"
+      :longitude "-121.94829954463574" :localIP "192.168.102.26" :fixtures []}
+    {:id "14"  :hardwareID "N0123077f" :hardwareModel "2" :latitude "37.3262828218923"
+      :longitude "-121.94860759337644" :localIP "192.168.100.210" :fixtures []}
+    {:id "15"  :hardwareID "N01230780" :hardwareModel "2" :latitude "37.325956972979014"
+      :longitude "-121.94762966293428" :localIP "192.168.100.30" :fixtures []}
+    {:id "16"  :hardwareID "N01230782" :hardwareModel "2" :latitude "37.32595217397738"
+      :longitude "-121.94839543360803" :localIP "192.168.102.34" :fixtures []}
+    {:id "17"  :hardwareID "N01230783" :hardwareModel "2" :latitude "37.32612264097973"
+      :longitude "-121.94822489237788" :localIP "192.168.100.98" :fixtures []}
+    {:id "18"  :hardwareID "N01230785" :hardwareModel "2" :latitude "37.32621575270065"
+      :longitude "-121.94872180275911" :localIP "192.168.100.103" :fixtures []}
+    {:id "19"  :hardwareID "N01230786" :hardwareModel "2" :latitude "37.32579439070425"
+      :longitude "-121.94883155784964" :localIP "192.168.101.59" :fixtures []}
+    {:id "20"  :hardwareID "N01230787" :hardwareModel "2" :latitude "37.326037489517006"
+      :longitude "-121.94883445553774" :localIP "192.168.101.200" :fixtures []}
+    {:id "21"  :hardwareID "N01230789" :hardwareModel "2" :latitude "37.32587912246956"
+      :longitude "-121.9476967181597" :localIP "192.168.101.138" :fixtures []}
+    {:id "22"  :hardwareID "N0123078c" :hardwareModel "2" :latitude "37.32629183589464"
+      :longitude "-121.94936294419779" :localIP "192.168.100.89" :fixtures []}
+    {:id "23"  :hardwareID "N0123078d" :hardwareModel "2" :latitude "37.32621670256536"
+      :longitude "-121.94769966566582" :localIP "192.168.100.140" :fixtures []}
+    {:id "24"  :hardwareID "N0123078e" :hardwareModel "2" :latitude "37.32604073957833"
+      :longitude "-121.94840106328229" :localIP "192.168.100.181" :fixtures []}
+    {:id "25"  :hardwareID "N0123078f" :hardwareModel "2" :latitude "37.32571760648265"
+      :longitude "-121.94848823507527" :localIP "192.168.102.92" :fixtures []}
+    {:id "26"  :hardwareID "N01230790" :hardwareModel "2" :latitude "37.32629770131455"
+      :longitude "-121.94774011425955" :localIP "192.168.100.98" :fixtures []}
+    {:id "27"  :hardwareID "N01230791" :hardwareModel "2" :latitude "37.32637661782925"
+      :longitude "-121.94861604529956" :localIP "192.168.101.160" :fixtures []}
+    {:id "28"  :hardwareID "N01230792" :hardwareModel "2" :latitude "37.32621931793764"
+      :longitude "-121.94822233481415" :localIP "192.168.100.116" :fixtures []}
+    {:id "29"  :hardwareID "N01230793" :hardwareModel "2" :latitude "37.32596285794468"
+      :longitude "-121.94759532811986" :localIP "192.168.100.219" :fixtures []}
+    {:id "30"  :hardwareID "N01230794" :hardwareModel "2" :latitude "37.326053406689724"
+      :longitude "-121.94742466616623" :localIP "192.168.101.57" :fixtures []}
+    {:id "31"  :hardwareID "N01230796" :hardwareModel "2" :latitude "37.326294501994674"
+      :longitude "-121.94850990824688" :localIP "192.168.101.89" :fixtures []}
+    {:id "32"  :hardwareID "N01230797" :hardwareModel "2" :latitude "37.32572452276559"
+      :longitude "-121.94849529844532" :localIP "192.168.100.58" :fixtures []}
+    {:id "33"  :hardwareID "N01230798" :hardwareModel "2" :latitude "37.32612461321167"
+      :longitude "-121.9480496208667" :localIP "192.168.100.94" :fixtures []}
+    {:id "34"  :hardwareID "N0123079b" :hardwareModel "2" :latitude "37.32571760648268"
+      :longitude "-121.94828706939916" :localIP "192.168.101.130" :fixtures []}
+    {:id "35"  :hardwareID "N0123079e" :hardwareModel "2" :latitude "37.32621131962923"
+      :longitude "-121.94917451901449" :localIP "192.168.100.99" :fixtures []}
+    {:id "36"  :hardwareID "N0123079f" :hardwareModel "2" :latitude "37.32637021919601"
+      :longitude "-121.94831554157747" :localIP "192.168.102.43" :fixtures []}
+    {:id "37"  :hardwareID "N012307a0" :hardwareModel "2" :latitude "37.326451801728936"
+      :longitude "-121.94742437763216" :localIP "192.168.103.211" :fixtures []}
+    {:id "38"  :hardwareID "N012307a2" :hardwareModel "2" :latitude "37.32613101186577"
+      :longitude "-121.94773848462097" :localIP "192.168.100.74" :fixtures []}
+    {:id "39"  :hardwareID "N012307a3" :hardwareModel "2" :latitude "37.325799722939465"
+      :longitude "-121.94822001417378" :localIP "192.168.100.190" :fixtures []}
+    {:id "40"  :hardwareID "N012307a5" :hardwareModel "2" :latitude "37.326115390592825"
+      :longitude "-121.94944578369359" :localIP "192.168.101.126" :fixtures []}
+    {:id "41"  :hardwareID "N012307a6" :hardwareModel "2" :latitude "37.32628602120457"
+      :longitude "-121.94823208415528" :localIP "192.168.101.103" :fixtures []}
+    {:id "42"  :hardwareID "N012307a9" :hardwareModel "2" :latitude "37.325787545818905"
+      :longitude "-121.94904922205541" :localIP "192.168.101.97" :fixtures []}
+    {:id "43"  :hardwareID "N012307aa" :hardwareModel "2" :latitude "37.326042288513015"
+      :longitude "-121.94861729009153" :localIP "192.168.100.79" :fixtures []}
+    {:id "44"  :hardwareID "N012307ab" :hardwareModel "2" :latitude "37.32635960553634"
+      :longitude "-121.94829779823522" :localIP "192.168.102.66" :fixtures []}
+    {:id "45"  :hardwareID "N012307ac" :hardwareModel "2" :latitude "37.32605083958084"
+      :longitude "-121.94780454034117" :localIP "192.168.100.253" :fixtures []}
+    {:id "46"  :hardwareID "N012307ad" :hardwareModel "2" :latitude "37.32579012491576"
+      :longitude "-121.94944846592307" :localIP "192.168.100.37" :fixtures []}
+    {:id "47"  :hardwareID "N012307af" :hardwareModel "2" :latitude "37.3259639243894"
+      :longitude "-121.94750502711031" :localIP "192.168.103.230" :fixtures []}]}

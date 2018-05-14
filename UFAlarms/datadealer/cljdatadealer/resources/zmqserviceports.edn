@@ -1,0 +1,61 @@
+{
+ :test {:actlog
+        {:js
+         {:fe 5511
+          :be 5512}
+         :broker "127.0.0.1"}
+        :devsvc
+        {:mp
+         {:fe 6531
+          :be 6532}
+         :broker "127.0.0.1"}
+        :devsvcctrl
+        {:mp
+         {:fe 6541
+          :be 6542}
+         :broker "127.0.0.1"}}
+ :development {:actlog
+               {:js
+                {:fe 5511
+                 :be 5512}
+                :broker "127.0.0.1"}
+               :devsvc
+               {:mp
+                {:fe 6531
+                 :be 6532}
+                :broker "127.0.0.1"}
+               :devsvcctrl
+               {:mp
+                {:fe 6541
+                 :be 6542}
+                :broker "127.0.0.1"}}
+ :production {:actlog
+              {:js
+               {:fe 5511
+                :be 5512}
+               :broker "0.0.0.0"}
+              :devsvc
+              {:mp
+               {:fe 6531
+                :be 6532}
+               :broker "0.0.0.0"}
+              :devsvcctrl
+              {:mp
+               {:fe 6541
+                :be 6542}
+               :broker "0.0.0.0"}}
+ :docker {:actlog
+          {:js
+           {:fe 5511
+            :be 5512}
+           :broker "0.0.0.0"}
+          :devsvc
+          {:mp
+           {:fe 6531
+            :be 6532}
+           :broker "0.0.0.0"}
+          :devsvcctrl
+          {:mp
+           {:fe 6541
+            :be 6542}
+           :broker "legacy_service"}}}

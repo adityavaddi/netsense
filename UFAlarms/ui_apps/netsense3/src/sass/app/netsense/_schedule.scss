@@ -1,0 +1,142 @@
+.sched-display,
+.image-display,
+.config-display,
+.localconfig-display,
+.factoryconfig-display,
+.provconfig-display,
+.config-displayalert {
+  display: none;
+  position: absolute;
+  width: 70%;
+  background-color: $white;
+  z-index: 999999;
+  border: 1px solid $grey;
+  left: 15%;
+  top: 8%;
+  cursor: move;
+  box-shadow: 0px 0px 20px 4px $grey;
+}
+
+.sched_spare_time{
+  top:-79px;
+  left:6px;
+}
+.sched_spare_sun{
+  top: -79px;
+  left: 52px;
+}
+
+#sched-heading,
+#image-heading,
+#localconfig-heading,
+#factoryconfig-heading,
+#provconfig-heading,
+#config-heading {
+  font-size: 30px;
+  margin: 10px 35px;
+}
+
+.sched-daydate{
+  h4{
+    font-size:15px;
+  }
+}
+
+
+.schedule-colors-list{
+  list-style-type:none;
+  li{
+    display: -webkit-box;
+    padding:5px 0;
+  }
+  span{
+    padding-left:15px;
+    color:$black;
+  }
+
+  .fixed-dimming{
+    background-color: $fixed-dimming-color;
+    height:20px;
+    width:20px;
+  }
+  .daylight-harvesting{
+    background-color: $daylight-harvesting-color;
+    height:20px;
+    width:20px;
+  }
+  .proximity-dimming{
+    background-color: $proximity-dimming-color;
+    height:20px;
+    width:20px;
+
+  }
+}
+
+// Scheduler Styling for Tablet Portrait view
+@media (min-width: 766px) and (max-width: 1020px){
+  .sched-daydate{
+    h4{
+      font-size:14px;
+      width:233px;
+    }
+  }
+  .sched-trash{
+    top:-5px;
+  }
+  .sched-arrow-up{
+    left:71px;
+  }
+  .sched-addbar {
+    button{
+      width:48%;
+    }
+
+  }
+  .sched_spare_time{
+    top:-96px;
+    left:5px;
+  }
+  .sched_spare_sun{
+    top: -96px;
+    left: 49px;
+  }
+  .sched-container input[type="checkbox"], .sched-container input[type="radio"]{
+    width:15px;
+    height:17px;
+  }
+
+}
+
+// Scheduler Styling for Tablet Landscape view
+@media (width: 1024px){
+  .sched-daydate{
+    h4{
+      font-size:11.5px;
+      width:217px;
+    }
+  }
+  .sched-legend{
+    table{
+      td{
+        font-size: 14px;
+      }
+    }
+  }
+  .sched_spare_time{
+    top:-97px;
+    left:5px;
+  }
+  .sched_spare_sun{
+    top: -97px;
+    left: 49px;
+  }
+  .sched-addbar {
+    button{
+      width:55%;
+    }
+  }
+  .sched-container input[type="checkbox"], .sched-container input[type="radio"]{
+    width:15px;
+    height:17px;
+  }
+}

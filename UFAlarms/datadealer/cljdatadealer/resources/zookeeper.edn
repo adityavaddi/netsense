@@ -1,0 +1,16 @@
+{:development {:host ["127.0.0.1"]
+               :port 2181
+               :topic "acl"
+               :group "acl-consumer-1"}
+ :production {:host ["127.0.0.1"]
+              :port 2181
+              :topic "acl"
+              :group "acl-consumer-1"}
+ :test       {:host ["127.0.0.1"]
+              :port 2181
+              :topic "acl"
+              :group "acl-consumer-1"}
+ :docker     {:host ["zookeeper_service"]
+              :port 2181
+              :topic "acl"
+              :group "acl-consumer-1"}}

@@ -1,0 +1,52 @@
+MATCH (:Site {siteid:"{{siteid}}"})-[:HAS]->(g:Group)
+OPTIONAL MATCH (g)-[:HAS]->(n:Node)
+OPTIONAL MATCH (sch:Schedule)-[:LINKED]->(g)
+OPTIONAL MATCH (etdh:ETDHProfile)-[:LINKED]->(g)
+OPTIONAL MATCH (dh:DHProfile)-[:LINKED]->(g)
+OPTIONAL MATCH (pd:PDProfile)-[:LINKED]->(g)
+
+WITH
+
+CASE sch
+WHEN NULL
+THEN []
+ELSE COLLECT( DISTINCT {scheduleid: sch.scheduleid, name: sch.name})
+END AS schedules,
+
+CASE pd
+WHEN NULL
+THEN []
+ELSE COLLECT( DISTINCT {pdprofileid: pd.pdprofileid, name: pd.name})
+END AS pdprofiles,
+
+CASE etdh
+WHEN NULL
+THEN []
+ELSE COLLECT( DISTINCT {etdhprofileid: etdh.etdhprofileid, name: etdh.name})
+END AS etdhprofiles,
+
+CASE dh
+WHEN NULL
+THEN []
+ELSE COLLECT( DISTINCT {dhprofileid: dh.dhprofileid, name: dh.name})
+END AS dhprofiles,
+
+CASE
+WHEN g:SiteLightingGroup THEN "site-lighting"
+WHEN g:LightingGroup THEN "lighting"
+ELSE "organizational"
+END AS groupType, g, n
+
+ORDER BY n.nodeid
+
+RETURN {
+    groupid: g.groupid,
+    name: g.name,
+    description: g.description,
+    type: groupType,
+    nodeList: COLLECT(n.nodeid),
+    schedules: schedules,
+    pdprofiles: pdprofiles,
+    etdhprofiles: etdhprofiles,
+    dhprofiles: dhprofiles
+} AS items

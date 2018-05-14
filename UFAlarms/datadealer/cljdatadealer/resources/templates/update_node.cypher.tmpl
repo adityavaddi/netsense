@@ -1,0 +1,53 @@
+MATCH (n:Node {nodeid: "{{nodeid}}"})
+
+WITH n, {props} AS props,
+
+CASE {props}.softwareVersion
+WHEN n.softwareVersion THEN n.firmwareLastUpdated
+ELSE timestamp() END AS firmwareLastUpdated
+
+OPTIONAL MATCH (n)-[:BELONGS_TO]->(f:Fixture)
+OPTIONAL MATCH (n)-[:BELONGS_TO]->(g:Group)
+
+SET n += { props }
+SET n.firmwareLastUpdated = firmwareLastUpdated
+
+RETURN {
+apn: n.apn,
+channel: n.channel,
+nodeid: n.nodeid,
+name: n.name,
+model: n.model,
+latitude: n.latitude,
+longitude: n.longitude,
+altitude: n.altitude,
+latitude_gps: n.latitude_gps,
+longitude_gps: n.longitude_gps,
+iccid: n.iccid,
+imei: n.imei,
+imsi: n.imsi,
+ip: n.ip,
+building: n.building,
+level: n.level,
+meshId: n.meshId,
+note: n.note,
+baseStation: n.baseStation,
+publicKey: n.publicKey,
+signature: n.signature,
+remoteNetwork: n.remoteNetwork,
+bssid: n.bssid,
+configToken: n.configToken,
+softwareVersion: n.softwareVersion,
+firmwareLastUpdated: n.firmwareLastUpdated,
+mfgDate: n.mfgDate,
+circuit: n.circuit,
+time_zone: n.time_zone,
+fixtureid: f.fixtureid,
+time_zone: n.time_zone,
+country_code: n.country_code,
+subType: n.subType,
+voltageType: n.voltageType,
+modemRevEd: n.modemRevEd,
+groupnamelist: COLLECT(DISTINCT(g.name)),
+groupidlist: COLLECT(DISTINCT(g.groupid))
+} AS node

@@ -1,0 +1,3 @@
+@reboot /home/ubuntu/join-cluster.sh >> /home/ubuntu/logs/join-cluster.log
+@reboot /home/ubuntu/listener.sh >> /home/ubuntu/logs/listener.log
+

@@ -1,0 +1,43 @@
+// NEW UXD SPECS Sass Coding for customer grid
+
+.netsense-center-panel{
+  width:auto;  // Width as provided by UXD specs on 10th May
+  margin:0 auto;
+}
+
+.customer-sites-icon{
+  font-size:16px;
+  margin-left:6px;
+  cursor:pointer;
+  color:$new-sites-icon-color;
+}
+.sites-label{
+  margin-top: 70px !important;
+}
+.customer-type{
+  float: right;
+  left: 23px;
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1025px) {
+  .netsense-center-panel{
+    width:100%;  // Width as provided by UXD specs on 10th May
+    margin:0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-horizontal .control-label {
+    text-align: inherit !important;
+  }
+}
+.site-list-name{
+  font-size: 16px !important;
+}
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px; 
+}
+

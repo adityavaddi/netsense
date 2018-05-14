@@ -1,0 +1,17 @@
+MATCH (pg:ParkingGroup {parkinggroupid:"{{parkinggroupid}}"}) MERGE (pz:ParkingZone:Active {
+name: "{{name}}",
+description: "{{description}}",
+type: "{{type}}",
+available_spaces_num: "{{available_spaces_num}}",
+occupied_spaces_num: "{{occupied_spaces_num}}",
+max_spaces_num: "{{max_spaces_num}}",
+address: "{{address}}",
+tags: "{{tags}}",
+length: "{{length}}",
+car_length: "{{car_length}}",
+bounding_box_real_world: "{{bounding_box_real_world}}",
+bounding_box_monitored_area: "{{bounding_box_monitored_area}}"
+})
+MERGE (pz)-[:BELONGS_TO]->(pg)
+MERGE (pg)-[:HAS]->(pz)
+ON CREATE SET pz.created=timestamp()

@@ -1,0 +1,42 @@
+@startuml
+    participant Client_Application
+    participant Interface_Service
+    participant Kafka
+    participant Alert_Service
+    participant ACL_Service
+    participant Cassandra
+    box  #LightGreen
+       participant Client_Application
+       participant Interface_Service
+       participant ACL_Service
+    end box
+    box #LightGrey
+        participant Kafka
+    end box
+    box  #LightBlue
+       participant Alert_Service
+       participant Cassandra
+    end box
+
+    Client_Application -> Interface_Service: API call
+    hnote over Kafka : Topic: ACL REQUEST Topic
+    Interface_Service -> Kafka: authentication request
+    Kafka -> ACL_Service: authentication request
+    ACL_Service -> Kafka: authentication response
+    hnote over Kafka : Topic: Interface Service RESPONSE Topic
+    Interface_Service  -> Kafka: subscribe to RESPONSE topic
+    Interface_Service -> Interface_Service: on new message
+    Interface_Service -> Kafka: publish REST query params
+
+
+    hnote over Kafka : Topic: Alert Service REQUEST topic
+    Kafka <- Alert_Service: subscribes to the REQUEST topic
+    Alert_Service -> Alert_Service: on new message, validate the request
+    Alert_Service -> Cassandra: CRUD Operation based on the Model
+    Cassandra -> Alert_Service: Result Set
+    Alert_Service -> Kafka: publish result to reponse topic
+    hnote over Kafka : Topic: Interface Service RESPONSE Topic
+    Kafka <- Interface_Service: subscribes result from response topic
+    Interface_Service -> Client_Application: response
+
+@enduml

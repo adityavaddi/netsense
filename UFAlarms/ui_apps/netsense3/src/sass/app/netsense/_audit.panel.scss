@@ -1,0 +1,49 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+
+//Audit panel
+#datemin,
+#datemax {
+  border: 2px solid #ddd;
+  padding-left: 3px;
+  color: $font-blue!important;
+}
+
+.generic-styling{
+  color: $font-blue!important;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+/**** Firefox 18- */
+input#datemin:-moz-placeholder
+,input#datemax:-moz-placeholder {
+  @extend .generic-styling;
+}
+
+/*****  Firefox 19+ */
+input#datemin::-moz-placeholder,
+input#datemax::-moz-placeholder {
+  @extend .generic-styling;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 $black;
+}
+
+input#datemin:-ms-input-placeholder,
+input#datemin::-webkit-input-placeholder,
+input#datemax:-ms-input-placeholder,
+input#datemax::-webkit-input-placeholder {
+  @extend .generic-styling;
+}
+
+#datemin, #datemax, .btn-theme.btn-outlined{
+  color:#000000 !important;
+}

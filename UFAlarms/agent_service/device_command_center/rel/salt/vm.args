@@ -1,0 +1,9 @@
+-name device_command_center@10.0.8.2
+-setcookie farallones
+## Heartbeat management; auto-restarts VM if it dies or becomes unresponsive
+## (Disabled by default..use with caution!)
+#-heart
+#-env ERL_CRASH_DUMP_SECONDS 30
+-smp enable
+##+P  #by default is 262144, increase this number if need to.
+##+Q  #(ERL_MAX_PORTS is deprecated. use this intead.setting, by default is 65536, but adjusted according to system set limits. (about 264K in Ubuntu)

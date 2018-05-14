@@ -1,0 +1,4 @@
+{:production {:hosts ["{{neo4j.local-ip}}"] :port 7687}
+ :development {:dbpath "/home/ubuntu/neo4j-db"}
+ :test {:dbpath "/tmp/java-query-db"}
+ :docker {:hosts ["neo4j"] :port 7687}}

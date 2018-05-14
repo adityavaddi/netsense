@@ -1,0 +1,27 @@
+@startuml
+box #LightGreen
+participant Client
+end box
+
+participant Interface_Service
+participant Kafka
+
+box #LightGrey
+participant SSE
+end box
+Client -> Interface_Service: Customer requests SSE endpoint with URI(v1/stream1/orgid/siteid/nodeid/topicname)
+Interface_Service -> Kafka: Interface service POSTs to Kafka with URI.
+Kafka -> Interface_Service: Subscribed successfully with code - 200,status-success else code - 400,status - Bad request
+Interface_Service -> Kafka: Interface Service posts heartbeat message
+Kafka -> Interface_Service: Heartbeats successfully with code - 200,status-success else code - 400,status - Bad request
+Interface_Service -> Kafka: Interface service POSTs disconnect message to Kafka with URI.
+Kafka -> Interface_Service: disconnects successfully with code - 200,status-success else code - 400,status - Bad request
+Kafka -> SSE: SSE persists to Cassandra table sse_filter
+ref over SSE
+ Cassandra(sse_filter table)
+ subscribe - inserts the data in Cassandra
+ heartbeat-updates the TTL in Cassandra
+ disconnect-SSE service to clean up connections(via TTL)
+end ref
+
+@enduml

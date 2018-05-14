@@ -1,0 +1,11 @@
+MATCH (s:Site {siteid:"{{siteid}}"}) CREATE UNIQUE (o:Overlay:Active {fileName: "{{fileName}}",overlayid: "{{overlayid}}",buildingLevel: "{{buildingLevel}}",description: "{{description}}",users: "{{users}}",imageBounds: "{{imageBounds}}",imageData:"{{imageData}}",imageType:"{{imageType}}"})-[:BELONGS_TO]->(s) CREATE UNIQUE (s)-[:HAS]->(o) RETURN {
+overlayid: o.overlayid,
+fileName: o.fileName,
+description: o.description,
+users: o.users,
+imageBounds: o.imageBounds,
+imageData: o.imageData,
+imageType: o.imageType,
+buildingLevel: o.buildingLevel,
+name: "overlay"
+} AS overlay

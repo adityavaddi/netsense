@@ -1,0 +1,70 @@
+
+<!--************************************** Menu 1 Content **************************************-->
+
+<div class="addMarginBottom">
+
+	<div class="verticalAlignContainer viewMaps disabled pullRight addPaddingLeft"> 
+		<span class="verticalAlign" > <a href="#mapOverlay" data-toggle="modal" > View Maps </a> </span>
+		<!--span class="verticalAlign" onclick="viewMaps();"> View Maps </span--> 
+	</div> 
+
+	<div class="verticalAlignContainer importText pullRight"> 
+		<span class="verticalAlign">Import</span> 
+		<input type="file" id="fileUpload" class="upload" onchange="Upload();"/>
+	</div>       
+
+	<div class="verticalAlignContainer editText disabled pullRight addPaddingRight"> 
+		<span class="verticalAlign" onclick="Edit();">Edit</span> 
+	</div>       
+
+	<div class="clear"></div>
+
+	<div id="paginatedTable">
+
+		<table id="csvToTable" class="addMarginTop editableTable"> 
+		</table>
+
+		<div class="clear"></div>
+
+		<div class="paginationNavigation">
+			<div class="first"></div>
+			<div class="previous"></div>
+			<div class="pageNumbers"></div>
+			<div class="next"></div>
+			<div class="last"></div>
+		</div>
+
+		<!-- Display Maps data in Modal -->
+
+        <div class="modal modalStandard fade" id="mapOverlay">
+          <div class="modalDialog">
+            <div class="modalContainer">      
+              <div class="modalHeader">
+                <ul class="modalMainNavRight">
+                  <li><a class="closeIcon" data-dismiss="modal"> &times; </a></li>
+                </ul>
+              </div>      
+              <div class="modalContent">
+                <div class="mapContainer">
+					<div id="mapCanvas"></div>
+				</div>
+              </div>
+            </div>  
+          </div>
+        </div>
+
+		<!-- End display Maps data in Modal -->
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	LoadTable(savedTable);
+
+	$("#mapOverlay").on("shown.bs.modal", function () {
+    	initializeMap();
+    }); 
+
+</script>
+
+<!--************************************** End Menu 1 Content **************************************-->

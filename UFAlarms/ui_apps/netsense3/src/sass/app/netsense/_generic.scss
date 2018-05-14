@@ -1,0 +1,474 @@
+// Generic Styles
+.alert-danger {
+  border-radius: 0px !important;
+}
+
+.modal-backdrop.in {
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// In all most al pages : - customers,configs, daylight, firmware, groups, proximity, schedules, sites, usermanagement
+.pulse:hover,
+.pulsenow {
+  -webkit-animation: pulse 0.4s 1;
+  animation: pulse 0.4s 1;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.4);
+    -webkit-transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.4);
+    -webkit-transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.bigger {
+  transform: scale(1.6);
+}
+
+.target-fade {
+  -webkit-animation: target-fade 3s 1;
+  -moz-animation: target-fade 3s 1;
+}
+
+@-webkit-keyframes target-fade {
+  0% {
+    background-color: rgba(255, 255, 51, .9);
+  }
+  100% {
+    background-color: rgba(255, 255, 51, 0);
+  }
+}
+
+@-moz-keyframes target-fade {
+  0% {
+    background-color: rgba(255, 255, 51, .9);
+  }
+  100% {
+    background-color: rgba(255, 255, 51, 0);
+  }
+}
+
+html.default body {
+  #rubix-nav-header {
+    .navbar-nav:first-child, .navbar-nav:last-child {
+      margin-right: -12px !important;
+    }
+  }
+}
+
+.panel-heading a {
+  outline: 0 !important;
+}
+
+#footer-container {
+  display: none;
+}
+
+.form-error {
+  color: #ED7000;
+  margin-left: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0px 8px;
+}
+
+.form-group>div>span {
+  color: #000;
+  padding-left: 14px;
+}
+
+.form-group {
+  margin-left: 0px !important;
+}
+
+// Slick grid
+input[type=text] {
+  border: 2px solid transparent;
+  border-bottom: 2px solid $light-grey;
+  margin-bottom: -4px;
+  font-size: 16px;
+}
+
+input[type=text]:not(.timefield):focus {
+  border-bottom-color: #000 !important;
+  transition: all 0.3s ease !important;
+}
+
+.timefield {
+  border-bottom:2px solid #CCC; 
+  font-size:14px;
+  color:#333;
+  border-radius:4px;
+  width:90%;
+  outline:none;
+  max-width:110px;
+  padding-left:12px;
+}
+.timefield:focus {
+  border:2px solid #ccc;
+}
+  
+.progress-bar-striped {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent) !important;
+    background-size: 40px 40px !important;
+}
+
+.bg-success {
+  background-color:#55c87e;
+}
+
+.btn {
+  border-radius: 4px !important;
+  text-transform: none !important;
+}
+
+label {
+  line-height: 1.2em;
+}
+
+.gm-style-iw {
+  border-radius: 12px;
+}
+
+.gm-style-iw table {
+  border-spacing: 12px 0px;
+  border-collapse: separate;
+}
+
+.gm-style-iw td {
+  padding: 0px;
+}
+
+/* Notifications table */
+#notificationtyperow span:not(:empty):not(:last-child):after,
+#notificationseverityrow span:not(:empty):not(:last-child):after {
+  content: ", ";
+}
+
+
+// config/configdetail.jsx
+.checkboxlabel {
+  padding-left: 10px;
+  position: relative;
+  top: -5px;
+  font-size: 16px;
+}
+
+/* Config page */
+// configform.jsx
+.infoMessage {
+  box-shadow: 0 0 0 1px, 0 0 0 0 transparent;
+  color: #000000;
+  font-size: 17px;
+  font-family: "NeueHaasGroteskTextW01";
+  border-radius: 0.285714rem;
+  box-shadow: 0 0 0 1px rgba(34, 36, 38, 0.22) inset, 0 0 0 0 transparent;
+  line-height: 1.4285em;
+  margin: 0 40px;
+  padding: 10px;
+  position: relative;
+  transition: opacity 0.1s ease 0s, color 0.1s ease 0s, background 0.1s ease 0s, box-shadow 0.1s ease 0s;
+}
+/* End Config page */
+
+
+.overflow_y{
+  overflow-y: auto;
+}
+@media (max-width: 990px)  {
+  html.default body #container.container-open > #body{
+    margin-right: 0 !important;
+  }
+
+  // Fix the side bar in tablet view
+  html.default body #sidebar{
+    left:0 !important;
+  }
+
+  html.default body #rubix-nav-header{
+    margin-left:250px !important;
+    position:absolute !important;
+  }
+
+  .btn_nodes_schedule{
+    position: inherit !important;
+  }
+}
+
+// Fix the side bar in tablet view
+@media (min-width: 990px){
+  html.default body #rubix-nav-header{
+    position:absolute !important;
+  }
+  .btn-big{
+    width:135px;
+    padding:0;
+
+  }
+}
+
+// search site list
+   .form-search {
+    height: 39px;
+    display: block;
+    width: 100%;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    line-height: 1.78571;
+    border-width: 0px;
+    letter-spacing: 0.5px;
+    border-radius: 0 !important;
+    padding-left: 25px;
+}
+#search-site{
+  position: absolute;
+  top:9px;
+  padding-left:3px;
+  font-size:16px;
+}
+
+// New Design Styles added : Generic
+
+.netsense{
+  &__padding__left{
+    &--none{
+      padding-left:0;
+    }
+
+    &--added{
+      padding-left:10px;
+    }
+  }
+  &__button{
+    border-radius: 0 !important;
+    margin-left:30px;
+  }
+  &__table__title{
+    font-family: "NHaasGroteskDSW01-75Bd";
+    font-size:32px;
+    color: $black;
+    margin-top:-4px;
+    padding-left: 23px;
+  }
+  &__map__table__title{
+    font-family: "NHaasGroteskDSW01-75Bd";
+    font-size:32px;
+    color: $black;
+    padding: 10px 0px 0px 2px;
+  }
+}
+
+.btn-commission-disable{
+  background-color: #D8DADA !important;
+  color: white !important;
+  height: 36px;
+  border-radius: 20px !important;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-commission-enable{
+  background-color: #ffffff;
+  color: #000000 !important;
+  height: 36px;
+  border-radius: 20px !important;
+  cursor: pointer;
+  border: 1px solid #000000;
+  white-space: nowrap;
+}
+
+.btn-set-config-disable{
+  background-color: #D8DADA !important;
+  font-size: 100%
+}
+.btn-set-config-enable{
+  font-size: 100%
+}
+.btn-primary-green{
+    // @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+background-color:  green !important;
+border-color: green !important;
+}
+
+
+ .rubix-icon .icon-ikons-close :focus{
+    background: #3C3;
+ }
+ #reqContent{
+   padding-left: 0px;
+   position: relative;
+   bottom: 14px;
+ }
+ #details{
+   padding-top: 7px;
+   position: relative;
+   right: 10px;
+ }
+ #empty-space{
+   margin-bottom: -30px !important;
+ }
+ .reset-form-error {
+  color: #F33;
+  text-align: center !important;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+// -------------------re-skinning nov-29-------------------------------
+.netsense__form__header{
+  background: #ffffff !important;
+  height: 60px !important;}
+.netsense__form__label , .form-group > .control-label {
+  color: #000000; 
+  font-family:NHaasGroteskDSW01-75Bd;
+  margin-top:10px;
+}
+
+.orange{
+  border:1px solid #ED7000 !important;
+  border-bottom:2px solid #ED7000 !important;
+}
+
+.netsense__form__input , input.form-control[type="text"] , input.form-control[type="password"] , input.form-control[type="email"] , .ms-parent ,select.form-control
+{
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 0px !important;
+  border-radius: 0px !important;
+  font-size: 16px !important;
+  color: #000000;
+  height:40px;
+  text-shadow:0 0 0 #000;
+}
+
+input.form-control.mini-text[type="text"]
+{
+  font-size:14px !important;
+  height:20px;
+  padding:0px 4px;
+}
+
+.netsense__form__input:focus , input.form-control:focus {
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease !important; }
+
+.ms-choice {
+  line-height:40px;
+}
+
+.invalidAlert{
+  float:left;
+}
+
+.netsense__form--hierarchy{
+  padding-bottom: 0px !important;
+  float:left;
+}
+
+.commit_info{
+  border: 0 none;
+}
+
+.netsense__form--sites{
+  padding-bottom:0px;  
+  float:left;
+}
+
+.sites-label{
+  margin-top:0px !important;  
+}
+
+.ns-span-line{
+  height: 3px;
+  background-color: #D52B1E;
+  position: absolute;
+  width: 100%;}
+.netsense__form--list--sites {
+  color: #000000 !important; }
+.ns-notifications-icon{
+  background: url(/imgs/new-icons/notifications.svg) no-repeat;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+}
+.ns-edit-icon{
+  background: url(/imgs/new-icons/edit.svg) no-repeat;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  left: 13px;
+  top: 8px;
+}
+.ns-customer-edit-icon{
+  background: url(/imgs/new-icons/edit.svg) no-repeat;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  bottom: 2px !important;
+  position: relative;
+  cursor: pointer;
+}
+.ns-arrow-icon{
+  background: url(/imgs/new-icons/arrow.svg) no-repeat;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  left: 65px;
+  top: 13px;
+}
+.ns-span-position{
+  margin-top: 7.5px !important;
+  height: 35px;
+}
+.ns-customer-site-icon{
+  background: url(/imgs/new-icons/site.svg) no-repeat;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.buttons-groups-overlay{
+  position: relative;
+  top: 56px;
+}
+
+.slick-cell-checkboxsel input[checked="checked"]:after, .slick-column-name input[checked="checked"]:after {
+  bottom: -1.5px !important;
+  right: -0.9px !important;
+}

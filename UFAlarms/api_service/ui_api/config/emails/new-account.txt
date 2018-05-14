@@ -1,0 +1,4 @@
+Your NetSense account is ready. Please go to {{url}} to login.
+Your user name is: {{email}}
+Your temporary password is: {{password}}
+You will be asked to change your password after your first login.

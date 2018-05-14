@@ -1,0 +1,17 @@
+MATCH (a:Notification:Active {nodeid: "{{nodeid}}", name: "{{name}}"}) RETURN {
+    notificationid: a.notificationid,
+    name: a.name,
+    nodeid: a.nodeid,
+    severity: a.severity,
+    rules: a.rules,
+    email: a.email,
+    phone: a.phone,
+    active: a.active,
+    msg: a.msg,
+    notificationtype: n.notificationtype,
+    severity: n.severity,
+    rule_selector: n.rule_selector,
+    scope: n.scope,
+    created: a.created,
+    updated: a.updated
+} AS items

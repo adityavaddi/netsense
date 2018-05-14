@@ -1,0 +1,48 @@
+.static-header{
+height: 40px;
+background-color: #eeeeee;
+text-align: -webkit-left;
+padding-top: 6px;
+padding-left: 10px;
+color: black;
+font-size: medium;
+}
+.group-btnDanger{
+position: relative;
+left: 10px
+}
+.group-btnSave{
+    position: relative;
+    bottom: 30px;
+    left: 173px;
+}
+.group-btnPush{
+  position: relative;
+  left: 112px;  
+}
+.group-header{
+    height: 64px;
+    background-color: #eeeeee;
+    text-align: -webkit-left;
+    padding-top: 10px;
+    padding-left: 27px;
+    color: black;
+    font-size: x-large;
+    font-weight: 700;
+}
+#select-lighting{
+  transform: scale(0.9);
+  outline: none;
+  
+}
+#select-organizational{
+  transform: scale(0.9);
+  outline: none;
+  position: relative;
+  bottom: 2px;
+}
+#grp-type{
+  position: relative;
+  bottom: 5px;
+  left: 5px;
+}

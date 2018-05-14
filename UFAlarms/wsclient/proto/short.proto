@@ -1,0 +1,6 @@
+package erproto.short;
+
+message short {
+    required string name = 1;
+    optional string email = 2;
+}

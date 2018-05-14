@@ -1,0 +1,10 @@
+MATCH (s:Site)-[:HAS]->(pg:ParkingGroup {parkinggroupid: "{{parkinggroupid}}"})
+RETURN {
+  parkinggroupid: pg.parkinggroupid,
+  name: pg.name,
+  description: pg.description,
+  vehicle_types: pg.vehicle_types,
+  policy: pg.policy,
+  parkingzones: pg.parkingzones,
+  site: {siteid: s.siteid, sitename: s.name}
+} AS parkinggroup

@@ -1,0 +1,73 @@
+/* User mgmt page */
+// Vendor style for the button : noty vendor
+.noty_buttons #button-0 {
+  width: 100px;
+}
+
+
+.apiKeyOverlay,
+.updatePasswordOverlay,
+.resetPasswordOverlay,
+.helpOverlay {
+  background: transparent url(/imgs/overlay.png) repeat top left;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1000;
+}
+
+.apiKeyWrapper,
+.updatePasswordWrapper,
+.helpWrapper {
+  position: fixed;
+  top: -800px;
+  left: 20%;
+  right: 20%;
+  background-color: $white;
+  padding: 20px;
+  -moz-box-shadow: 0 1px 5px $charcoal;
+  -webkit-box-shadow: 0 1px 5px $charcoal;
+  z-index: 100001;
+}
+
+.resetPasswordWrapper {
+  position: fixed;
+  top: -560px;
+  right: 30.9%;
+  background-color: $white;
+  padding: 20px 20px 22px 35px;
+  -moz-border-radius: 20px;
+  -moz-box-shadow: 0 1px 5px $charcoal;
+  -webkit-box-shadow: 0 1px 5px $charcoal;
+  z-index: 100001;
+}
+
+.apiKeyWrapper h3,
+.updatePasswordWrapper h3,
+.resetPasswordWrapper h3,
+.helpWrapper h3 {
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+a.overlayClose,
+a.updatePasswordoverlayClose,
+a.helpoverlayClose {
+  background: transparent url("/imgs/cancel.png") repeat scroll left top;
+  float: right;
+  width: 26px;
+  height: 26px;
+  margin-top: -30px;
+  margin-right: -30px;
+  cursor: pointer;
+}
+
+.info-message{
+  position: relative;
+  top: 20px;
+  display: -webkit-inline-box;
+  font-size: 13px;
+}
+/* End User mgmt page */

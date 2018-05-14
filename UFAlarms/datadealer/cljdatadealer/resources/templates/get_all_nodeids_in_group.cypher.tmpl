@@ -1,0 +1,4 @@
+MATCH (n:Node:Active)-[r:BELONGS_TO]->(g:Group {groupid: "{{groupid}}"})
+RETURN DISTINCT {
+    nodeid: n.nodeid
+} AS items

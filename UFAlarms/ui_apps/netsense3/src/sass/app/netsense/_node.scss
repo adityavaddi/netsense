@@ -1,0 +1,274 @@
+/* new code added
+* /firmwareform.jsx
+*/
+
+.otaWrapper{
+  border: 3px double #ccc;
+  padding: 0.5em;
+}
+
+.otaWrapper dt{
+  float: left;
+  clear: left;
+  width: 100px;
+}
+
+.otaWrapper dt:after{
+  content: ":";
+}
+
+.otaWrapper dd{
+  margin: 0 0 0 110px;
+  color: black;
+  padding: 0 0 0.5em 0;
+}
+
+.firmware-display,
+{
+  display: none;
+  position: absolute;
+  width: 70%;
+  background-color: $white;
+  z-index: 999999;
+  border: 2px solid $light-grey;
+  border-radius: 16px;
+  left: 15%;
+  top: 8%;
+  cursor: move;
+  box-shadow: 0px 0px 30px 8px $grey;
+}
+
+#firmware-heading,
+{
+  font-size: 30px;
+  margin: 10px 35px;
+}
+
+.nodeAccordionWrapper .panel-title a:hover, .nodeAccordionWrapper .panel-title a:focus{
+  color: #000000;
+  font-weight:bold;
+  border-color: #000000;
+}
+
+#trafficconfig_legend {
+  background: #FFF;
+  padding: 10px;
+  margin: 5px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  box-shadow:0px 1px 4px -1px rgba(0, 0, 0, 0.3);
+  border-radius:2px;
+}
+
+.trafficconfig_color {
+  border: 1px solid;
+  height: 12px;
+  width: 12px;
+  margin-right: 3px;
+  float: left;
+}
+
+.trafficconfig_grey{
+  background-color: #525252;
+}
+
+.trafficconfig_green{
+  background-color: #4DFA90;
+}
+
+.trafficconfig_red{
+  background-color: #FF5468;
+}
+
+.trafficconfig_yellow{
+  background-color: #4641f4;
+}
+
+
+/*
+* nodes/nodeform.jsx
+*/
+.nodeAlertsWrapper,
+.nodeDismissedAlertsWrapper {
+  border: 3px double $light-grey;
+  padding: 0.5em;
+}
+
+.nodeAlertsWrapper dt,
+.nodeDismissedAlertsWrapper dt {
+  float: left;
+  clear: left;
+  width: 100px;
+  text-align: right;
+  font-weight: bold;
+  word-wrap:break-word;
+  color: $font-blue;
+}
+
+.nodeAlertsWrapper dt:after,
+.nodeDismissedAlertsWrapper dt:after {
+  content: ":";
+}
+
+.nodeAlertsWrapper dd,
+.nodeDismissedAlertsWrapper dd {
+  margin: 0 0 0 110px;
+  word-wrap:break-word;
+  color: $black;
+  padding: 0 0 0.5em 0;
+}
+
+/* Nodepanel changes */
+// nodeform.jsx - app/components
+.accordionWrapper .panel-title {
+  font-size: auto;
+}
+
+.accordionWrapper .panel-group .panel-heading+.panel-collapse>.panel-body {
+  border: 0 none !important;
+}
+
+.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group{
+  border-top: 0 none !important;  
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body{
+  border: 0 none !important;
+}
+
+.accordionWrapper .panel-group, .accordionWrapper .panel-group .panel, .accordionWrapper .panel-group .panel-heading, .accordionWrapper .panel-group .panel-heading a, .accordionWrapper .panel-group .panel-title, .accordionWrapper .panel-group .panel-title a, .accordionWrapper .panel-group .panel-body, .accordionWrapper .panel-group .panel-group .panel-heading + .panel-collapse > .panel-body
+{
+  box-shadow:none;
+}
+
+
+.accordionWrapper .panel-group .panel-heading a::after{
+  content: " " !important;
+  background: url(/imgs/close.png) no-repeat !important;
+  height:30px;
+  width:30px;
+  top:10px !important;
+  right:-10px !important;
+}
+
+.accordionWrapper .panel-group .panel-heading a.collapsed::after{
+  content: " " !important;
+  background: url(/imgs/open.png) no-repeat !important;
+}
+
+.accordionWrapper .panel-group,
+.accordionWrapper .panel-group .panel,
+.accordionWrapper .panel-group .panel-heading,
+.accordionWrapper .panel-group .panel-heading a,
+.accordionWrapper .panel-group .panel-title,
+.accordionWrapper .panel-group .panel-title a,
+.accordionWrapper .panel-group .panel-body,
+.accordionWrapper .panel-group .panel-group .panel-heading+.panel-collapse>.panel-body {
+  border-radius: 2px;
+  border: 0;
+}
+
+.ns-form-btn, .ns-save-btn, .ns-reset-btn, .ns-suspend-btn, .ns-delete-btn, .ns-cancel-btn, .ns-validate-btn, .ns-reset-pwd-btn, .ns-api-key-btn, .ns-big-btn{
+  width:auto !important;
+  padding-left:15px !important;
+  padding-right:15px !important;
+}
+
+.nodeAlertsWrapper dt, .nodeDismissedAlertsWrapper dt{
+  color:#000000 !important;  
+}
+
+.accordionWrapper .panel-group .panel-heading {
+  padding: 0;
+  a{
+    display: block;
+    background: $white;
+    color: $black;
+    padding: 8px;
+    text-decoration: none;
+    position: relative;
+    height: 38px;
+    border-top:1px solid $black;
+    border-bottom:1px solid $black;
+  }
+
+  a.collapsed {
+    background: $white;
+    color: inherit;
+  }
+
+  a:after {
+    content: '-';
+    position: absolute;
+    right: 20px;
+    top: -1px;
+    font-size: 30px;
+  }
+
+  a.collapsed:after {
+    content: '+';
+  }
+}
+
+.accordionWrapper .panel-group {
+  .panel-collapse {
+    margin-top: 5px !important;
+  }
+  .panel-body {
+    background: $white;
+    padding: 15px;
+    p:last-child,
+    ul:last-child,
+    ol:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .panel {
+    background-color: transparent;
+  }
+}
+
+#innerAccordion {
+  margin: 16px 8px;
+}
+
+
+#nodesummary {
+  td {
+    font-weight: bold;
+  }
+  td:nth-child(2) {
+    color: #00AC3E;
+  }
+  td:nth-child(3) {
+    color: #FFBC3D;
+  }
+  td:nth-child(4) {
+    color: #ED7000;
+  }
+
+  td:nth-child(5) {
+    color: #000;
+  }
+}
+
+.dismiss-all {
+    margin-right: 40px;
+    background-color: #5cb85c;
+    border-radius: 3px;
+    float: right;
+    color: $white;
+    border: none;
+    height: 27px;
+    margin-top: -2px;
+    font-size:12px;
+}
+#model{
+  width: 190px !important;
+}
+
+// Fix the side bar in tablet view
+@media (min-width: 990px) and (max-width: 1024px) {
+  .btn_nodes_schedule{
+    position: inherit !important;
+  }
+}

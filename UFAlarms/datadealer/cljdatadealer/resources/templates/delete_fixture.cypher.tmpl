@@ -1,0 +1,8 @@
+MATCH (f:Fixture:Active {fixtureid: "{{fixtureid}}"})
+    OPTIONAL MATCH (f)-[oldHas:HAS]->(:Node)-[oldBelongs:BELONGS_TO]->(f)
+    DELETE oldHas, oldBelongs
+    REMOVE f:Fixture:Active
+    SET f:Fixture:Inactive
+RETURN {
+    fixtureid: f.fixtureid
+}

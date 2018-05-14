@@ -1,0 +1,4 @@
+MATCH (s:Site {siteid:"{{siteid}}"})
+CREATE (c:Config { props })
+CREATE UNIQUE (c)-[:BELONGS_TO]->(s)
+CREATE UNIQUE (s)-[:HAS]->(c)

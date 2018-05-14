@@ -1,0 +1,20 @@
+{
+  "name": "exporter",
+  "version": "1.0.0",
+  "description": "Tool for exporting 2x system data",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Dragan Ignjatic",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.4",
+    "commander": "^2.9.0",
+    "superagent": "^3.0.0",
+    "node-html-encoder": "^0.0.2"
+  },
+  "bin": {
+    "exp": "./index.js"
+  }
+}

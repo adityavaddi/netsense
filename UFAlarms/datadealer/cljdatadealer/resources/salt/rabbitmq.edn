@@ -1,0 +1,12 @@
+{:docker {:host "rabbitmq"
+ :username "farallones"
+ :password "sensity1"}
+:test {:host "127.0.0.1"
+ :username "farallones"
+ :password "sensity1"}
+:development {:host "127.0.0.1"
+ :username "farallones"
+ :password "sensity1"}
+:production {:host "{{rabbit.local-ip}}"
+ :username "{{rmq-username}}"
+ :password "{{rmq-password}}"}}

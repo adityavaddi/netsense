@@ -1,0 +1,103 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.ns-panel-btn{
+  height: 36px;
+  margin-bottom: 0; 
+  text-align: center;
+  color: #ffffff;
+  border-radius: 20px;
+  vertical-align: middle;
+  font-size: 14px;
+  position: relative;
+  background-color: #000000;
+  float: right;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.ns-big-btn {
+  @extend .ns-panel-btn;
+  width: 130px;
+  margin-right: 24px;
+}
+.ns-med-btn {
+  @extend .ns-panel-btn;
+  width: 105px;
+  margin-right: 24px;
+}
+.ns-small-btn {
+  @extend .ns-panel-btn;
+  width: 105px;
+}
+
+
+// --------------------------------------------------
+
+.ns-form-btn{
+  height: 36px;
+  width: 105px;
+  border-radius: 20px;
+  margin-bottom: 0; 
+  text-align: center;
+  color: #000000;
+  vertical-align: middle;
+  font-size: 14px;
+  position: relative;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #000000;
+  white-space: nowrap;
+}
+
+.ns-save-btn{
+  @extend .ns-form-btn;
+  width: 105px;
+  border-radius: 20px !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid transparent !important;
+  margin-left: 25px;
+}
+
+.ns-reset-btn{
+  @extend .ns-form-btn;
+  margin-left: 20px;
+}
+
+.ns-suspend-btn{
+  @extend .ns-form-btn;
+}
+
+.ns-delete-btn{
+  @extend .ns-form-btn;
+}
+
+.ns-cancel-btn{
+  @extend .ns-form-btn;
+  margin-right: -15px;
+}
+
+.ns-validate-btn{
+  @extend .ns-form-btn;
+  width: 135px;
+  margin-left: 25px;
+}
+
+.ns-reset-pwd-btn{
+  @extend .ns-form-btn;
+  width: 135px;
+  margin-left: 25px;
+}
+
+.ns-close-btn{
+  @extend .ns-form-btn;
+}
+
+.ns-api-key-btn{
+  @extend .ns-form-btn;
+  width: 140px;
+  margin-left: 25px;
+}
+// --------------------------------------------------

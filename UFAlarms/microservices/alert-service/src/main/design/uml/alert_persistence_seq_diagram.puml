@@ -1,0 +1,45 @@
+@startuml
+    participant Kafka
+    participant Alert_Service
+    participant Cassandra
+    box #LightGrey
+        participant Kafka
+    end box
+    box  #LightBlue
+       participant Alert_Service
+       participant Cassandra
+    end box
+
+    alt Scenario: Core node Alarms
+        hnote over Kafka : Topic: Core.Alarm topic
+        Kafka <- Alert_Service: subscribes to the Core.Alarm topic
+        Alert_Service -> Alert_Service: On new Core Node Alarm
+        Alert_Service -> Alert_Service: Convert MsgPack to RestPack
+        Alert_Service -> Cassandra: Get OrgHierarchy for Node
+        Cassandra -> Alert_Service: OrgHierarchy
+        Alert_Service -> Alert_Service: Enrich the Alarm
+        Alert_Service -> Cassandra: Insert or Update the enriched Alarm (i.e Alert)
+
+        hnote over Kafka : Topic: Alert topic
+        Alert_Service <- Cassandra: Get Or Insert UF Alarm
+        Alert_Service -> Alert_Service: Add UF Alarm properties to Alert
+        Cassandra -> Alert_Service: Enriched Alert
+        Kafka <- Alert_Service: Publish enriched alarm (i.e Alert) to alert topic
+    end
+
+    alt Scenario: Video node Alarms
+        hnote over Kafka : Topic: Alarm topic
+        Kafka <- Alert_Service: subscribes to the Alarm topic
+        Alert_Service -> Alert_Service: on New Video Node Alarm
+        Alert_Service -> Cassandra: Get OrgHierarchy for Node
+        Cassandra -> Alert_Service: OrgHierarchy
+        Alert_Service -> Alert_Service: Enrich the Alarm
+        Alert_Service -> Cassandra: Insert or Update the enriched Alarm (i.e Alert)
+        hnote over Kafka : Topic: Alert topic
+        Alert_Service <- Cassandra: Get Or Insert UF Alarm
+        Alert_Service -> Alert_Service: Add UF Alarm properties to Alert
+        Cassandra -> Alert_Service: Enriched Alert
+        Kafka <- Alert_Service: Publish enriched Alarm (i.e Alert) to Alert topic
+    end
+
+@enduml

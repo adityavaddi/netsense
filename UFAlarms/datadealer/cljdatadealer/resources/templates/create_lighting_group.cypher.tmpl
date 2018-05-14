@@ -1,0 +1,17 @@
+MATCH (s:Site {siteid:"{{siteid}}"})
+CREATE (g:Group:LightingGroup:Active {groupid: "{{groupid}}", name: "{{name}}", description: "{{description}}"})
+CREATE UNIQUE (g)-[:BELONGS_TO]->(s)
+CREATE UNIQUE (s)-[:HAS]->(g)
+WITH { props } AS props, g,s
+UNWIND props.nodeList AS nodeid
+    MATCH (s)-[:HAS]->(n:Node {nodeid: nodeid})
+    OPTIONAL MATCH (:Group:LightingGroup)-[old:BELONGS_TO|HAS]-(n)
+    DELETE old
+    CREATE UNIQUE (n)-[:BELONGS_TO]->(g)
+    CREATE UNIQUE (g)-[:HAS]->(n)
+RETURN {
+    groupid: g.groupid,
+    name: g.name,
+    description: g.description,
+    nodeList: COLLECT(n.nodeid)
+} AS result

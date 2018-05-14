@@ -1,0 +1,260 @@
+package com.xeralux.device;
+
+option java_package = "com.xeralux.device";
+
+import "deviceMessages.proto";
+//import "nanopb.proto";
+
+// Request/Response pairs
+
+// Login Request
+// On network connect, the client will send a LoginReq to announce their node id
+// and version of the protocol they are talking. The server responds with a LoginResp, nominally with
+// okay=true. If okay=false, the client should terminate the connection.
+message LoginReq {
+	required string nodeId = 1;
+
+	// The current version of the protocol is 1
+	required uint64 protocolVersion = 2;
+
+	// Eventually we should pull this from the database, but for right now we have sim clients pretending
+	// to be various unodes at different times.
+	// Defined values:
+	// "unode-v1" - Version 1 compatible micronode board
+	// "ssim" - The scala simulator
+	// "psim" - The python simulator
+	optional string clientType = 3;
+
+	// String identifying the current SW version running.
+	// First x of SHA (where x is currently 7)
+	// Build release server will contain files of the form MajVer.MinVer.sha.suffix (where there may be
+	// multiple suffixes for any one release)
+	optional string swVerId = 4;
+
+	// Network info
+	// The network name/ID we connected through (typically the SSID)
+	// Below This is from David V's.
+	// For a cell modem, this is the APN.
+	//optional string netNameOrApn = 5 [(nanopb).max_size = 32];
+	optional string netName = 5;
+
+	// The internal network profile name through which we connected to
+	// the AP (currently 'x' or 'y').
+	// For a cell modem node, this is the IMEI.
+	//optional string profileNameOrImei = 6 [(nanopb).max_size = 16];
+	//Above is DavidV's messages file def. We don't use the same names.
+	//Adding this here for info.
+	optional string profileName = 6 ;
+
+	// The 802.11[bgn] channel number on which we're associated to the AP.
+	//This is changing from string -> int for V2 compatibility.
+	optional string assocChannel = 7;
+
+	/*
+	So Sarah and I talked this morning: We worked out something that does what you describe (though on the server side I'll probably use a checksum or count to make this happen):
+
+	LoginReq will have a new optional 32 bit param of configToken.
+	ConfigRespDone will have a new optional 32 bit param of configToken (these params are optional to allow old clients/servers to work with new servers/clients)
+
+	When the client sends LoginReq it will include any known value of configToken.
+
+	Server will check configToken to see if it matches what is expected for the client, if wrong I'll squirt down all the config recs.
+
+	Then server will squirt down ConfigRespDone with configToken set to the new correct value.
+	*/
+
+	optional string configToken = 8;
+
+	optional string localIP = 9;
+
+	optional uint64 time = 10;
+
+	// BSSID (MAC address) of the AP the endpoint is associated with. -> Below is David V's description
+	// For a cell modem node, this is the ICCID.
+	//optional string bssidOrIccid = 11 [(nanopb).max_size = 22];
+	optional string bssid = 11;
+
+
+	// MAC address of endpoint, as seen on the WiFi network.
+	// For a cell modem node, this is the IMSI. Below David V.def
+	// optional string macOrImsi = 12 [(nanopb).max_size = 18];
+	optional string mac = 12;
+
+	// Authentication method used to sign in to the network.
+	optional WiFiAuthType auth = 13;
+
+	// Node sub-type information.  Comma separated decimal integers "<m>,<v>" where
+	//         for all nodes: 0 = Undetermined
+	//         for v3  nodes: 1 = ZMotion sensor pod type
+	//                        2 = SiHawk sensor pod type
+	//         for v4+ nodes: 1 = Fully populated with external pod bus and an auxiliary power relay
+	//                        2 = De-populated: no external pod bus and no auxiliary power relay
+	//   <v> = voltage subtype
+	//         for all nodes: 0 = Undetermined
+	//                        1 = 277 V
+	//                        2 = 480 V
+	optional string clientSubType = 14;
+	optional string modemRevEd = 15;
+}
+
+message LoginResp {
+	required bool okay = 1;
+	// Current time on server, usec since Unix epoch
+	optional uint64 time = 2;
+}
+
+// Configuration Request
+// Unused - we now automatically send config when client logs in
+message UnusedConfigReq {
+}
+
+message KVPair {
+	required string key = 1;
+	optional string sValue = 2;
+	optional int64  lValue = 3;
+	optional bool   bValue = 4;
+}
+
+message ConfigResp {
+	required KVPair pair = 1;
+}
+
+message ConfigRespDone {
+	// Due to a bug in old device clients, we can't add this here
+	// optional int32 token = 1;
+}
+
+// This is sent from the server to the node over the push channel.
+// It instructs the node to pull a SW update from the given URL.
+message SoftwareUpdateReq {
+	required string swUpdateURL = 1;
+	optional string cellFwUpdateURL = 2;
+	optional bool has_cellFwUpdateURL = 3;
+}
+
+enum X509Update {
+	X509ClientOnly = 0;
+	X509ServerOnly = 1;
+	X509Both = 2;
+}
+
+// This is sent from the server to the node over the push channel.
+// It instructs the node to pull new certificate(s) or key from the given URL.
+// Note: URL will not include suffix.
+// Suffix shall be
+//   .clcrt for client certificates
+//   .clkey for client key
+//   .cacrt for ca certificate
+/*
+url does not include the suffix as I have it.
+
+clientonly -> downloads $url.clcrt, $url.clkey
+serveronly -> downloads $usr.cacrt
+both -> downloads $url.clcrt, $url.clkey, $url.cacrt
+
+After this I think we intended the micronode to reboot which is why we want to say if both need to be updated.
+*/
+message X509UpdateReq {
+	required string x509UpdateURL = 1;
+	required X509Update x509Update = 2;
+	optional uint32 httpsPort = 3;
+}
+
+// Video Upload Request
+// Somewhat TBD. Leaving it here to keep old stuff working.
+message VideoUploadReq {
+	required string sensorId = 1;
+	optional uint64 startTime = 2;
+	optional uint64 endTime = 3;
+	optional string fileType = 4;
+}
+
+message VideoUploadResp {
+	required string sensorId = 1;
+	required string url = 2;
+}
+
+message ErrorResp {
+	required string message = 1;
+}
+
+// Request time from the server.
+message TimeReq {
+}
+
+// Reply for time request.
+message TimeResp {
+	// Time in usec UTC.
+	required uint64 time = 1;
+}
+
+// This enum must match the field numbers in the envelope.
+// The embedded decoder can save memory by manually decoding the envelope,
+// but to do so it needs to dispatch the message based on its type.
+// This enum defines the message types in the embedded code.
+// Unfortunately, you cannot use enums for field numbers. The enum
+// members below must match the field numbers in the envelope EXACTLY.
+enum EnvelopeMsgCode {
+	LoginReqCode = 1;
+	LoginRespCode = 2;
+
+	UnusedConfigReqCode = 3;
+	ConfigRespCode = 4;
+	ConfigRespDoneCode = 5;
+	SoftwareUpdateReqCode = 6;
+	DeviceAlarmCode = 7;
+	DeviceActionReqCode = 8;
+	X509UpdateReqCode = 9;
+
+	SensorSampleCode = 10;
+	VideoUploadReqCode = 11;
+	VideoUploadRespCode = 12;
+	TimeReqCode = 13;
+	TimeRespCode = 14;
+	SensorSampleReqCode = 15;
+	GpsSampleCode = 16;
+	GpsActionReqCode = 17;
+	GpsActionRspCode = 18;
+	LightingForceStateCode = 20;
+	LightingSetAutoCode = 21;
+	LightingScheduledEventCode = 22;
+	LightingAstronomicalEventCode = 23;
+	LightingClearScheduleEventCode = 24;
+	AuxRelayActionReqCode = 28;
+	ErrorRespCode = 31;
+}
+
+// Envelope to contain all the messages. At any time, ONLY 1 of the optional
+// fields can be used.
+message Envelope {
+	// Login
+	optional LoginReq loginReq = 1;
+	optional LoginResp loginResp = 2;
+
+	// Configuration / control / alarms
+	optional UnusedConfigReq unusedConfigReq = 3;
+	optional ConfigResp configResp = 4;
+	optional ConfigRespDone configRespDone = 5;
+	optional SoftwareUpdateReq softwareUpdateReq = 6;
+	optional DeviceAlarm deviceAlarm = 7;
+	optional DeviceActionReq deviceAction = 8;
+	optional X509UpdateReq x509Update = 9;
+
+	// Sensor handling
+	optional SensorSample sensorSample = 10;
+	optional VideoUploadReq videoUploadReq = 11;
+	optional VideoUploadResp videoUploadResp = 12;
+	optional TimeReq timeReq = 13;
+	optional TimeResp timeResp = 14;
+	optional SensorSampleReq sensorSampleReq = 15;
+	//gps
+	optional GpsSample gpsSample = 16;
+	optional GpsActionReq gpsActionReq = 17;
+	optional GpsActionRsp gpsActionRsp = 18;
+	// Lighting
+	optional LightingForceState lightingForceState = 20;
+	optional LightingSetAuto lightingSetAuto = 21;
+	optional LightingScheduledEvent lightingScheduledEvent = 22;
+	optional LightingAstronomicalEvent lightingAstronomicalEvent = 23;
+	optional LightingClearSchedule lightingClearSchedule = 24;
+}

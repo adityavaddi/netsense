@@ -1,0 +1,7 @@
+bool
+bytes
+float
+int64
+string
+uint32
+uint64
